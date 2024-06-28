@@ -9,12 +9,12 @@ export default function Header() {
           <input type="text" className="location input-container" placeholder="กรุงเทพและ..." />
           <img src="../img/dropdown.png" alt="dropdown pic" className='icon dropdown-icon' />
         </div>
-        <div className="restaurant-search ">
+        <div className="restaurant-search-container">
           <input type="text" className="restaurant input-container" placeholder="ร้านอาหาร โรงแรม ที่เที่ยวร้านเสริมสว..." />
-          <button className="search-button">
-            <img src="../img/search_icon.png" alt="search icon" className='icon' />
-          </button>
         </div>
+        <button className="search-button">
+          <img src="../img/search_icon.png" alt="search icon" className='icon' />
+        </button>
       </div>
       <div className="header-right-container">
         <button>
