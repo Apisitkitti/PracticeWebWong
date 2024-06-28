@@ -7,6 +7,54 @@
   border-bottom: 1px solid #E9ECEE;
 }
 
+.header-center-container {
+  display: flex;
+}
+
+::placeholder {
+  color: black;
+}
+
+.input-container {
+  border: none;
+}
+
+.input-container:focus {
+  outline: none;
+}
+
+.header-center-container .icon {
+  width: 26px;
+  height: 30px;
+}
+
+.location-container {
+  display: flex;
+  align-items: center;
+  background-color: #E9ECEE;
+  border-radius: 10px;
+  padding: 0 10px;
+}
+
+.header-center-container .dropdown-icon {
+  width: 14px;
+  height: 12px;
+}
+
+.input-container {
+  font-size: 22px;
+  background-color: transparent;
+}
+
+.location-container .input-container {
+  width: 97px;
+  margin: 0 4px;
+}
+
+
+
+
+/* 
 .wongnai-logo {
   margin-right: 50px;
   margin-left: -200px;
@@ -57,4 +105,4 @@
 
 .restuarant input {
   padding: inherit inherit 20px inherit;
-}
+} */

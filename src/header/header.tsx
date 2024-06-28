@@ -3,8 +3,8 @@ export default function Header() {
   return (
     <div className="header-container">
       <img src="../img/wongnai-logo-header.png" alt="wongnai logo" height={48} width={118} className='wongnai-logo' />
-      <div className="header-center container">
-        <div className="location container">
+      <div className="header-center-container">
+        <div className="location-container">
           <img src="../img/location.png" alt="location logo" className='icon location-icon' />
           <input type="text" className="location input-container" placeholder="กรุงเทพและ..." />
           <img src="../img/dropdown.png" alt="dropdown pic" className='icon dropdown-icon' />
@@ -16,7 +16,7 @@ export default function Header() {
           </button>
         </div>
       </div>
-      <div className="header-right container">
+      <div className="header-right-container">
         <button>
           <img src="../img/peopleIcon.png" alt="people icon" className='icon' />เข้าสู่ระบบ
         </button>
