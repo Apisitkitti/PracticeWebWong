@@ -17,12 +17,12 @@ export default function Header() {
         </button>
       </div>
       <div className="header-right-container">
-        <button>
-          <img src="../img/peopleIcon.png" alt="people icon" className='icon' />เข้าสู่ระบบ
+        <button className='signIn-button user-button'>
+          <img src="../img/peopleIcon.png" alt="people icon" className='icon' />
+          <span>เข้าสู่ระบบ</span>
         </button>
-        <button><img src="../img/dropdownSmall.png" alt="dropdown png" className='icon' /></button>
+        <button className='dropdown-button user-button'><img src="../img/dropdownSmall.png" alt="dropdown png" className='icon' /></button>
       </div>
-    </div >
+    </div>
   );
-
 }
