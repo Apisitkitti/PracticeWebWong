@@ -1,11 +1,14 @@
 import React from 'react';
-import Header from './header/header';
 import './Setting.css'
+import Header from './header/header';
+import Body from './body/body';
+
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <Body />
     </div>
   );
 }

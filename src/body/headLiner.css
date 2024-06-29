@@ -1,0 +1,33 @@
+.headLiner-container {
+  height: 110px;
+  grid-column: 1 / span 5;
+  background-color: white;
+}
+
+.headLiner-text-container {
+  margin: 20px 180px;
+  grid-column: 3 / span 2;
+
+  & a {
+    color: #A9A6A9;
+  }
+
+  & a:hover {
+    text-decoration: underline;
+  }
+
+  & :is(a, span) {
+    font-size: 18px;
+  }
+
+  & p {
+    margin-top: 10px;
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+}
+
+.hl {
+  color: black;
+}

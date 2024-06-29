@@ -1,0 +1,5 @@
+.body-container {
+  background-color: #E9ECEE;
+  display: grid;
+  grid-template-columns: 180px 1fr 2fr 1fr 180px;
+}

@@ -19,7 +19,7 @@ export default function Header() {
       <div className="header-right-container">
         <button className='signIn-button user-button'>
           <img src="../img/peopleIcon.png" alt="people icon" className='icon' />
-          <span>เข้าสู่ระบบ</span>
+          เข้าสู่ระบบ
         </button>
         <button className='dropdown-button user-button'><img src="../img/dropdownSmall.png" alt="dropdown png" className='icon' /></button>
       </div>

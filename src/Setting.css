@@ -18,8 +18,13 @@
   font-family: DBHeavent;
   margin: 0;
   padding: 0;
+  text-decoration: none;
 }
 
 :root {
   --fontsize: 16px;
+}
+
+body {
+  background-color: #E9ECEE;
 }

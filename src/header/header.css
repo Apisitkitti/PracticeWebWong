@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: white;
   border-bottom: 1px solid #E9ECEE;
 }
 
@@ -101,6 +102,7 @@
   font-size: 25px;
   font-weight: bold;
   margin-right: 5px;
+  color: black;
 }
 
 .dropdown-button {

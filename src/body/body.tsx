@@ -1,8 +1,9 @@
 import './bodySetup.css'
-export default function body() {
+import HeadLiner from './headLiner';
+export default function Body() {
   return (
     <div className="body-container">
-
+      <HeadLiner />
     </div>
   );
 }
