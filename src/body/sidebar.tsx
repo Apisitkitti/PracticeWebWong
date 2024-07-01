@@ -8,16 +8,11 @@ function FoodShowUp({ food }: { food: string[] }) {
   return (
     <div>
       {food.map((foodItem, index) =>
-
         <div key={index}>
-          <input type="checkbox" name="provinceCheck" className="sidebarItem radio" />
-          <label htmlFor="provinceCheck">{foodItem}</label>
-          if(index == 5)
-          {
-            <a href="#">ดูเพิ่มเติม({food.length}) </a>
-          }
+          <input type="checkbox" name="foodCheck" className="sidebarItem radio" />
+          <label htmlFor="foodCheck">{foodItem}</label>
         </div>
-      )};
+      )}
     </div>
   );
 }
@@ -57,7 +52,9 @@ export default function Sidebar() {
         <hr />
       </div>
       <div>
+        <legend>ประเภทอาหาร</legend>
         <FoodShowUp food={foodCategory} />
+        <hr />
       </div>
 
     </div>
