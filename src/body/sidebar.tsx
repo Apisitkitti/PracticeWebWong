@@ -5,9 +5,10 @@ const foodCategory: string[] =
 
 
 function FoodShowUp({ food }: { food: string[] }) {
+  const filterFoodToShow = food.slice(0, 6);
   return (
     <div>
-      {food.map((foodItem, index) =>
+      {filterFoodToShow.map((foodItem, index) =>
         <div key={index}>
           <input type="checkbox" name="foodCheck" className="sidebarItem radio" />
           <label htmlFor="foodCheck">{foodItem}</label>
