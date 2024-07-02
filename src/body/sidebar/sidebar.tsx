@@ -1,22 +1,5 @@
-const foodCategory: string[] =
-  [
-    'อาหารตามสั่ง', 'อาหารจานเดี่ยว', 'ก๋วยเตี๋ยว', 'ของหวาน', 'เครื่องดื่ม/น้ำผลไม้', 'เบเกอรี/เค้ก', 'อาหารไทย'
-  ]
-
-
-function FoodShowUp({ food }: { food: string[] }) {
-  const filterFoodToShow = food.slice(0, 6);
-  return (
-    <div>
-      {filterFoodToShow.map((foodItem, index) =>
-        <div key={index}>
-          <input type="checkbox" name="foodCheck" className="sidebarItem radio" />
-          <label htmlFor="foodCheck">{foodItem}</label>
-        </div>
-      )}
-    </div>
-  );
-}
+import { foodCategory, province } from "./sidebarData";
+import { FoodShowUp, ProvinceShowUp } from "./sidebarShow";
 
 
 export default function Sidebar() {
@@ -52,12 +35,20 @@ export default function Sidebar() {
         </div>
         <hr />
       </div>
+      <ProvinceShowUp province={province} />
+      <FoodShowUp food={foodCategory} />
       <div>
-        <legend>ประเภทอาหาร</legend>
-        <FoodShowUp food={foodCategory} />
-        <hr />
+        <input type="checkbox" name="price-checkbox" />
+        <label htmlFor="price-checkbox" className="sidebarItem text">฿ ถูกกว่า 100</label>
+        <input type="checkbox" name="price checkbox" />
+        <label htmlFor="price-checkbox" className="sidebarItem text">฿฿ 100-250</label>
+        <input type="checkbox" name="price-checkbox" />
+        <label htmlFor="price-checkbox" className="sidebarItem text">฿฿฿ 251-500</label>
+        <input type="checkbox" name="price-checkbox" />
+        <label htmlFor="price-checkbox" className="sidebarItem text">฿฿฿฿ 500+</label>
+        <input type="checkbox" name="price-checkbox" />
+        <label htmlFor="price-checkbox" className="sidebarItem text">฿฿฿฿฿ 1000+</label>
       </div>
-
     </div>
   );
 }
