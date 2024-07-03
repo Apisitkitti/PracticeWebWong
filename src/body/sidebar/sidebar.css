@@ -1,4 +1,5 @@
 .sidebar-container {
+  width: 210px;
   background-color: white;
   margin-top: 25px;
   grid-column: 2;
