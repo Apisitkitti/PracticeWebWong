@@ -1,15 +1,73 @@
-
-
+import { distanceType } from "./sidebarData";
+export function ShopCategoryShowUp({ shopCategory }: { shopCategory: string[] }) {
+  return (
+    <div className="shop-category container">
+      {shopCategory.map((shopItem, index) =>
+        <div key={index} >
+          <input type="radio" name="shopCategoryRadio" />
+          <label htmlFor="shopCategoryCheck">{shopItem}</label>
+        </div>
+      )}
+      <hr />
+    </div>
+  )
+}
+export function RateShowUp({ rate }: { rate: number[] }) {
+  return (
+    <div className="rate container">
+      <p>เรตติ้ง</p>
+      {rate.map((rateItem, index) =>
+        <div key={index}>
+          <input type="radio" name="ratingRadio" value={rateItem} />
+          <label htmlFor="ratingRadio">{rateItem.toFixed(1)} +</label>
+        </div>
+      )}
+      <hr />
+    </div>
+  );
+}
+export function DistanceShowUp({ distance }: { distance: distanceType[] }) {
+  return (
+    <div className="distanceNum container">
+      <p>ค้นหาตามระยะห่างจาก</p>
+      <div className="placeblock textbox"><input type="text" /></div>
+      <div className="distanceblock textbox"><input type="text" /></div>
+      <select name="distance">
+        {distance.map((distanceItem, index) =>
+          <option value={distanceItem.distanceNum}>{distanceItem.distanceNum} {distanceItem.distanceSuffix}</option>
+        )}
+      </select>
+      <hr />
+    </div>
+  );
+}
+export function ProvinceShowUp({ province }: { province: string[] }) {
+  const filterProvinceToShow: string[] = province.slice(0, 6);
+  const leftProvince = province.length - filterProvinceToShow.length;
+  return (
+    <div className="food-category container">
+      <p>ย่าน และ เขต</p>
+      {filterProvinceToShow.map((provinceItem, index) =>
+        <div key={index} >
+          <input type="checkbox" name="provinceCheck" className="sidebarItem radio" value={provinceItem} />
+          <label htmlFor="provinceCheck" className="sidebarItem text">{provinceItem}</label>
+        </div>
+      )}
+      <a href="##">ดูเพิ่มเติม ({leftProvince} ย่าน)</a>
+      <hr />
+    </div>
+  );
+}
 export function FoodShowUp({ food }: { food: string[] }) {
   const filterFoodToShow: string[] = food.slice(0, 6);
   const leftfood: number = food.length - filterFoodToShow.length;
   return (
-    <div>
-      <legend>ประเภทอาหาร</legend>
+    <div className="food-category container">
+      <p>ประเภทอาหาร</p>
       {filterFoodToShow.map((foodItem, index) =>
         <div key={index}>
           <input type="checkbox" name="foodCheck" className="sidebarItem radio" value={foodItem} />
-          <label htmlFor="foodCheck">{foodItem}</label>
+          <label htmlFor="foodCheck" className="sidebarItem text">{foodItem}</label>
         </div>
       )}
       <a href="###">ดูเพิ่มเติม ({leftfood} ประเภท)</a>
@@ -18,20 +76,45 @@ export function FoodShowUp({ food }: { food: string[] }) {
   );
 }
 
-export function ProvinceShowUp({ province }: { province: string[] }) {
-  const filterProvinceToShow: string[] = province.slice(0, 6);
-  const leftProvince = province.length - filterProvinceToShow.length;
+export function DiscountShowUp({ discount }: { discount: string[] }) {
   return (
-    <div>
-      <legend>ย่าน และ เขต</legend>
-      {filterProvinceToShow.map((provinceItem, index) =>
+    <div className="discount container">
+      <p>ส่วนลด</p>
+      {discount.map((discountItem, index) =>
         <div key={index}>
-          <input type="checkbox" name="provinceCheck" className="sidebarItem radio" value={provinceItem} />
-          <label htmlFor="provinceCheck">{provinceItem}</label>
+          <input type="checkbox" className="sidebarItem checkbox" name="discountCheck" />
+          <label htmlFor='discountCheck'>{discountItem}</label>
         </div>
       )}
-      <a href="##">ดูเพิ่มเติม ({leftProvince} ย่าน)</a>
       <hr />
+    </div >
+  );
+}
+export function PriceShowUp({ price }: { price: string[] }) {
+  return (
+    <div>
+      <p>ราคา</p>
+      {price.map((priceItem, index) =>
+        <div key={index}>
+          <input type="checkbox" name="priceCheckbox" />
+          <label htmlFor="priceCheckbox">{priceItem}</label>
+        </div>
+      )}
+      <hr />
+    </div>
+  );
+}
+export function DealShowUp({ deal }: { deal: string[] }) {
+  const filterDeal: string[] = deal.slice(0, 5);
+  return (
+    <div className="food-category container" >
+      {filterDeal.map((dealItem, index) =>
+        <div key={index} >
+          <input type="checkbox" name="dealCheck" className="sidebarItem radio" value={dealItem} />
+          <label htmlFor="dealCheck" className="sidebarItem text">{dealItem}</label>
+        </div>
+      )}
+      <a href="##">ดูเพิ่มเติม</a>
     </div>
   );
 }

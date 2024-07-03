@@ -1,0 +1,16 @@
+.sidebar-container {
+  background-color: white;
+  margin-top: 25px;
+  grid-column: 2;
+  box-shadow: 0 0 #EDF0F2;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.container:not(.shop-category) {
+  margin-top: 10px;
+}
+
+.container hr {
+  margin-top: 10px;
+}
