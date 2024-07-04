@@ -1,14 +1,15 @@
 import { distanceType } from "./sidebarData";
+import { useState } from "react";
 export function ShopCategoryShowUp({ shopCategory }: { shopCategory: string[] }) {
   return (
-    <div className="shop-category container">
+    <div className="shop-category container " >
       {shopCategory.map((shopItem, index) =>
         <div key={index} >
           <input type="radio" name="shopCategoryRadio" />
           <label htmlFor="shopCategoryCheck">{shopItem}</label>
         </div>
       )}
-      <hr />
+      <hr id="endLine" />
     </div>
   )
 }
@@ -22,22 +23,27 @@ export function RateShowUp({ rate }: { rate: number[] }) {
           <label htmlFor="ratingRadio">{rateItem.toFixed(1)} +</label>
         </div>
       )}
-      <hr />
+      <hr id="endLine" />
     </div>
   );
 }
 export function DistanceShowUp({ distance }: { distance: distanceType[] }) {
+  const [placeHolderText, placeHolderControl] = useState('500 ม.')
+  const handleChangeFollowOption = (event: any) => {
+    let value: any = event.target.value;
+    placeHolderControl(value);
+  }
   return (
     <div className="distanceNum container">
       <p>ค้นหาตามระยะห่างจาก</p>
-      <div className="placeblock textbox"><input type="text" /></div>
-      <div className="distanceblock textbox"><input type="text" /></div>
-      <select name="distance">
-        {distance.map((distanceItem, index) =>
-          <option value={distanceItem.distanceNum}>{distanceItem.distanceNum} {distanceItem.distanceSuffix}</option>
+      <div className="placeblock textbox"><input type="text" placeholder="เช่น วัดพระแก้ว" /></div>
+      <div className="distanceblock textbox"><input type="text" placeholder={placeHolderText} /></div>
+      <select name="distance" onChange={handleChangeFollowOption}>
+        {distance.map((distanceItem) =>
+          <option value={distanceItem.distanceNum + ' ' + distanceItem.distanceSuffix} >{distanceItem.distanceNum} {distanceItem.distanceSuffix} </option>
         )}
       </select>
-      <hr />
+      <hr id="endLine" />
     </div>
   );
 }
@@ -54,7 +60,7 @@ export function ProvinceShowUp({ province }: { province: string[] }) {
         </div>
       )}
       <a href="##">ดูเพิ่มเติม ({leftProvince} ย่าน)</a>
-      <hr />
+      <hr id="endLine" />
     </div>
   );
 }
@@ -71,7 +77,7 @@ export function FoodShowUp({ food }: { food: string[] }) {
         </div>
       )}
       <a href="###">ดูเพิ่มเติม ({leftfood} ประเภท)</a>
-      <hr />
+      <hr id="endLine" />
     </div>
   );
 }
@@ -86,7 +92,7 @@ export function DiscountShowUp({ discount }: { discount: string[] }) {
           <label htmlFor='discountCheck'>{discountItem}</label>
         </div>
       )}
-      <hr />
+      <hr id="endLine" />
     </div >
   );
 }
@@ -100,7 +106,7 @@ export function PriceShowUp({ price }: { price: string[] }) {
           <label htmlFor="priceCheckbox">{priceItem}</label>
         </div>
       )}
-      <hr />
+      <hr id="endLine" />
     </div>
   );
 }

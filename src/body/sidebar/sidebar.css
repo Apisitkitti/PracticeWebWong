@@ -1,4 +1,6 @@
 .sidebar-container {
+  display: flex;
+  flex-direction: column;
   width: 210px;
   background-color: white;
   margin-top: 25px;
@@ -6,12 +8,35 @@
   box-shadow: 0 0 #EDF0F2;
   border-radius: 10px;
   padding: 15px;
+
+  & p {
+    font-size: 24px;
+    margin: 5px 0;
+    font-weight: bold;
+  }
+
+  & input[type=radio],
+  input[type=checkbox] {
+    accent-color: rgb(49, 155, 217);
+  }
+
+  & label {
+    font-size: 18px;
+    color: rgb(120, 127, 131);
+    margin-left: 5px;
+  }
+}
+
+.container>div {
+  display: flex;
+  align-items: center;
 }
 
 .container:not(.shop-category) {
   margin-top: 10px;
 }
 
-.container hr {
+#endLine {
   margin-top: 10px;
+  opacity: 50%;
 }
