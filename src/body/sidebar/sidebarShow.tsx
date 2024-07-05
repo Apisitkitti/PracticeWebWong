@@ -29,22 +29,34 @@ export function RateShowUp({ rate }: { rate: number[] }) {
 }
 export function DistanceShowUp({ distance }: { distance: distanceType[] }) {
   const [placeHolderText, placeHolderControl] = useState('500 ม.')
+  const [isOnButton, buttonAppearControl] = useState(false);
   const handleChangeFollowOption = (event: any) => {
     let value: any = event.target.value;
     placeHolderControl(value);
+    buttonAppearControl(!isOnButton);
+  }
+  const handleButtonAppear = (event: any) => {
+    buttonAppearControl(!isOnButton);
   }
   return (
     <div className="distanceNum container">
       <p>ค้นหาตามระยะห่างจาก</p>
       <div className="placeblock textbox"><input type="text" placeholder="เช่น วัดพระแก้ว" /></div>
-      <div className="distanceblock textbox"><input type="text" placeholder={placeHolderText} /></div>
-      <select name="distance" onChange={handleChangeFollowOption}>
-        {distance.map((distanceItem) =>
-          <option value={distanceItem.distanceNum + ' ' + distanceItem.distanceSuffix} >{distanceItem.distanceNum} {distanceItem.distanceSuffix} </option>
-        )}
-      </select>
+      <div className="distanceblock textbox">
+        <input type="text" placeholder={placeHolderText} onClick={handleButtonAppear} />
+        <button id="dropdownIcon" onClick={handleButtonAppear}>
+          <img src="../img/dropdownSmall.png" alt="icon" className="icon" />
+        </button>
+      </div>
+      {isOnButton && (
+        <div className="button-group">
+          {distance.map((distanceItem) =>
+            <button id="destination-button" onClick={handleChangeFollowOption} value={distanceItem.distanceNum + ' ' + distanceItem.distanceSuffix} > {distanceItem.distanceNum} {distanceItem.distanceSuffix}</button>
+          )}
+        </div>
+      )}
       <hr id="endLine" />
-    </div>
+    </div >
   );
 }
 export function ProvinceShowUp({ province }: { province: string[] }) {
