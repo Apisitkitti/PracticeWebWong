@@ -39,6 +39,7 @@
 #endLine {
   margin-top: 10px;
   opacity: 50%;
+  position: static;
 }
 
 .textbox:not(:first-child) {
@@ -76,19 +77,22 @@
 .button-group {
   width: 180px;
   flex-direction: column;
-  margin-top: 10px;
+  margin-top: 5px;
   border: 1px solid #c8ccce;
   border-radius: 5px;
+  position: absolute;
+  background-color: white;
+  z-index: 2;
 }
 
 #destination-button {
   display: flex;
   width: inherit;
-  padding: 10px;
+  padding: 6px;
   font-size: 18px;
   border: none;
   background-color: transparent;
-  transition: all 0.3s;
+  transition: background-color 0.3s;
 }
 
 #destination-button:first-child {

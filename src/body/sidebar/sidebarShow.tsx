@@ -3,7 +3,7 @@ import { useState } from "react";
 export function ShopCategoryShowUp({ shopCategory }: { shopCategory: string[] }) {
   return (
     <div className="shop-category container " >
-      {shopCategory.map((shopItem, index) =>
+      {shopCategory.map((shopItem: string, index: number) =>
         <div key={index} >
           <input type="radio" name="shopCategoryRadio" />
           <label htmlFor="shopCategoryCheck">{shopItem}</label>
@@ -17,7 +17,7 @@ export function RateShowUp({ rate }: { rate: number[] }) {
   return (
     <div className="rate container">
       <p>เรตติ้ง</p>
-      {rate.map((rateItem, index) =>
+      {rate.map((rateItem: number, index: number) =>
         <div key={index}>
           <input type="radio" name="ratingRadio" value={rateItem} />
           <label htmlFor="ratingRadio">{rateItem.toFixed(1)} +</label>
@@ -30,12 +30,12 @@ export function RateShowUp({ rate }: { rate: number[] }) {
 export function DistanceShowUp({ distance }: { distance: distanceType[] }) {
   const [placeHolderText, placeHolderControl] = useState('500 ม.')
   const [isOnButton, buttonAppearControl] = useState(false);
-  const handleChangeFollowOption = (event: any) => {
-    let value: any = event.target.value;
+  const handleChangeFollowOption = (event: React.MouseEvent<HTMLButtonElement>) => {
+    let value: string = event.currentTarget.value;
     placeHolderControl(value);
     buttonAppearControl(!isOnButton);
   }
-  const handleButtonAppear = (event: any) => {
+  const handleButtonAppear = () => {
     buttonAppearControl(!isOnButton);
   }
   return (
@@ -50,7 +50,7 @@ export function DistanceShowUp({ distance }: { distance: distanceType[] }) {
       </div>
       {isOnButton && (
         <div className="button-group">
-          {distance.map((distanceItem) =>
+          {distance.map((distanceItem: distanceType) =>
             <button id="destination-button" onClick={handleChangeFollowOption} value={distanceItem.distanceNum + ' ' + distanceItem.distanceSuffix} > {distanceItem.distanceNum} {distanceItem.distanceSuffix}</button>
           )}
         </div>
@@ -65,7 +65,7 @@ export function ProvinceShowUp({ province }: { province: string[] }) {
   return (
     <div className="food-category container">
       <p>ย่าน และ เขต</p>
-      {filterProvinceToShow.map((provinceItem, index) =>
+      {filterProvinceToShow.map((provinceItem: string, index: number) =>
         <div key={index} >
           <input type="checkbox" name="provinceCheck" className="sidebarItem radio" value={provinceItem} />
           <label htmlFor="provinceCheck" className="sidebarItem text">{provinceItem}</label>
@@ -82,7 +82,7 @@ export function FoodShowUp({ food }: { food: string[] }) {
   return (
     <div className="food-category container">
       <p>ประเภทอาหาร</p>
-      {filterFoodToShow.map((foodItem, index) =>
+      {filterFoodToShow.map((foodItem: string, index: number) =>
         <div key={index}>
           <input type="checkbox" name="foodCheck" className="sidebarItem radio" value={foodItem} />
           <label htmlFor="foodCheck" className="sidebarItem text">{foodItem}</label>
@@ -98,7 +98,7 @@ export function DiscountShowUp({ discount }: { discount: string[] }) {
   return (
     <div className="discount container">
       <p>ส่วนลด</p>
-      {discount.map((discountItem, index) =>
+      {discount.map((discountItem: string, index: number) =>
         <div key={index}>
           <input type="checkbox" className="sidebarItem checkbox" name="discountCheck" />
           <label htmlFor='discountCheck'>{discountItem}</label>
@@ -112,7 +112,7 @@ export function PriceShowUp({ price }: { price: string[] }) {
   return (
     <div>
       <p>ราคา</p>
-      {price.map((priceItem, index) =>
+      {price.map((priceItem: string, index: number) =>
         <div key={index}>
           <input type="checkbox" name="priceCheckbox" />
           <label htmlFor="priceCheckbox">{priceItem}</label>
@@ -126,7 +126,7 @@ export function DealShowUp({ deal }: { deal: string[] }) {
   const filterDeal: string[] = deal.slice(0, 5);
   return (
     <div className="food-category container" >
-      {filterDeal.map((dealItem, index) =>
+      {filterDeal.map((dealItem: string, index: number) =>
         <div key={index} >
           <input type="checkbox" name="dealCheck" className="sidebarItem radio" value={dealItem} />
           <label htmlFor="dealCheck" className="sidebarItem text">{dealItem}</label>
