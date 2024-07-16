@@ -6,6 +6,7 @@ import './sidebar.css';
 export default function Sidebar() {
   return (
     <div className="sidebar-container">
+
       <show.ShopCategoryShowUp shopCategory={data.shopCategory} />
       <show.RateShowUp rate={data.ratingScore} />
       <show.DistanceShowUp distance={data.distance} />

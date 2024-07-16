@@ -10,7 +10,7 @@
   padding: 15px;
 
   & p {
-    font-size: 24px;
+    font-size: 20px;
     margin: 5px 0;
     font-weight: bold;
   }
@@ -55,7 +55,7 @@
 
 .textbox {
   padding: 10px;
-  border-radius: 3px;
+  border-radius: 5px;
   border: 0.5px solid #c8ccce;
   margin-top: 10px;
   color: black;
@@ -64,13 +64,15 @@
     border-color: #2DA8ED
   }
 
-  &:focus {
-    border: 1px solid red;
+  &:active {
+    border: 3px solid#2DA8ED;
+    opacity: 100%;
   }
 
   & .icon {
     width: 15px;
     margin-left: 10px;
+    opacity: 20%;
   }
 }
 
@@ -88,7 +90,7 @@
 #destination-button {
   display: flex;
   width: inherit;
-  padding: 6px;
+  padding: 4px 10px;
   font-size: 18px;
   border: none;
   background-color: transparent;
@@ -99,11 +101,15 @@
   margin-top: 4px;
 }
 
+#destination-button:last-child {
+  margin-bottom: 4px;
+}
+
 #destination-button:hover {
   background-color: #dbdbdb;
 }
 
-#destination-button:active {
+#destination-button:focus {
   background-color: #2DA8ED;
 }
 

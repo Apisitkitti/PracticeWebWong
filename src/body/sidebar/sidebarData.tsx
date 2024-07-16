@@ -1,3 +1,13 @@
+export type DistanceType =
+  {
+    distanceNum: number,
+    distanceSuffix: string;
+  }
+export type DistancePropShowType =
+  {
+    distance: DistanceType[];
+  }
+
 export const shopCategory: string[] =
   [
     'ร้านอาหาร', 'ร้านเสริมสวย และ สปา', 'ที่พัก', 'สถานที่ท่องเที่ยว'
@@ -7,12 +17,8 @@ export const ratingScore: number[] =
   [
     3.5, 4.0
   ]
-export type distanceType =
-  {
-    distanceNum: number;
-    distanceSuffix: string;
-  }
-export const distance: distanceType[] =
+
+export const distance: DistanceType[] =
   [
     {
       distanceNum: 500,
@@ -42,6 +48,7 @@ export const distance: distanceType[] =
       distanceNum: 50,
       distanceSuffix: 'กม.'
     }
+
   ]
 
 
@@ -86,6 +93,7 @@ export const price: string[] =
   [
     '฿ ถูกกว่า 100', '฿฿ 100-250', '฿฿฿ 251-500', '฿฿฿฿ 500+', '฿฿฿฿฿฿ 1000+',
   ]
+
 
 
 

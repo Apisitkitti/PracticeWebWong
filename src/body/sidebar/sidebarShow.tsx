@@ -1,5 +1,8 @@
-import { distanceType } from "./sidebarData";
+import { DistanceType, DistancePropShowType } from "./sidebarData";
 import { useState } from "react";
+
+
+
 export function ShopCategoryShowUp({ shopCategory }: { shopCategory: string[] }) {
   return (
     <div className="shop-category container " >
@@ -27,9 +30,9 @@ export function RateShowUp({ rate }: { rate: number[] }) {
     </div>
   );
 }
-export function DistanceShowUp({ distance }: { distance: distanceType[] }) {
+export function DistanceShowUp({ distance }: DistancePropShowType) {
   const [placeHolderText, placeHolderControl] = useState('500 ม.')
-  const [isOnButton, buttonAppearControl] = useState(false);
+  const [isOnButton, buttonAppearControl] = useState<boolean>(false);
   const handleChangeFollowOption = (event: React.MouseEvent<HTMLButtonElement>) => {
     let value: string = event.currentTarget.value;
     placeHolderControl(value);
@@ -42,15 +45,15 @@ export function DistanceShowUp({ distance }: { distance: distanceType[] }) {
     <div className="distanceNum container">
       <p>ค้นหาตามระยะห่างจาก</p>
       <div className="placeblock textbox"><input type="text" placeholder="เช่น วัดพระแก้ว" /></div>
-      <div className="distanceblock textbox">
-        <input type="text" placeholder={placeHolderText} onClick={handleButtonAppear} />
-        <button id="dropdownIcon" onClick={handleButtonAppear}>
+      <div className="distanceblock textbox" onClick={handleButtonAppear}>
+        <input type="text" placeholder={placeHolderText} />
+        <button id="dropdownIcon" >
           <img src="../img/dropdownSmall.png" alt="icon" className="icon" />
         </button>
       </div>
       {isOnButton && (
         <div className="button-group">
-          {distance.map((distanceItem: distanceType) =>
+          {distance.map((distanceItem: DistanceType) =>
             <button id="destination-button" onClick={handleChangeFollowOption} value={distanceItem.distanceNum + ' ' + distanceItem.distanceSuffix} > {distanceItem.distanceNum} {distanceItem.distanceSuffix}</button>
           )}
         </div>
