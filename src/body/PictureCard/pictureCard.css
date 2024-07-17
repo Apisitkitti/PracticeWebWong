@@ -12,18 +12,16 @@
 .imageAndCaptionBlock {
   position: relative;
   padding: 0 5px;
+
 }
 
 #imageInside {
   width: 180px;
+  box-shadow: inset 3px 5px 5px rgba(0, 0, 0, 0.5);
   height: 110px;
   border-radius: 5px;
   margin-top: 5px;
-  z-index: 1;
-}
 
-#backgroundImg {
-  background-color: black;
 }
 
 #pictureCaption {
@@ -32,4 +30,5 @@
   position: absolute;
   top: 5px;
   left: 10px;
+
 }
