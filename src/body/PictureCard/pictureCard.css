@@ -1,0 +1,19 @@
+.picture-container {
+  display: flex;
+}
+
+.imageAndCaptionBlock {
+  position: relative;
+}
+
+#imageInside {
+  width: 200px;
+  height: 100px;
+  border-radius: 5px;
+}
+
+#pictureCaption {
+  font-weight: bold;
+  color: white;
+  position: absolute;
+}
