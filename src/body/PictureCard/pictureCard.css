@@ -1,19 +1,35 @@
 .picture-container {
   display: flex;
+  height: fit-content;
+  width: max-content;
+  background-color: white;
+  border-radius: 8px;
+  grid-column: 3 / span 2;
+  padding: 16px;
+  margin-bottom: 10px;
 }
 
 .imageAndCaptionBlock {
   position: relative;
+  padding: 0 5px;
 }
 
 #imageInside {
-  width: 200px;
-  height: 100px;
+  width: 180px;
+  height: 110px;
   border-radius: 5px;
+  margin-top: 5px;
+  z-index: 1;
+}
+
+#backgroundImg {
+  background-color: black;
 }
 
 #pictureCaption {
   font-weight: bold;
   color: white;
   position: absolute;
+  top: 5px;
+  left: 10px;
 }

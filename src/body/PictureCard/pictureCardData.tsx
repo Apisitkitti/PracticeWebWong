@@ -16,5 +16,17 @@ export const pictureAndInformation: PictureType[] =
     {
       caption: "กินจริงจังกับ กับบัตร ttb",
       picture: '../../../img/ttbOat.jpg'
+    },
+    {
+      caption: "ร้านใหม่ และ แนะนำ",
+      picture: '../../../img/newAndRecommended.jpg'
+    },
+    {
+      caption: "ถูกและดี",
+      picture: '../../../img/cheapAndGood.jpg'
+    },
+    {
+      caption: "ไลฟ์สไตล์ยามค่ำคืน",
+      picture: '../../../img/nightRestaurant.jpg'
     }
   ]

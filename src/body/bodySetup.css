@@ -1,4 +1,9 @@
 .body-container {
   display: grid;
   grid-template-columns: 180px 1fr 2fr 1fr 180px;
+  grid-column-gap: 12px;
+}
+
+.bodySection {
+  margin-top: 25px;
 }

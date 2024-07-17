@@ -5,7 +5,7 @@ import './sidebar.css';
 
 export default function Sidebar() {
   return (
-    <div className="sidebar-container">
+    <div className="sidebar-container bodySection">
 
       <show.ShopCategoryShowUp shopCategory={data.shopCategory} />
       <show.RateShowUp rate={data.ratingScore} />
