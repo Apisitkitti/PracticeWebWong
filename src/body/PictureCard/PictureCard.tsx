@@ -1,6 +1,7 @@
 import { FoodForShow } from "./pictureCardData"
 import './pictureCard.css'
-export default function PictureCard({ pictureAndInformation }: FoodForShow) {
+import { pictureAndInformation } from './pictureCardData';
+function PictureCard({ pictureAndInformation }: FoodForShow) {
   return (
     <div className="picture-container bodySection">
       {pictureAndInformation.map((pictureWithCaption) =>
@@ -10,5 +11,12 @@ export default function PictureCard({ pictureAndInformation }: FoodForShow) {
         </div>
       )}
     </div>
+  )
+}
+export default function CardComponent() {
+  return (
+    <>
+      <PictureCard pictureAndInformation={pictureAndInformation} />
+    </>
   )
 }
