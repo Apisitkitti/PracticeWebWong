@@ -2,6 +2,7 @@
   display: flex;
   height: fit-content;
   width: max-content;
+  position: relative;
   background-color: white;
   border-radius: 8px;
   grid-column: 3 / span 2;
@@ -21,6 +22,7 @@
   height: 110px;
   border-radius: 5px;
   margin-top: 5px;
+  filter: drop-shadow(5%);
 }
 
 #pictureCaption {
@@ -30,4 +32,28 @@
   position: absolute;
   top: 9px;
   left: 10px;
+}
+
+#sliderButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-90deg);
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  border: 1px solid rgb(137, 137, 137);
+  background-color: rgb(62, 62, 62);
+  opacity: 70%;
+  position: absolute;
+  top: 55px;
+  right: 10px;
+}
+
+#imageButtonImage {
+
+  width: 12px;
+  height: 12px;
+  filter: invert(100%);
+
 }
