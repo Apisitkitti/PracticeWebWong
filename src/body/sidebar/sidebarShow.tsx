@@ -1,9 +1,7 @@
-import { DistanceType, DistancePropShowType } from "./sidebarData";
+import * as data from "./sidebarData";
 import { useState } from "react";
 
-
-
-export function ShopCategoryShowUp({ shopCategory }: { shopCategory: string[] }) {
+function ShopCategoryShowUp({ shopCategory }: { shopCategory: string[] }) {
   return (
     <div className="shop-category container " >
       {shopCategory.map((shopItem: string, index: number) =>
@@ -16,7 +14,7 @@ export function ShopCategoryShowUp({ shopCategory }: { shopCategory: string[] })
     </div>
   )
 }
-export function RateShowUp({ rate }: { rate: number[] }) {
+function RateShowUp({ rate }: { rate: number[] }) {
   return (
     <div className="rate container">
       <p>เรตติ้ง</p>
@@ -30,7 +28,7 @@ export function RateShowUp({ rate }: { rate: number[] }) {
     </div>
   );
 }
-export function DistanceShowUp({ distance }: DistancePropShowType) {
+function DistanceShowUp({ distance }: data.DistancePropShowType) {
   const [placeHolderText, placeHolderControl] = useState('500 ม.')
   const [isOnButton, buttonAppearControl] = useState<boolean>(false);
   const handleChangeFollowOption = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -53,7 +51,7 @@ export function DistanceShowUp({ distance }: DistancePropShowType) {
       </div>
       {isOnButton && (
         <div className="button-group">
-          {distance.map((distanceItem: DistanceType) =>
+          {distance.map((distanceItem: data.DistanceType) =>
             <button id="destination-button" onClick={handleChangeFollowOption} value={distanceItem.distanceNum + ' ' + distanceItem.distanceSuffix} > {distanceItem.distanceNum} {distanceItem.distanceSuffix}</button>
           )}
         </div>
@@ -62,7 +60,7 @@ export function DistanceShowUp({ distance }: DistancePropShowType) {
     </div >
   );
 }
-export function ProvinceShowUp({ province }: { province: string[] }) {
+function ProvinceShowUp({ province }: { province: string[] }) {
   const filterProvinceToShow: string[] = province.slice(0, 6);
   const leftProvince = province.length - filterProvinceToShow.length;
   return (
@@ -79,7 +77,7 @@ export function ProvinceShowUp({ province }: { province: string[] }) {
     </div>
   );
 }
-export function FoodShowUp({ food }: { food: string[] }) {
+function FoodShowUp({ food }: { food: string[] }) {
   const filterFoodToShow: string[] = food.slice(0, 6);
   const leftfood: number = food.length - filterFoodToShow.length;
   return (
@@ -97,7 +95,7 @@ export function FoodShowUp({ food }: { food: string[] }) {
   );
 }
 
-export function DiscountShowUp({ discount }: { discount: string[] }) {
+function DiscountShowUp({ discount }: { discount: string[] }) {
   return (
     <div className="discount container">
       <p>ส่วนลด</p>
@@ -111,7 +109,7 @@ export function DiscountShowUp({ discount }: { discount: string[] }) {
     </div >
   );
 }
-export function PriceShowUp({ price }: { price: string[] }) {
+function PriceShowUp({ price }: { price: string[] }) {
   return (
     <div>
       <p>ราคา</p>
@@ -125,7 +123,7 @@ export function PriceShowUp({ price }: { price: string[] }) {
     </div>
   );
 }
-export function DealShowUp({ deal }: { deal: string[] }) {
+function DealShowUp({ deal }: { deal: string[] }) {
   const filterDeal: string[] = deal.slice(0, 5);
   return (
     <div className="food-category container" >
@@ -139,3 +137,21 @@ export function DealShowUp({ deal }: { deal: string[] }) {
     </div>
   );
 }
+
+export default function ForShowSidebar() {
+  return (
+    <div className="sidebar-container ">
+      <ShopCategoryShowUp shopCategory={data.shopCategory} />
+      <RateShowUp rate={data.ratingScore} />
+      <DistanceShowUp distance={data.distance} />
+      <ProvinceShowUp province={data.province} />
+      <FoodShowUp food={data.foodCategory} />
+      <DiscountShowUp discount={data.discount} />
+      <PriceShowUp price={data.price} />
+      <DealShowUp deal={data.deal} />
+    </div>
+
+  );
+}
+
+

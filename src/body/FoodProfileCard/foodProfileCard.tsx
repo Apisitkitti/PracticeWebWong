@@ -1,5 +1,20 @@
-export default function CardComponent() {
+import { FoodCardDataShow, restuarantData } from "./foodprofileCardData"
+
+function CardComponent({ restuarantData }: FoodCardDataShow) {
   return (
-    <div></div>
+    <div>
+      {restuarantData.map((restuarantItem, index) =>
+        <div key={index}>
+          {restuarantItem.name}
+        </div>
+      )}
+    </div>
+  )
+}
+export default function FoodCardComponent() {
+  return (
+    <>
+      <CardComponent restuarantData={restuarantData} />
+    </>
   )
 }
