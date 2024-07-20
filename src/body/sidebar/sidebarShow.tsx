@@ -140,7 +140,7 @@ function DealShowUp({ deal }: { deal: string[] }) {
 
 export default function ForShowSidebar() {
   return (
-    <div className="sidebar-container ">
+    <>
       <ShopCategoryShowUp shopCategory={data.shopCategory} />
       <RateShowUp rate={data.ratingScore} />
       <DistanceShowUp distance={data.distance} />
@@ -149,7 +149,7 @@ export default function ForShowSidebar() {
       <DiscountShowUp discount={data.discount} />
       <PriceShowUp price={data.price} />
       <DealShowUp deal={data.deal} />
-    </div>
+    </>
 
   );
 }
