@@ -8,7 +8,7 @@ type RestuarantCardType =
     score: number,
     review: number,
     status: boolean,
-    category: string;
+    category: string[];
   }
 
 export type FoodCardDataShow =
@@ -17,6 +17,7 @@ export type FoodCardDataShow =
   }
 
 const dotTemplateFoodImg: string = '../../../img/foodImg/'
+
 
 export const restuarantData: RestuarantCardType[] =
   [
@@ -31,7 +32,7 @@ export const restuarantData: RestuarantCardType[] =
       score: 5.0,
       review: 10,
       status: false,
-      category: 'อาหารทะเล'
+      category: ['อาหารอิตาเลียน', 'พิซซ่า', 'ร้านไวน์']
     },
 
   ]
