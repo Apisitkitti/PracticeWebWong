@@ -138,7 +138,7 @@ function DealShowUp({ deal }: { deal: string[] }) {
   );
 }
 
-export default function ForShowSidebar() {
+function ForShowSidebar() {
   return (
     <>
       <ShopCategoryShowUp shopCategory={data.shopCategory} />
@@ -153,5 +153,6 @@ export default function ForShowSidebar() {
 
   );
 }
+export default ForShowSidebar;
 
 

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './header.css'
-export default function Header() {
+function Header() {
   const [placeHolder, setPlaceHolder] = useState<string>('กรุงเทพและ...');
   const handleFocus = () => { setPlaceHolder('พิมพ์สถานที่') }
   const handleBlur = () => { setPlaceHolder('กรุงเทพและ...') }
@@ -31,5 +31,6 @@ export default function Header() {
   );
 }
 
+export default Header;
 
 

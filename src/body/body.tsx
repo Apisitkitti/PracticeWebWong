@@ -2,7 +2,7 @@ import './bodySetup.css'
 import HeadLiner from './headLiner';
 import Sidebar from './sidebar/sidebar';
 import CardComponent from './PictureCard/PictureCard';
-export default function Body() {
+function Body() {
   return (
     <div className="body-container">
       <HeadLiner />
@@ -11,3 +11,5 @@ export default function Body() {
     </div>
   );
 }
+
+export default Body;

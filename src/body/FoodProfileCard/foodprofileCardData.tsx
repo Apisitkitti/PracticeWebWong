@@ -1,5 +1,6 @@
 type RestuarantCardType =
   {
+    ads: boolean,
     foodImg: string[]
     name: string,
     place?: string,
@@ -9,31 +10,28 @@ type RestuarantCardType =
     status: boolean,
     category: string;
   }
+
 export type FoodCardDataShow =
   {
     restuarantData: RestuarantCardType[];
   }
+
+const dotTemplateFoodImg: string = '../../../img/foodImg/'
+
 export const restuarantData: RestuarantCardType[] =
   [
     {
-      foodImg: ['', ''],
-      name: 'บ้านยายเวียง',
-      place: 'บางขุนเทียน',
+      ads: true,
+      foodImg: [`${dotTemplateFoodImg}/shrimp.jpg`, `${dotTemplateFoodImg}/shrimpSap.jpg`,
+      `${dotTemplateFoodImg}/foodWithBarrel.jpg`, `${dotTemplateFoodImg}/foodwithnoodle.jpg`
+      ],
+      name: 'MAKE ME WINE เมคมีไวน์',
+      place: 'ลำลูกกา คลอง 4',
       caption: 'ชี้เป้าเช็กอิน! คาเฟ่ริมน้ำบางขุนเทียน ฟีลดี อาหารปัง ใกล้ชิดธรรมชาติ',
       score: 5.0,
       review: 10,
       status: false,
       category: 'อาหารทะเล'
     },
-    {
-      foodImg: ['', ''],
-      name: 'บ้านยายเวียง',
-      place: 'บางขุนเทียน',
-      caption: 'ชี้เป้าเช็กอิน! คาเฟ่ริมน้ำบางขุนเทียน ฟีลดี อาหารปัง ใกล้ชิดธรรมชาติ',
-      score: 5.0,
-      review: 10,
-      status: false,
-      category: 'อาหารทะเล'
-    }
 
   ]

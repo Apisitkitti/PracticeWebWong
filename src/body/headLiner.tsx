@@ -1,5 +1,5 @@
 import './headLiner.css'
-export default function HeadLiner() {
+function HeadLiner() {
   return (
     <div className="headLiner-container">
       <div className='headLiner-text-container'>
@@ -12,3 +12,5 @@ export default function HeadLiner() {
     </div>
   );
 }
+
+export default HeadLiner;

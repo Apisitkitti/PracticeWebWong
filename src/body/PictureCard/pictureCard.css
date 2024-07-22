@@ -13,17 +13,18 @@
 .imageAndCaptionBlock {
   position: relative;
   padding: 0 2px;
+  overflow: hidden;
 }
-
 
 
 #imageInside {
+  border-radius: 5px;
   width: 180px;
   height: 110px;
-  border-radius: 5px;
   margin-top: 5px;
-  filter: drop-shadow(5%);
+  box-shadow: inset 0px 0px 100px black;
 }
+
 
 #pictureCaption {
   font-size: 18px;
