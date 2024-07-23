@@ -4,13 +4,61 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+
+.headLineRestuarantGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+#bookMarkIcon {
+  width: 12px;
+  height: 12px;
+  display: flex;
+  vertical-align: middle;
+}
+
+.firstLineHeadLineRestuarant {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.restuarantCaption {
+  color: aqua;
+}
+
+.boldText {
+  font-weight: bold;
+}
+
+.normalText {
+  color: #787F83;
+}
+
+.restuarantStatusGroup {
+  display: flex;
+}
+
+#scoreText {
+  font-size: 15px;
+}
+
+#foodImg {
+  width: 109px;
+  height: 109px;
+  border-radius: 8px;
 }
 
 .ratingIcon {
   display: flex;
+  height: 15px;
+  align-items: center;
   color: white;
   font-size: 12px;
   border-radius: 5px;
+  padding: 1px 5px;
   background-color: #880B0B;
 }
 

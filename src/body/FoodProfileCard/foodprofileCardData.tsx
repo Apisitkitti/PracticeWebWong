@@ -24,7 +24,8 @@ export const restuarantData: RestuarantCardType[] =
     {
       ads: true,
       foodImg: [`${dotTemplateFoodImg}/shrimp.jpg`, `${dotTemplateFoodImg}/shrimpSap.jpg`,
-      `${dotTemplateFoodImg}/foodWithBarrel.jpg`, `${dotTemplateFoodImg}/foodwithnoodle.jpg`
+      `${dotTemplateFoodImg}/foodWithBarrel.jpg`, `${dotTemplateFoodImg}/foodwithnoodle.jpg`,
+      `${dotTemplateFoodImg}/steak.jpg`, `${dotTemplateFoodImg}/spaghetti.jpg`, `${dotTemplateFoodImg}/pizza.jpg`
       ],
       name: 'MAKE ME WINE เมคมีไวน์',
       place: 'ลำลูกกา คลอง 4',
