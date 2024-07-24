@@ -15,13 +15,16 @@
   padding: 0 2px;
 }
 
+.imageRestaurantContainer {
+  margin-top: 17px;
+  padding: 5px;
+}
 
 #imageInside {
   border-radius: 5px;
   width: 180px;
   height: 110px;
   margin-top: 5px;
-  box-shadow: inset 0px 0px 100px black;
 }
 
 
@@ -32,6 +35,7 @@
   position: absolute;
   top: 9px;
   left: 10px;
+
 }
 
 #sliderButton {
