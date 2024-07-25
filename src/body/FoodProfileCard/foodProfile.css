@@ -14,7 +14,7 @@
 
 .textRestuarantContainer {
   margin-bottom: 10px;
-  width: 90%
+  width: 95%
 }
 
 .imageBorder {
@@ -72,6 +72,7 @@
 
 .restuarantStatusGroup {
   display: flex;
+  align-items: center;
 }
 
 #scoreText {

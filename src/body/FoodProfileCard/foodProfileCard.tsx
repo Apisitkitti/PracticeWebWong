@@ -31,7 +31,8 @@ function CardComponent({ restuarantData }: FoodCardDataShow) {
 
         <div className="restuarantStatusGroup">
           <div className="ratingIcon"><span id="scoreText">{restuarantData.score.toFixed(1)}</span>★</div>
-          <a href="###">{restuarantData.review} รีวิว</a>
+          <a href="###">{restuarantData.review} รีวิว {restuarantData.dollarSign}</a>
+
           {restuarantData.status ? <span className="restuarantStatus restuarantOpen">เปิดอยู่</span> : <span className="restuarantStatus restuarantClose">ปิดอยู่</span>}
         </div>
 
@@ -44,12 +45,12 @@ function CardComponent({ restuarantData }: FoodCardDataShow) {
     </div>
   )
 }
-export default function FoodCardComponent() {
+function FoodCardComponent() {
   return (
     <>
       {restuarantData.map((restuarantData, index) =>
         <CardComponent restuarantData={restuarantData} />)}
-
     </>
   )
 }
+export default FoodCardComponent

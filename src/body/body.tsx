@@ -8,8 +8,10 @@ function Body() {
     <div className="body-container">
       <HeadLiner />
       <Sidebar />
-      <CardComponent />
-      <FoodCardComponent />
+      <main>
+        <CardComponent />
+        <FoodCardComponent />
+      </main>
     </div>
   );
 }
