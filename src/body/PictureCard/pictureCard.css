@@ -1,6 +1,6 @@
 .picture-container {
   display: flex;
-  height: fit-content;
+  height: max-content;
   width: max-content;
   position: relative;
   background-color: white;

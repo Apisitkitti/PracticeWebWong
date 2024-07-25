@@ -2,6 +2,7 @@ import { FoodForShow } from "./pictureCardData"
 import { useState } from "react";
 import './pictureCard.css'
 import { pictureAndInformation } from './pictureCardData';
+
 function PictureCard({ pictureAndInformation }: FoodForShow) {
   const [isbuttonAppear, setButtonIsAppear] = useState<boolean>(false);
   const handleButtonAppear = () => {
@@ -26,10 +27,11 @@ function PictureCard({ pictureAndInformation }: FoodForShow) {
 
   )
 }
-export default function CardComponent() {
+function CardComponent() {
   return (
     <>
       <PictureCard pictureAndInformation={pictureAndInformation} />
     </>
   )
 }
+export default CardComponent
