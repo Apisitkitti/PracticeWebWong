@@ -26,19 +26,22 @@ function CardComponent({ restuarantData }: FoodCardDataShow) {
             <a href="##"> {restuarantData.ads ? 'Ad · ' : ''} <span className="restuarantName boldText">{restuarantData.name}</span> <span className="restuarantPlace normalText">{restuarantData.place}</span></a>
             <img src="../../../img/bookmarkIcon.png" alt="bookMarkIcon" id="bookMarkIcon" />
           </div>
-          <a href="##" className="restaurantCaption">{restuarantData.caption}</a>
+          <a href="##" className="restaurantCaption linkText">{restuarantData.caption}</a>
         </div>
 
         <div className="restuarantStatusGroup">
           <div className="ratingIcon"><span id="scoreText">{restuarantData.score.toFixed(1)}</span>★</div>
           <a href="###">{restuarantData.review} รีวิว {restuarantData.dollarSign}</a>
 
-          {restuarantData.status ? <span className="restuarantStatus restuarantOpen">เปิดอยู่</span> : <span className="restuarantStatus restuarantClose">ปิดอยู่</span>}
+          {restuarantData.status ? <span className="restuarantStatus restuarantOpen boldText">เปิดอยู่</span> : <span className="restuarantStatus restuarantClose boldText">ปิดอยู่</span>}
         </div>
 
         <div className="categoryGroup">
           {restuarantData.category.map((categoryItem, index) =>
-            <a href="###">{categoryItem}{index + 1 < restuarantData.category.length ? ', ' : ''} </a>
+            <div>
+              <a href="###" className="underLineText normalText">{categoryItem}</a>
+              <span className="normalText">{index + 1 < restuarantData.category.length ? ', ' : ''} </span>
+            </div>
           )}
         </div>
       </div>

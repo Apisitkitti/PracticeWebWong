@@ -10,11 +10,20 @@
   width: max-content;
   padding: 0px 10px;
   height: max-content;
+
 }
 
 .textRestuarantContainer {
   margin-bottom: 10px;
-  width: 95%
+  width: 95%;
+}
+
+.linkText {
+  color: #0093EC;
+}
+
+.underLineText:hover {
+  text-decoration: underline;
 }
 
 .imageBorder {
@@ -38,6 +47,10 @@
 .imageRestaurantContainer {
   display: flex;
 
+}
+
+.categoryGroup {
+  display: flex;
 }
 
 #bookMarkIcon {
