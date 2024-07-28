@@ -52,6 +52,21 @@ export const restuarantData: RestuarantCardType[] =
       status: false,
       category: ['ชาบู/สุกี้ยากี้/หม้อไฟ', 'อาหารญี่ปุ่น']
     },
-
+    {
+      ads: false,
+      foodImg: [`${dotTemplateFoodImg}/thirdRestaurant/view.jpg`, `${dotTemplateFoodImg}/thirdRestaurant/beachView.jpg`,
+      `${dotTemplateFoodImg}/thirdRestaurant/crab.jpg`, `${dotTemplateFoodImg}/thirdRestaurant/shrimp.jpg`,
+      `${dotTemplateFoodImg}/thirdRestaurant/sitting.jpg`, `${dotTemplateFoodImg}/thirdRestaurant/rainbow.jpg`, `${dotTemplateFoodImg}/thirdRestaurant/peopleRestuarant.jpg`,
+      `${dotTemplateFoodImg}/thirdRestaurant/cake.jpg`, `${dotTemplateFoodImg}/thirdRestaurant/crab.jpg`
+      ],
+      name: 'Beachy cafe บีชชี่ซีฟู้ด',
+      place: 'บางขุนเทียน',
+      caption: 'คาเฟ่ และ ร้านอาหารบรรยากาศริมน้ำบางขุนเทียน เมนูหลากหลาย ซีฟู้ดสดใหม่',
+      score: 5.0,
+      review: 11,
+      dollarSign: '฿฿฿',
+      status: true,
+      category: ['อาหารทะเล']
+    },
 
   ]
