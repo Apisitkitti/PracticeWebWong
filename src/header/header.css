@@ -1,4 +1,5 @@
 .header-container {
+  width: 100vw;
   height: 80px;
   flex-direction: row;
   display: flex;

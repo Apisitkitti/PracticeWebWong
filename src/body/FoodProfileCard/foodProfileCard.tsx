@@ -31,7 +31,7 @@ function CardComponent({ restuarantData }: FoodCardDataShow) {
 
         <div className="restuarantStatusGroup">
           <div className="ratingIcon"><span id="scoreText">{restuarantData.score.toFixed(1)}</span>★</div>
-          <a href="###">{restuarantData.review} รีวิว {restuarantData.dollarSign}</a>
+          <a href="###" className="normalText"><span className="underLineText">{restuarantData.review} รีวิว</span> {restuarantData.dollarSign}</a>
 
           {restuarantData.status ? <span className="restuarantStatus restuarantOpen boldText">เปิดอยู่</span> : <span className="restuarantStatus restuarantClose boldText">ปิดอยู่</span>}
         </div>
