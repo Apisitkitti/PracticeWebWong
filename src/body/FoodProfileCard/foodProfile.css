@@ -1,5 +1,5 @@
 .restuarantCardContainer {
-  grid-column: 3;
+  grid-column: 2;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -76,14 +76,6 @@
   color: aqua;
 }
 
-.boldText {
-  font-weight: bold;
-  color: black;
-}
-
-.normalText {
-  color: #787F83;
-}
 
 .restuarantStatusGroup {
   display: flex;
