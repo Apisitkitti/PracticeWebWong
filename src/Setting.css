@@ -24,8 +24,12 @@
 
 :root {
   --fontsize: 16px;
+  --colorBlue: #0093E8;
+  --colorBlueHover: #027ec7;
+  --colorWhite: #ffff;
+  --colorGrey: #EDF0F2
 }
 
 body {
-  background-color: #E9ECEE;
+  background-color: var(--colorGrey);
 }

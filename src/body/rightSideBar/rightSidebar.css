@@ -6,6 +6,43 @@
 
 .contentContainer {
   background-color: white;
-  height: max-content;
+  padding: 15px;
+  border-radius: 5px;
+  width: 333px;
+}
 
+.headText {
+  margin: 0px 0 10px 0px;
+  font-size: 25px;
+}
+
+.groupMapContent {
+  background: no-repeat url('../../../public/img/map.jpg');
+  display: flex;
+  height: 150px;
+  width: 305px;
+  align-items: center;
+  justify-content: center;
+}
+
+#mapLocation {
+  width: 25px;
+  margin-right: 1px;
+  margin-left: -5px;
+}
+
+#locationButton {
+  background-color: var(--colorBlue);
+  color: var(--colorWhite);
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 10px;
+  font-size: 25px;
+}
+
+#locationButton:hover {
+  background-color: var(--colorBlueHover);
 }

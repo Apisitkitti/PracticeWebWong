@@ -1,12 +1,12 @@
 import './rightSidebar.css'
+
 function FirstBlockSidebar() {
   return (
     <div className="contentContainer">
-      <span className=" boldText">ค้นหาจากแผนที่</span>
-      <div className='GroupMapContent'>
-        <img src="" alt="" />
-        <button>
-          <img src="" alt="" />
+      <p className="headText boldText">ค้นหาจากแผนที่</p>
+      <div className='groupMapContent'>
+        <button id='locationButton'>
+          <img id='mapLocation' src="../../../img/locationWhite.png" alt="location" />
           ดูแผนที่
         </button>
       </div>
