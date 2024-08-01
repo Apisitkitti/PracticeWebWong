@@ -1,4 +1,4 @@
-type RestuarantCardType =
+export type RestuarantCardType =
   {
     ads: boolean,
     foodImg: string[]
