@@ -1,6 +1,8 @@
 import { RestuarantCardType, restuarantData } from "../FoodProfileCard/foodprofileCardData";
 
 
+const dotTemplateContentImg: string = '../../../img/content/'
+
 interface rightSidebarContent {
   headTitle: string,
   advertise?: ContentTypeInformation[],
@@ -10,11 +12,12 @@ interface rightSidebarContent {
 }
 interface needInsideContent {
   img: string,
-  name: string
+  contentName: string
 }
 interface ContentTypeInformation extends needInsideContent {
   ad?: boolean,
   place: string;
+  nameOfShop: string,
   bookmark: number;
 }
 export const rightSidebarData: rightSidebarContent[] = [
@@ -28,38 +31,40 @@ export const rightSidebarData: rightSidebarContent[] = [
     advertise: [
       {
         ad: true,
-        img: '',
-        name: '“ขนมปังคลีน By Monnaie” ร้านดังจากครัวคุณต๋อย จุดเด่นคือขนมปังคลีน',
+        img: `${dotTemplateContentImg}cleanBakery.jpg`,
+        contentName: '“ขนมปังคลีน By Monnaie” ร้านดังจากครัวคุณต๋อย จุดเด่นคือขนมปังคลีน"',
         place: 'เมืองอุดรธานี',
+        nameOfShop: 'ขนมปังคลีน บาย โมเน่',
         bookmark: 4
       },
       {
         ad: false,
-        img: '',
-        name: '“ขนมปังคลีน By Monnaie” ร้านดังจากครัวคุณต๋อย จุดเด่นคือขนมปังคลีน',
-        place: 'เมืองอุดรธานี',
-        bookmark: 4
+        img: `${dotTemplateContentImg}environment.jpg`,
+        contentName: 'ร้านหิ้วปีก Hiw Peek Cafe & Restaurant ร้านบรรยากาศดี ครบจบทั้งคาวหวาน',
+        place: 'เมืองภูเก็ต',
+        nameOfShop: 'HIWPEEK Cafe & Restuarant หิ้วปีก คาเฟ่แอนด์เรสเตอรอง',
+        bookmark: 12
       },
     ]
   },
   {
-    headTitle: '',
+    headTitle: 'รวมลิสต์แนะนำที่คุณต้องลอง',
     listRecommended: [
       {
         img: '',
-        name: ''
+        contentName: ''
       },
       {
         img: '',
-        name: ''
+        contentName: ''
       },
       {
         img: '',
-        name: ''
+        contentName: ''
       },
       {
         img: '',
-        name: ''
+        contentName: ''
       },
     ]
 
