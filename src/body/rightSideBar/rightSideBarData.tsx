@@ -3,7 +3,7 @@ import { RestuarantCardType, restuarantData } from "../FoodProfileCard/foodprofi
 
 const dotTemplateContentImg: string = '../../../img/content/'
 
-interface rightSidebarContent {
+export interface rightSidebarContent {
   headTitle: string,
   advertise?: ContentTypeInformation[],
   recommended?: RestuarantCardType[],

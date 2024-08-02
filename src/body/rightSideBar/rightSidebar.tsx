@@ -1,4 +1,5 @@
 import './rightSidebar.css'
+import { rightSidebarContent } from './rightSideBarData'
 
 function FirstBlockSidebar() {
   return (
@@ -13,7 +14,15 @@ function FirstBlockSidebar() {
     </div>
   )
 }
-
+function RigtSideBarTemplateContent({ rightSidebarContent }: { rightSidebarContent: rightSidebarContent }) {
+  return (
+    <div className="contentContainer">
+      <div className='headBar'>
+        <p className="headText boldText">{rightSidebarContent.headTitle}</p>
+      </div>
+    </div>
+  )
+}
 
 
 function RightSideBar() {
