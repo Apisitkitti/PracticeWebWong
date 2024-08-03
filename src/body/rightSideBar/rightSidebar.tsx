@@ -1,5 +1,4 @@
 import './rightSidebar.css'
-import { rightSidebarContent } from './rightSideBarData'
 
 function FirstBlockSidebar() {
   return (
@@ -14,11 +13,17 @@ function FirstBlockSidebar() {
     </div>
   )
 }
-function RigtSideBarTemplateContent({ rightSidebarContent }: { rightSidebarContent: rightSidebarContent }) {
+function RigtSideBarTemplateContent() {
   return (
     <div className="contentContainer">
       <div className='headBar'>
-        <p className="headText boldText">{rightSidebarContent.headTitle}</p>
+        <p className="headText boldText">{ }</p>
+      </div>
+      <div className='indsideRightSidebarContainer'>
+        <div><img src="" alt="" /></div>
+        <div className='textContainer'>
+          <p><span className='boldText'>{ }</span></p>
+        </div>
       </div>
     </div>
   )
