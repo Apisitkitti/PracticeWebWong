@@ -20,7 +20,14 @@ interface ContentTypeInformation extends needInsideContent {
 interface articleRecommendedContentWantThis extends contentWantThisIntheTop {
   advertise: ContentTypeInformation[]
 }
-
+interface restaurantReccomendedWantThis extends contentWantThisIntheTop {
+  restaurant: RestuarantCardType[];
+}
+export const restaurantReccomended: restaurantReccomendedWantThis =
+{
+  headTitle: 'ร้านอาหารแนะนำ',
+  restaurant: restuarantData
+}
 export const articleRecommendedContent: articleRecommendedContentWantThis =
 {
   headTitle: 'บทความแนะนำ',
