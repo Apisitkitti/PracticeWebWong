@@ -11,16 +11,16 @@ interface needInsideContent {
   img: string,
   contentName: string
 }
-interface ContentTypeInformation extends needInsideContent {
+export interface ContentTypeInformation extends needInsideContent {
   ad?: boolean,
   place: string;
   nameOfShop: string,
   bookmark: number;
 }
-interface articleRecommendedContentWantThis extends contentWantThisIntheTop {
+export interface articleRecommendedContentWantThis extends contentWantThisIntheTop {
   advertise: ContentTypeInformation[]
 }
-interface restaurantReccomendedWantThis extends contentWantThisIntheTop {
+export interface restaurantReccomendedWantThis extends contentWantThisIntheTop {
   restaurant: RestuarantCardType[];
 }
 export const restaurantReccomended: restaurantReccomendedWantThis =
@@ -72,3 +72,4 @@ export const listRecomended =
     },
   ]
 }
+

@@ -1,5 +1,5 @@
 import './rightSidebar.css'
-
+import { restaurantReccomendedWantThis } from './rightSideBarData'
 function FirstBlockSidebar() {
   return (
     <div className="contentContainer">
@@ -13,17 +13,22 @@ function FirstBlockSidebar() {
     </div>
   )
 }
-function RigtSideBarTemplateContent() {
+function RestaurantContentRightSidebr({ restaurantRecommended }: { restaurantRecommended: restaurantReccomendedWantThis }) {
   return (
     <div className="contentContainer">
       <div className='headBar'>
-        <p className="headText boldText">{ }</p>
+        <p className="headText boldText">{restaurantRecommended.headTitle}</p>
       </div>
       <div className='indsideRightSidebarContainer'>
-        <div><img src="" alt="" /></div>
-        <div className='textContainer'>
-          <p><span className='boldText'>{ }</span></p>
-        </div>
+        {restaurantRecommended.restaurant.map((restaurant, index) =>
+          <div key={index}>
+            <div><img src={restaurant.foodImg[0]} alt={restaurant.name} /></div>
+            <div className='textContainer'>
+              <p><span className='boldText'>{ }</span></p>
+            </div>
+          </div>
+        )}
+
       </div>
     </div>
   )
