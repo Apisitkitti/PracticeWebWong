@@ -9,6 +9,7 @@
   padding: 15px;
   border-radius: 5px;
   width: 333px;
+  margin-bottom: 15px;
 }
 
 .headText {
@@ -47,7 +48,21 @@
   background-color: var(--colorBlueHover);
 }
 
+.cardRestaurantContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.ratingGroup {
+  display: flex;
+  align-items: center;
+}
+
 #imageSize {
   width: 70px;
   height: 70px;
+  border-radius: 5px;
+  display: flex;
+  margin-right: 15px;
 }

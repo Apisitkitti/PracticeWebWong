@@ -28,6 +28,7 @@
   padding: 1px 5px;
   background-color: #880B0B;
   margin-right: 5px;
+  width: max-content;
 }
 
 .restuarantOpen {
@@ -36,4 +37,12 @@
 
 .restuarantClose {
   color: red;
+}
+
+.restuarantCaption {
+  color: aqua;
+}
+
+.linkText {
+  color: #0093EC;
 }

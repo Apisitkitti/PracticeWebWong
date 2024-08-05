@@ -16,14 +16,15 @@ function FirstBlockSidebar() {
   )
 }
 function RestaurantContentRightSidebr({ restaurantRecommended }: { restaurantRecommended: restaurantReccomendedWantThis }) {
+  const dataForShow = restaurantReccomended.restaurant.slice(0, 2);
   return (
     <div className="contentContainer">
       <div className='headBar'>
         <p className="headText boldText">{restaurantRecommended.headTitle}</p>
       </div>
       <div className='indsideRightSidebarContainer'>
-        {restaurantRecommended.restaurant.map((restaurant, index) =>
-          <div key={index}>
+        {dataForShow.map((restaurant, index) =>
+          <div className='cardRestaurantContainer' key={index}>
             <div ><img id='imageSize' src={restaurant.foodImg[0]} alt={restaurant.name} /></div>
             <div className='textContainer'>
               <p>
@@ -35,6 +36,7 @@ function RestaurantContentRightSidebr({ restaurantRecommended }: { restaurantRec
                 </div>
                 {restaurant.review} <span className='normalText'>รีวิว</span> <span className='normalText'>{restaurant.dollarSign}</span> {restaurant.status ? <span className='restuarantOpen'>เปิดอยู่</span> : <span className='restuarantClose'>ปิดอยู่</span>}
               </div>
+              <a href='##' className='linkText'>{restaurant.caption}</a>
             </div>
           </div>
         )}
