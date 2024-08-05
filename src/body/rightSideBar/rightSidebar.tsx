@@ -1,5 +1,7 @@
 import './rightSidebar.css'
 import { restaurantReccomendedWantThis } from './rightSideBarData'
+import { restaurantReccomended } from './rightSideBarData'
+
 function FirstBlockSidebar() {
   return (
     <div className="contentContainer">
@@ -22,9 +24,17 @@ function RestaurantContentRightSidebr({ restaurantRecommended }: { restaurantRec
       <div className='indsideRightSidebarContainer'>
         {restaurantRecommended.restaurant.map((restaurant, index) =>
           <div key={index}>
-            <div><img src={restaurant.foodImg[0]} alt={restaurant.name} /></div>
+            <div ><img id='imageSize' src={restaurant.foodImg[0]} alt={restaurant.name} /></div>
             <div className='textContainer'>
-              <p><span className='boldText'>{ }</span></p>
+              <p>
+                {restaurant.ads ? 'Ad ·' : ''} <span className='boldText'>{restaurant.name}-</span>
+              </p>
+              <div className='ratingGroup'>
+                <div className='ratingIcon'>
+                  {restaurant.score.toFixed(1)}★
+                </div>
+                {restaurant.review} <span className='normalText'>รีวิว</span> <span className='normalText'>{restaurant.dollarSign}</span> {restaurant.status ? <span className='restuarantOpen'>เปิดอยู่</span> : <span className='restuarantClose'>ปิดอยู่</span>}
+              </div>
             </div>
           </div>
         )}
@@ -39,6 +49,7 @@ function RightSideBar() {
   return (
     <div className='rightSidebarGroup'>
       <FirstBlockSidebar />
+      <RestaurantContentRightSidebr restaurantRecommended={restaurantReccomended} />
     </div>
   )
 }

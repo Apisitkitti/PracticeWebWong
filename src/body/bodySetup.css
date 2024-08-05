@@ -17,3 +17,23 @@
 .normalText {
   color: #787F83;
 }
+
+.ratingIcon {
+  display: flex;
+  height: 15px;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 1px 5px;
+  background-color: #880B0B;
+  margin-right: 5px;
+}
+
+.restuarantOpen {
+  color: rgb(2, 195, 2);
+}
+
+.restuarantClose {
+  color: red;
+}

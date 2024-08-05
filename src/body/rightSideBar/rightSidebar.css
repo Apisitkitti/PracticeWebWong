@@ -46,3 +46,8 @@
 #locationButton:hover {
   background-color: var(--colorBlueHover);
 }
+
+#imageSize {
+  width: 70px;
+  height: 70px;
+}
