@@ -10,7 +10,7 @@
   width: max-content;
   padding: 5px 10px;
   height: max-content;
-
+  font-size: 20px;
 }
 
 .textRestuarantContainer {
@@ -18,9 +18,6 @@
   width: 95%;
 }
 
-.linkText {
-  color: #0093EC;
-}
 
 .underLineText:hover {
   text-decoration: underline;
@@ -69,22 +66,17 @@
   display: flex;
   justify-content: space-between;
   font-size: 20px;
-
 }
 
-.restuarantCaption {
-  color: aqua;
-}
+
 
 
 .restuarantStatusGroup {
   display: flex;
   align-items: center;
+  margin-bottom: 5px;
 }
 
-#scoreText {
-  font-size: 15px;
-}
 
 #foodImg {
   width: 109px;
@@ -93,26 +85,8 @@
   margin: 0 3px;
 }
 
-.ratingIcon {
-  display: flex;
-  height: 15px;
-  align-items: center;
-  color: white;
-  font-size: 12px;
-  border-radius: 5px;
-  padding: 1px 5px;
-  background-color: #880B0B;
-  margin-right: 5px;
-}
+
 
 .restuarantStatus {
   padding-left: 5px;
-}
-
-.restuarantOpen {
-  color: rgb(2, 195, 2);
-}
-
-.restuarantClose {
-  color: red;
 }

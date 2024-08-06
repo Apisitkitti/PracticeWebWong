@@ -30,6 +30,7 @@ function PictureCard({ pictureAndInformation }: FoodForShow) {
 function CardComponent() {
   return (
     <PictureCard pictureAndInformation={pictureAndInformation} />
+
   )
 }
 export default CardComponent

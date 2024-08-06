@@ -32,9 +32,12 @@ function RestaurantContentRightSidebr({ restaurantRecommended }: { restaurantRec
               </p>
               <div className='ratingGroup'>
                 <div className='ratingIcon'>
-                  {restaurant.score.toFixed(1)}★
+                  <span id='scoreText'>{restaurant.score.toFixed(1)}</span>★
                 </div>
-                {restaurant.review} <span className='normalText'>รีวิว</span> <span className='normalText'>{restaurant.dollarSign}</span> {restaurant.status ? <span className='restuarantOpen'>เปิดอยู่</span> : <span className='restuarantClose'>ปิดอยู่</span>}
+                <div>
+                  <span className='normalText'>{restaurant.review} รีวิว </span>
+                  <span className='normalText'>{restaurant.dollarSign}</span> {restaurant.status ? <span className='restuarantOpen'>เปิดอยู่</span> : <span className='restuarantClose'>ปิดอยู่</span>}
+                </div>
               </div>
               <a href='##' className='linkText'>{restaurant.caption}</a>
             </div>
