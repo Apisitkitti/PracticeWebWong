@@ -1,6 +1,6 @@
 import './rightSidebar.css'
 import { restaurantReccomendedWantThis } from './rightSideBarData'
-import { restaurantReccomended } from './rightSideBarData'
+import { restaurantReccomended, ContentTypeInformation, articleRecommendedContentWantThis, articleRecommendedContent } from './rightSideBarData'
 import { RestuarantCardType } from '../FoodProfileCard/foodprofileCardData'
 function FirstBlockSidebar() {
   return (
@@ -48,12 +48,22 @@ function RestaurantContentRightSidebr({ restaurantRecommended }: { restaurantRec
   )
 }
 
-
+function ArticleContentRightSidebar({ articleData }: { articleData: articleRecommendedContentWantThis }) {
+  const articleForShowData: ContentTypeInformation[] = articleData.advertise.slice(0, 6);
+  return (
+    <div className='contentContainer'>
+      <div className='headBar'>
+        <p className="headText boldText">{articleData.headTitle}</p>
+      </div>
+    </div>
+  )
+}
 function RightSideBar() {
   return (
     <div className='rightSidebarGroup'>
       <FirstBlockSidebar />
       <RestaurantContentRightSidebr restaurantRecommended={restaurantReccomended} />
+      <ArticleContentRightSidebar articleData={articleRecommendedContent} />
     </div>
   )
 }
