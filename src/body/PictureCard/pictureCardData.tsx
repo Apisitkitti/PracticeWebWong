@@ -1,4 +1,4 @@
-type PictureType =
+export type PictureType =
   {
     caption: string,
     picture: string;

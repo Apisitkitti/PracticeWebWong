@@ -1,7 +1,7 @@
 import { FoodForShow } from "./pictureCardData"
 import { useState } from "react";
 import './pictureCard.css'
-import { pictureAndInformation } from './pictureCardData';
+import { pictureAndInformation, PictureType } from './pictureCardData';
 
 function PictureCard({ pictureAndInformation }: FoodForShow) {
   const [isbuttonAppear, setButtonIsAppear] = useState<boolean>(false);
@@ -13,8 +13,8 @@ function PictureCard({ pictureAndInformation }: FoodForShow) {
   }
   return (
     <div className="picture-container bodySection " onMouseEnter={handleButtonAppear} onMouseLeave={handleButtonDisappear}>
-      {pictureAndInformation.map((pictureWithCaption) =>
-        <div className="imageAndCaptionBlock" >
+      {pictureAndInformation.map((pictureWithCaption: PictureType, index: number) =>
+        <div key={index} className="imageAndCaptionBlock" >
           <p id="pictureCaption">{pictureWithCaption.caption}</p>
           <img id="imageInside" src={pictureWithCaption.picture} alt={pictureWithCaption.caption} />
         </div>

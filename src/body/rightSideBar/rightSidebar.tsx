@@ -1,7 +1,7 @@
 import './rightSidebar.css'
 import { restaurantReccomendedWantThis } from './rightSideBarData'
 import { restaurantReccomended } from './rightSideBarData'
-
+import { RestuarantCardType } from '../FoodProfileCard/foodprofileCardData'
 function FirstBlockSidebar() {
   return (
     <div className="contentContainer">
@@ -16,14 +16,14 @@ function FirstBlockSidebar() {
   )
 }
 function RestaurantContentRightSidebr({ restaurantRecommended }: { restaurantRecommended: restaurantReccomendedWantThis }) {
-  const dataForShow = restaurantReccomended.restaurant.slice(0, 2);
+  const dataForShow: RestuarantCardType[] = restaurantReccomended.restaurant.slice(0, 2);
   return (
     <div className="contentContainer">
       <div className='headBar'>
         <p className="headText boldText">{restaurantRecommended.headTitle}</p>
       </div>
       <div className='indsideRightSidebarContainer'>
-        {dataForShow.map((restaurant, index) =>
+        {dataForShow.map((restaurant: RestuarantCardType, index: number) =>
           <div className='cardRestaurantContainer' key={index}>
             <div ><img id='imageSize' src={restaurant.foodImg[0]} alt={restaurant.name} /></div>
             <div className='textContainer'>
@@ -43,7 +43,6 @@ function RestaurantContentRightSidebr({ restaurantRecommended }: { restaurantRec
             </div>
           </div>
         )}
-
       </div>
     </div>
   )
