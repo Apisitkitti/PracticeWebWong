@@ -13,8 +13,8 @@
 }
 
 .headText {
-  margin: 0px 0 10px 0px;
-  font-size: 25px;
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 .groupMapContent {
@@ -65,4 +65,10 @@
   border-radius: 5px;
   display: flex;
   margin-right: 15px;
+}
+
+.headBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

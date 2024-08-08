@@ -5,7 +5,9 @@ import { RestuarantCardType } from '../FoodProfileCard/foodprofileCardData'
 function FirstBlockSidebar() {
   return (
     <div className="contentContainer">
-      <p className="headText boldText">ค้นหาจากแผนที่</p>
+      <div className='headText'>
+        <p className="headText boldText">ค้นหาจากแผนที่</p>
+      </div>
       <div className='groupMapContent'>
         <button id='locationButton'>
           <img id='mapLocation' src="../../../img/locationWhite.png" alt="location" />
@@ -50,20 +52,25 @@ function RestaurantContentRightSidebr({ restaurantRecommended }: { restaurantRec
 
 function ArticleContentRightSidebar({ articleData }: { articleData: articleRecommendedContentWantThis }) {
   const articleForShowData: ContentTypeInformation[] = articleData.advertise.slice(0, 6);
+
   return (
     <div className='contentContainer'>
       <div className='headBar'>
         <p className="headText boldText">{articleData.headTitle}</p>
+        <p className='headText'>{articleData.advertise.length > articleForShowData.length ? <a className='linkText' href='###'>ดูทั้งหมด</a> : ''}</p>
       </div>
+
     </div>
   )
 }
+
 function RightSideBar() {
   return (
     <div className='rightSidebarGroup'>
       <FirstBlockSidebar />
       <RestaurantContentRightSidebr restaurantRecommended={restaurantReccomended} />
       <ArticleContentRightSidebar articleData={articleRecommendedContent} />
+
     </div>
   )
 }
