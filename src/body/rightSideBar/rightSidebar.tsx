@@ -37,8 +37,8 @@ function RestaurantContentRightSidebr({ restaurantRecommended }: { restaurantRec
                   <span id='scoreText'>{restaurant.score.toFixed(1)}</span>★
                 </div>
                 <div>
-                  <span className='normalText'>{restaurant.review} รีวิว </span>
-                  <span className='normalText'>{restaurant.dollarSign}</span> {restaurant.status ? <span className='restuarantOpen'>เปิดอยู่</span> : <span className='restuarantClose'>ปิดอยู่</span>}
+                  <span className='normalText'>{restaurant.review} รีวิว {restaurant.dollarSign} </span>
+                  {restaurant.status ? <span className='restuarantOpen'>เปิดอยู่</span> : <span className='restuarantClose'>ปิดอยู่</span>}
                 </div>
               </div>
               <a href='##' className='linkText'>{restaurant.caption}</a>
@@ -58,6 +58,26 @@ function ArticleContentRightSidebar({ articleData }: { articleData: articleRecom
       <div className='headBar'>
         <p className="headText boldText">{articleData.headTitle}</p>
         <p className='headText'>{articleData.advertise.length > articleForShowData.length ? <a className='linkText' href='###'>ดูทั้งหมด</a> : ''}</p>
+      </div>
+      <div>
+        {articleForShowData.map((item, index) =>
+          <div key={index}>
+            <div className='imageTextContainer'>
+              <img id='imageSizing' src={item.img} alt={item.nameOfShopInsideImage} />
+              <div className='restaurantPlace '>{item.place}</div>
+              <div className='restaurantName '>{item.nameOfShopInsideImage}</div>
+            </div>
+            <div className='textContainerArticle'>
+              <div className='underLineText' >{item.ad ? 'Ad ·' : ''} {item.contentName}</div>
+              <div className='bookmarkGroup'>
+                <img id='bookMarkIcon' src="../../img/bookmarkIcon.png" alt="bookmarkIcon " />
+                <p>{item.bookmark}</p>
+              </div>
+
+            </div>
+
+          </div>
+        )}
       </div>
 
     </div>

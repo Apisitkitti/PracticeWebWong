@@ -14,7 +14,7 @@ interface needInsideContent {
 export interface ContentTypeInformation extends needInsideContent {
   ad?: boolean,
   place: string;
-  nameOfShop: string,
+  nameOfShopInsideImage: string,
   bookmark: number;
 }
 export interface articleRecommendedContentWantThis extends contentWantThisIntheTop {
@@ -37,7 +37,7 @@ export const articleRecommendedContent: articleRecommendedContentWantThis =
       img: `${dotTemplateContentImg}cleanBakery.jpg`,
       contentName: '“ขนมปังคลีน By Monnaie” ร้านดังจากครัวคุณต๋อย จุดเด่นคือขนมปังคลีน"',
       place: 'เมืองอุดรธานี',
-      nameOfShop: 'ขนมปังคลีน บาย โมเน่',
+      nameOfShopInsideImage: 'ขนมปังคลีน บาย โมเน่',
       bookmark: 4
     },
     {
@@ -45,7 +45,7 @@ export const articleRecommendedContent: articleRecommendedContentWantThis =
       img: `${dotTemplateContentImg}environment.jpg`,
       contentName: 'ร้านหิ้วปีก Hiw Peek Cafe & Restaurant ร้านบรรยากาศดี ครบจบทั้งคาวหวาน',
       place: 'เมืองภูเก็ต',
-      nameOfShop: 'HIWPEEK Cafe & Restuarant หิ้วปีก คาเฟ่แอนด์เรสเตอรอง',
+      nameOfShopInsideImage: 'HIWPEEK Cafe & Restuarant หิ้วปีก คาเฟ่แอนด์เรสเตอรอง',
       bookmark: 12
     },
     {
@@ -53,7 +53,7 @@ export const articleRecommendedContent: articleRecommendedContentWantThis =
       img: `${dotTemplateContentImg}cleanBakery.jpg`,
       contentName: '“ขนมปังคลีน By Monnaie” ร้านดังจากครัวคุณต๋อย จุดเด่นคือขนมปังคลีน"',
       place: 'เมืองอุดรธานี',
-      nameOfShop: 'ขนมปังคลีน บาย โมเน่',
+      nameOfShopInsideImage: 'ขนมปังคลีน บาย โมเน่',
       bookmark: 4
     },
     {
@@ -61,7 +61,7 @@ export const articleRecommendedContent: articleRecommendedContentWantThis =
       img: `${dotTemplateContentImg}environment.jpg`,
       contentName: 'ร้านหิ้วปีก Hiw Peek Cafe & Restaurant ร้านบรรยากาศดี ครบจบทั้งคาวหวาน',
       place: 'เมืองภูเก็ต',
-      nameOfShop: 'HIWPEEK Cafe & Restuarant หิ้วปีก คาเฟ่แอนด์เรสเตอรอง',
+      nameOfShopInsideImage: 'HIWPEEK Cafe & Restuarant หิ้วปีก คาเฟ่แอนด์เรสเตอรอง',
       bookmark: 12
     },
     {
@@ -69,7 +69,7 @@ export const articleRecommendedContent: articleRecommendedContentWantThis =
       img: `${dotTemplateContentImg}cleanBakery.jpg`,
       contentName: '“ขนมปังคลีน By Monnaie” ร้านดังจากครัวคุณต๋อย จุดเด่นคือขนมปังคลีน"',
       place: 'เมืองอุดรธานี',
-      nameOfShop: 'ขนมปังคลีน บาย โมเน่',
+      nameOfShopInsideImage: 'ขนมปังคลีน บาย โมเน่',
       bookmark: 4
     },
     {
@@ -77,7 +77,7 @@ export const articleRecommendedContent: articleRecommendedContentWantThis =
       img: `${dotTemplateContentImg}environment.jpg`,
       contentName: 'ร้านหิ้วปีก Hiw Peek Cafe & Restaurant ร้านบรรยากาศดี ครบจบทั้งคาวหวาน',
       place: 'เมืองภูเก็ต',
-      nameOfShop: 'HIWPEEK Cafe & Restuarant หิ้วปีก คาเฟ่แอนด์เรสเตอรอง',
+      nameOfShopInsideImage: 'HIWPEEK Cafe & Restuarant หิ้วปีก คาเฟ่แอนด์เรสเตอรอง',
       bookmark: 12
     },
     {
@@ -85,7 +85,7 @@ export const articleRecommendedContent: articleRecommendedContentWantThis =
       img: `${dotTemplateContentImg}cleanBakery.jpg`,
       contentName: '“ขนมปังคลีน By Monnaie” ร้านดังจากครัวคุณต๋อย จุดเด่นคือขนมปังคลีน"',
       place: 'เมืองอุดรธานี',
-      nameOfShop: 'ขนมปังคลีน บาย โมเน่',
+      nameOfShopInsideImage: 'ขนมปังคลีน บาย โมเน่',
       bookmark: 4
     },
     {
@@ -93,7 +93,7 @@ export const articleRecommendedContent: articleRecommendedContentWantThis =
       img: `${dotTemplateContentImg}environment.jpg`,
       contentName: 'ร้านหิ้วปีก Hiw Peek Cafe & Restaurant ร้านบรรยากาศดี ครบจบทั้งคาวหวาน',
       place: 'เมืองภูเก็ต',
-      nameOfShop: 'HIWPEEK Cafe & Restuarant หิ้วปีก คาเฟ่แอนด์เรสเตอรอง',
+      nameOfShopInsideImage: 'HIWPEEK Cafe & Restuarant หิ้วปีก คาเฟ่แอนด์เรสเตอรอง',
       bookmark: 12
     }
   ]
