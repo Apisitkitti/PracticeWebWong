@@ -19,9 +19,7 @@
 }
 
 
-.underLineText:hover {
-  text-decoration: underline;
-}
+
 
 .imageBorder {
   position: relative;
@@ -50,13 +48,6 @@
   display: flex;
 }
 
-#bookMarkIcon {
-  width: 18px;
-  height: 17px;
-  display: flex;
-  vertical-align: middle;
-  cursor: pointer;
-}
 
 #bookMarkIcon:active {
   color: yellow
