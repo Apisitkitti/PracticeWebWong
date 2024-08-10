@@ -17,6 +17,7 @@ function PictureCard({ pictureAndInformation }: FoodForShow) {
         <div key={index} className="imageAndCaptionBlock" >
           <p id="pictureCaption">{pictureWithCaption.caption}</p>
           <img id="imageInside" src={pictureWithCaption.picture} alt={pictureWithCaption.caption} />
+          <div id="shadow"></div>
         </div>
       )}
       {isbuttonAppear &&

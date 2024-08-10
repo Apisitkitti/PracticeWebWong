@@ -35,6 +35,7 @@
   position: absolute;
   top: 9px;
   left: 10px;
+  z-index: 1;
 
 }
 
@@ -59,4 +60,15 @@
   height: 12px;
   filter: invert(100%);
 
+}
+
+#shadow {
+  background: linear-gradient(rgba(0, 0, 0, 0.7) 99.48%, rgba(0, 0, 0, 0));
+  width: 180px;
+  height: 25%;
+  position: absolute;
+  top: 4%;
+  border-radius: 5px 5px 0 0;
+  z-index: 0;
+  opacity: 30%;
 }

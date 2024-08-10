@@ -53,11 +53,12 @@ function RestaurantContentRightSidebr({ restaurantRecommended }: { restaurantRec
 
 function ArticleContentRightSidebar({ articleData }: { articleData: articleRecommendedContentWantThis }) {
   const articleForShowData: ContentTypeInformation[] = articleData.advertise.slice(0, 6);
-  const [isBookmark, bookmarkControl] = useState<boolean>(false)
-
-  const bookmarkHandleEvent: MouseEventHandler = () => {
-    bookmarkControl(!isBookmark)
-  }
+  const [isBookmark, bookmarkControl] = useState<boolean[]>(Array(articleForShowData.length).fill(false));
+  const bookmarkHandleEvent = (index: number) => {
+    const newBookmarkStates = [...isBookmark];
+    newBookmarkStates[index] = !newBookmarkStates[index];
+    bookmarkControl(newBookmarkStates);
+  };
   return (
     <div className='contentContainer'>
       <div className='headBar'>
@@ -75,8 +76,8 @@ function ArticleContentRightSidebar({ articleData }: { articleData: articleRecom
             <div className='textContainerArticle'>
               <div className='underLineText' >{item.ad ? 'Ad ·' : ''} {item.contentName}</div>
               <div className='bookmarkGroup'>
-                <img onClick={bookmarkHandleEvent} id='bookMarkIcon' src={isBookmark ? "../../img/bookmarkIconBlue.png" : "../../img/bookmarkIcon.png"} alt="bookmarkIcon " />
-                <p>{isBookmark ? `${item.bookmark + 1}` : `${item.bookmark}`}</p>
+                <img onClick={() => bookmarkHandleEvent(index)} id='bookMarkIcon' src={isBookmark[index] ? "../../img/bookmarkIconBlue.png" : "../../img/bookmarkIcon.png"} alt="bookmarkIcon " />
+                <p>{isBookmark[index] ? `${item.bookmark + 1}` : `${item.bookmark}`}</p>
               </div>
             </div>
           </div>

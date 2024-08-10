@@ -80,6 +80,7 @@
 
 
 #imageSizing {
+  margin-top: 10px;
   width: 100%;
   height: 100%;
   border-radius: 10px;
@@ -99,9 +100,11 @@
 }
 
 .restaurantName {
-  bottom: 4px;
+  bottom: 5px;
   padding: 0 10px;
-  text-shadow: 0 0 1px rgb(0, 0, 0, 0.6);
+  border-radius: 0 0 10px 10px;
+  background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 99.48%);
+  width: 100%;
 }
 
 .textContainerArticle {
@@ -113,5 +116,5 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+
 }
