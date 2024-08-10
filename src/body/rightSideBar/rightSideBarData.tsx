@@ -7,7 +7,7 @@ const dotTemplateContentImg: string = '../../../img/content/'
 interface contentWantThisIntheTop {
   headTitle: string
 }
-interface needInsideContent {
+export interface needInsideContent {
   img: string,
   contentName: string
 }
@@ -27,6 +27,9 @@ export const restaurantReccomended: restaurantReccomendedWantThis =
 {
   headTitle: 'ร้านอาหารแนะนำ',
   restaurant: restuarantData
+}
+export interface listRecommendedWantThis extends contentWantThisIntheTop {
+  listRecommended: needInsideContent[];
 }
 export const articleRecommendedContent: articleRecommendedContentWantThis =
 {
@@ -98,26 +101,40 @@ export const articleRecommendedContent: articleRecommendedContentWantThis =
     }
   ]
 }
-export const listRecomended =
+export const listRecomended: listRecommendedWantThis =
 {
   headTitle: 'รวมลิสต์แนะนำที่คุณต้องลอง',
   listRecommended: [
     {
-      img: '',
-      contentName: ''
+      img: `${dotTemplateContentImg}Chinese.jpg`,
+      contentName: '20 ร้านอาหารจีนต้นตำรับ ระดับภัตตาคาร ขนไปกินกันทั้งบ้าน!'
     },
     {
-      img: '',
-      contentName: ''
+      img: `${dotTemplateContentImg}cafe.jpg`,
+      contentName: '30 ร้านอาหารนครปฐมสุดปัง บรรยากาศน่านั่งต้องไปเยือน ฉบับอัปเดตล่าสุด!'
     },
     {
-      img: '',
-      contentName: ''
+      img: `${dotTemplateContentImg}30Restaurant.jpg`,
+      contentName: 'เช็กอิน 10 คาเฟ่รัชโยธิน บรรยากาศดี เดินทางง่าย ได้คอนเทนต์ฉ่ำ!'
     },
     {
-      img: '',
-      contentName: ''
+      img: `${dotTemplateContentImg}cafe.jpg`,
+      contentName: '30 ร้านอาหารนครปฐมสุดปัง บรรยากาศน่านั่งต้องไปเยือน ฉบับอัปเดตล่าสุด!'
     },
+    {
+      img: `${dotTemplateContentImg}30Restaurant.jpg`,
+      contentName: 'เช็กอิน 10 คาเฟ่รัชโยธิน บรรยากาศดี เดินทางง่าย ได้คอนเทนต์ฉ่ำ!'
+    }
+    ,
+    {
+      img: `${dotTemplateContentImg}cafe.jpg`,
+      contentName: '30 ร้านอาหารนครปฐมสุดปัง บรรยากาศน่านั่งต้องไปเยือน ฉบับอัปเดตล่าสุด!'
+    },
+    {
+      img: `${dotTemplateContentImg}30Restaurant.jpg`,
+      contentName: 'เช็กอิน 10 คาเฟ่รัชโยธิน บรรยากาศดี เดินทางง่าย ได้คอนเทนต์ฉ่ำ!'
+    }
+
   ]
 }
 

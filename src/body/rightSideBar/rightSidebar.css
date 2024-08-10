@@ -2,6 +2,8 @@
   grid-column: 3;
   position: absolute;
   margin-left: 620px;
+  font-size: 18px;
+  height: max-content;
 }
 
 .contentContainer {
@@ -10,6 +12,7 @@
   border-radius: 5px;
   width: 333px;
   margin-bottom: 15px;
+  font-size: 20px;
 }
 
 .headText {

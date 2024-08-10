@@ -1,6 +1,6 @@
 import './rightSidebar.css'
-import { restaurantReccomendedWantThis } from './rightSideBarData'
-import { restaurantReccomended, ContentTypeInformation, articleRecommendedContentWantThis, articleRecommendedContent } from './rightSideBarData'
+import { listRecomended, restaurantReccomendedWantThis } from './rightSideBarData'
+import { restaurantReccomended, ContentTypeInformation, articleRecommendedContentWantThis, articleRecommendedContent, listRecommendedWantThis, needInsideContent } from './rightSideBarData'
 import { RestuarantCardType } from '../FoodProfileCard/foodprofileCardData'
 import { MouseEventHandler, useState } from 'react'
 function FirstBlockSidebar() {
@@ -66,7 +66,7 @@ function ArticleContentRightSidebar({ articleData }: { articleData: articleRecom
         <p className='headText'>{articleData.advertise.length > articleForShowData.length ? <a className='linkText' href='###'>ดูทั้งหมด</a> : ''}</p>
       </div>
       <div>
-        {articleForShowData.map((item, index) =>
+        {articleForShowData.map((item: ContentTypeInformation, index: number) =>
           <div key={index}>
             <div className='imageTextContainer'>
               <img id='imageSizing' src={item.img} alt={item.nameOfShopInsideImage} />
@@ -87,6 +87,25 @@ function ArticleContentRightSidebar({ articleData }: { articleData: articleRecom
     </div>
   )
 }
+function ListContentRightSideBar({ listRecommended }: { listRecommended: listRecommendedWantThis }) {
+  const listForShowData: needInsideContent[] = listRecommended.listRecommended.slice(0, 6);
+  return (
+    <div className='contentContainer'>
+      <div className='headBar'>
+        <p className="headText boldText">{listRecommended.headTitle}</p>
+        <p className='headText'>{listRecommended.listRecommended.length > listForShowData.length ? <a className='linkText' href='###'>ดูทั้งหมด</a> : ''}</p>
+      </div>
+      <div>
+        {listForShowData.map((listItem: needInsideContent, index: number) =>
+          <div key={index}>
+            <img id='imageSizing' src={listItem.img} alt={listItem.contentName} />
+            <p className='underLineText'>{listItem.contentName}</p>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
 
 function RightSideBar() {
   return (
@@ -94,6 +113,7 @@ function RightSideBar() {
       <FirstBlockSidebar />
       <RestaurantContentRightSidebr restaurantRecommended={restaurantReccomended} />
       <ArticleContentRightSidebar articleData={articleRecommendedContent} />
+      <ListContentRightSideBar listRecommended={listRecomended} />
     </div>
   )
 }
