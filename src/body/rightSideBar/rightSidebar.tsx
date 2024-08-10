@@ -2,6 +2,7 @@ import './rightSidebar.css'
 import { restaurantReccomendedWantThis } from './rightSideBarData'
 import { restaurantReccomended, ContentTypeInformation, articleRecommendedContentWantThis, articleRecommendedContent } from './rightSideBarData'
 import { RestuarantCardType } from '../FoodProfileCard/foodprofileCardData'
+import { MouseEventHandler, useState } from 'react'
 function FirstBlockSidebar() {
   return (
     <div className="contentContainer">
@@ -52,7 +53,11 @@ function RestaurantContentRightSidebr({ restaurantRecommended }: { restaurantRec
 
 function ArticleContentRightSidebar({ articleData }: { articleData: articleRecommendedContentWantThis }) {
   const articleForShowData: ContentTypeInformation[] = articleData.advertise.slice(0, 6);
+  const [isBookmark, bookmarkControl] = useState<boolean>(false)
 
+  const bookmarkHandleEvent: MouseEventHandler = () => {
+    bookmarkControl(!isBookmark)
+  }
   return (
     <div className='contentContainer'>
       <div className='headBar'>
@@ -70,12 +75,10 @@ function ArticleContentRightSidebar({ articleData }: { articleData: articleRecom
             <div className='textContainerArticle'>
               <div className='underLineText' >{item.ad ? 'Ad ·' : ''} {item.contentName}</div>
               <div className='bookmarkGroup'>
-                <img id='bookMarkIcon' src="../../img/bookmarkIcon.png" alt="bookmarkIcon " />
-                <p>{item.bookmark}</p>
+                <img onClick={bookmarkHandleEvent} id='bookMarkIcon' src={isBookmark ? "../../img/bookmarkIconBlue.png" : "../../img/bookmarkIcon.png"} alt="bookmarkIcon " />
+                <p>{isBookmark ? `${item.bookmark + 1}` : `${item.bookmark}`}</p>
               </div>
-
             </div>
-
           </div>
         )}
       </div>
@@ -90,7 +93,6 @@ function RightSideBar() {
       <FirstBlockSidebar />
       <RestaurantContentRightSidebr restaurantRecommended={restaurantReccomended} />
       <ArticleContentRightSidebar articleData={articleRecommendedContent} />
-
     </div>
   )
 }

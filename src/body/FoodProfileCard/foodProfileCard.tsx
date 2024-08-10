@@ -1,15 +1,21 @@
-import { FoodCardDataShow, restuarantData } from "./foodprofileCardData"
+import { FoodCardDataShow, RestuarantCardType, restuarantData } from "./foodprofileCardData"
+import { useState, MouseEventHandler } from "react";
 import './foodProfile.css'
 
 
 function CardComponent({ restuarantData }: FoodCardDataShow) {
   const imageForShow = (imageData: string[]): string[] => imageData.slice(0, 5);
   const calculatePictureLeftNumber = (imageData: string[], imageForShow: string[]): number => imageData.length - imageForShow.length;
+  const [isBookmark, bookmarkControl] = useState<boolean>(false)
+
+  const bookmarkHandleEvent: MouseEventHandler = () => {
+    bookmarkControl(!isBookmark)
+  }
   return (
 
     <div className="restuarantCardContainer">
       <div className="imageRestaurantContainer">
-        {imageForShow(restuarantData.foodImg).map((foodImgItem, index) =>
+        {imageForShow(restuarantData.foodImg).map((foodImgItem: string, index: number) =>
           <div key={index} className="imageBorder">
             <img id="foodImg" src={foodImgItem} alt={restuarantData.name + restuarantData.caption} />
             {index + 1 >= imageForShow(restuarantData.foodImg).length ?
@@ -24,7 +30,7 @@ function CardComponent({ restuarantData }: FoodCardDataShow) {
         <div className="headLineRestuarantGroup">
           <div className="firstLineHeadLineRestuarant">
             <a href="##"> {restuarantData.ads ? 'Ad · ' : ''} <span className="restuarantName boldText">{restuarantData.name}</span> <span className="restuarantPlace normalText">{restuarantData.place}</span></a>
-            <img src="../../../img/bookmarkIcon.png" alt="bookMarkIcon" id="bookMarkIcon" />
+            <img onClick={bookmarkHandleEvent} src={isBookmark ? "../../../img/bookmarkIconBlue.png" : "../../../img/bookmarkIcon.png"} alt="bookMarkIcon" id="bookMarkIcon" />
           </div>
           <a href="##" className="restaurantCaption linkText">{restuarantData.caption}</a>
         </div>
@@ -51,7 +57,7 @@ function CardComponent({ restuarantData }: FoodCardDataShow) {
 function FoodCardComponent() {
   return (
     <>
-      {restuarantData.map((restuarantData, index) =>
+      {restuarantData.map((restuarantData: RestuarantCardType) =>
         <CardComponent restuarantData={restuarantData} />)}
     </>
   )
