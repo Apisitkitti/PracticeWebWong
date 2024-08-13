@@ -5,12 +5,10 @@ import { pictureAndInformation, PictureType } from './pictureCardData';
 
 function PictureCard({ pictureAndInformation }: FoodForShow) {
   const [isbuttonAppear, setButtonIsAppear] = useState<boolean>(false);
-  const handleButtonAppear = () => {
-    setButtonIsAppear(true);
-  }
-  const handleButtonDisappear = () => {
-    setButtonIsAppear(false);
-  }
+  const handleButtonAppear = () => setButtonIsAppear(true);
+
+  const handleButtonDisappear = () => setButtonIsAppear(false);
+
   return (
     <div className="picture-container bodySection " onMouseEnter={handleButtonAppear} onMouseLeave={handleButtonDisappear}>
       {pictureAndInformation.map((pictureWithCaption: PictureType, index: number) =>
