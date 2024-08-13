@@ -1,6 +1,11 @@
-function Footer() {
+import { footerData, dataInsideFooter } from "./footerData"
+
+
+
+function Footer({ footerInformation }: dataInsideFooter) {
   return (
     <footer>
+
     </footer>
   )
 }
