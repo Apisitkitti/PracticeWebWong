@@ -17,7 +17,7 @@ function FooterContent({ appImg, footerInformation }: dataInsideFooter) {
                     <img src={dowloadPlatformApp.icon} alt={dowloadPlatformApp.maintext} />
                   </div>
                   <div>
-                    <span>{dowloadPlatformApp.subtext}</span>
+                    <p>{dowloadPlatformApp.subtext}</p>
                     <p>{dowloadPlatformApp.maintext}</p>
                   </div>
                 </button>
@@ -32,10 +32,21 @@ function FooterContent({ appImg, footerInformation }: dataInsideFooter) {
               <div key={index}>
                 <img src={socialImg.applicationImg} alt={socialImg.alt} />
               </div>
-
             )}
           </div>
         </div>
+      </div>
+      <div>
+        {footerData.map((footerItem, index) =>
+          <div key={index}>
+            <h3>{footerItem.header}</h3>
+            <div>
+              {footerItem.insideText.map((indsideText, index) =>
+                <div>{indsideText}</div>
+              )}
+            </div>
+          </div>
+        )}
       </div>
 
     </footer>
