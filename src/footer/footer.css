@@ -1,0 +1,17 @@
+footer {
+  margin-top: 10px;
+  background-color: var(--colorGrey);
+  border: 1px solid #DEE2E4;
+  display: grid;
+  grid-template-columns: 270px 1fr 270px;
+  width: 100vw;
+}
+
+.footerContent {
+  grid-column: 2;
+}
+
+.informationContainer {
+  display: flex;
+  flex-direction: row;
+}

@@ -79,7 +79,7 @@ export const footerData: footerCategoryDataType[] =
       insideText:
         [
           'ตำแหน่งเปิดรับ',
-          'Lif @ Wongnai',
+          'Life@Wongnai',
           'ระบบจัดการร้านอาหาร (Wongnai POS)',
           'รับเดลิเวอรีผ่าน Wongnai x LINE MAN (Wongnai Merchant App)',
           'บทความเทคนิคการตลาด'
