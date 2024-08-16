@@ -8,10 +8,22 @@ footer {
 }
 
 .footerContent {
+  margin-top: 20px;
   grid-column: 2;
 }
 
 .informationContainer {
   display: flex;
   flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.itemIndsideTextGroup {
+  width: 200px;
+}
+
+.wongnaiCopyRightGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

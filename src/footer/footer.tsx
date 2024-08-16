@@ -42,7 +42,7 @@ function FooterContent({ appImg, footerInformation }: dataInsideFooter) {
           {footerData.map((footerItem, index) =>
             <div key={index}>
               <h3>{footerItem.header}</h3>
-              <div>
+              <div className="itemIndsideTextGroup">
                 {footerItem.insideText.map((indsideText, index) =>
                   <div key={index}>{indsideText}</div>
                 )}
@@ -50,7 +50,11 @@ function FooterContent({ appImg, footerInformation }: dataInsideFooter) {
             </div>
           )}
         </div>
-
+        <hr />
+        <div className="wongnaiCopyRightGroup">
+          <div>Copyright 2010-2024  Wongnai Media Co., Ltd. All right reserved. <a href="##" className="linkText">Terms & Conditions|Privacy Policy</a></div>
+          <div>TH | EN</div>
+        </div>
       </div>
     </footer>
   )
