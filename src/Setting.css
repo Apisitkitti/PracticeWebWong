@@ -33,3 +33,8 @@
 body {
   background-color: var(--colorGrey);
 }
+
+.wongnai-logo {
+  height: 48px;
+  width: 118px;
+}

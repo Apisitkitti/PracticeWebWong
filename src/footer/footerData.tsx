@@ -3,11 +3,44 @@ type footerCategoryDataType =
     header: string;
     insideText: string[]
   }
-
+type platformButton =
+  {
+    icon: string,
+    subtext: string,
+    maintext: string
+  }
+type socialIcon =
+  {
+    applicationImg: string,
+    alt: string
+  }
+type applicationImg = {
+  dowloadPlatformImg: platformButton[],
+  socialImg: socialIcon[];
+}
 export type dataInsideFooter =
   {
+    appImg: applicationImg,
     footerInformation: footerCategoryDataType[]
   }
+export const applicationImg: applicationImg =
+{
+  dowloadPlatformImg:
+    [
+      {
+        icon: '',
+        subtext: '',
+        maintext: ''
+      },
+    ],
+  socialImg:
+    [
+      {
+        applicationImg: '',
+        alt: ''
+      }
+    ]
+}
 export const footerData: footerCategoryDataType[] =
   [
     {
