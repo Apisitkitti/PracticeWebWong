@@ -38,3 +38,16 @@ body {
   height: 48px;
   width: 118px;
 }
+
+.boldText {
+  font-weight: bold;
+  color: black;
+}
+
+.normalText {
+  color: #787F83;
+}
+
+.blackText {
+  color: black;
+}

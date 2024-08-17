@@ -1,43 +1,74 @@
+type linkInSide =
+  {
+    link: string
+    insideText: string
+  }
+
 type footerCategoryDataType =
   {
-    header: string;
-    insideText: string[]
-  }
-type platformButton =
-  {
-    icon: string,
-    subtext: string,
-    maintext: string
+    header: string,
+    linkText: linkInSide[];
   }
 type socialIcon =
   {
     applicationImg: string,
-    alt: string
+    alt: string,
+    link: string
   }
-type applicationImg = {
-  dowloadPlatformImg: platformButton[],
+type applicationImgType = {
+  dowloadPlatformImg: socialIcon[],
   socialImg: socialIcon[];
 }
 export type dataInsideFooter =
   {
-    appImg: applicationImg,
+    appImg: applicationImgType,
     footerInformation: footerCategoryDataType[]
   }
-export const applicationImg: applicationImg =
+export const applicationImg: applicationImgType =
 {
   dowloadPlatformImg:
     [
       {
-        icon: '',
-        subtext: '',
-        maintext: ''
+        applicationImg: '../../../img/application/appStore.png',
+        alt: '',
+        link: ''
+      },
+      {
+        applicationImg: '../../../img/application/googlePlay.png',
+        alt: '',
+        link: ''
+      },
+      {
+        applicationImg: '../../../img/application/huaweiApp.png',
+        alt: '',
+        link: ''
       },
     ],
   socialImg:
     [
       {
         applicationImg: '',
-        alt: ''
+        alt: '',
+        link: ''
+      },
+      {
+        applicationImg: '',
+        alt: '',
+        link: ''
+      }, {
+        applicationImg: '',
+        alt: '',
+        link: ''
+      },
+      {
+        applicationImg: '',
+        alt: '',
+        link: ''
+      },
+      {
+        applicationImg: '',
+        alt: '',
+        link: ''
       }
     ]
 }
@@ -45,53 +76,108 @@ export const footerData: footerCategoryDataType[] =
   [
     {
       header: 'สำหรับผู้ใช้ Wongnai',
-      insideText:
+
+      linkText:
         [
-          'เกี่ยวกับ Wongnai Community',
-          'ระดับของผู้ใช้ Wongnai',
-          'เกี่ยวกับ Wongnai Elite',
-          'ตารางอันดับของผู้ใช้งาน',
-          'แนวทางปฏิบัติของผู้ใช้งาน'
+          {
+            link: '####',
+            insideText: 'เกี่ยวกับ Wongnai Community'
+          },
+          {
+            link: '####',
+            insideText: 'ระดับของผู้ใช้ Wongnai'
+          },
+          {
+            link: '####',
+            insideText: 'เกี่ยวกับ Wongnai Elite'
+          },
+          {
+            link: '####',
+            insideText: 'ตารางอันดับของผู้ใช้งาน'
+          },
+          {
+            link: '####',
+            insideText: 'แนวทางปฏิบัติของผู้ใช้งาน'
+          }
         ]
     },
     {
       header: 'สำหรับร้านหรือธุรกิจ',
-      insideText:
+
+      linkText:
         [
-          'แจ้งเป็นเจ้าของร้าน',
-          'ลงโฆษณากับ Wongnai',
-          'ระบบจัดการร้านอาหาร (Wongnai POS)',
-          'รับเดลิเวอรีผ่าน Wongnai x LINE MAN (Wongnai Merchant App)',
-          'บทความเทคนิคการตลาด'
+          {
+            link: '####',
+            insideText: 'แจ้งเป็นเจ้าของร้าน'
+          },
+          {
+            link: '####',
+            insideText: 'ลงโฆษณากับ Wongnai'
+          },
+          {
+            link: '####',
+            insideText: 'ระบบจัดการร้านอาหาร (Wongnai POS)'
+          },
+          {
+            link: '####',
+            insideText: 'รับเดลิเวอรีผ่าน Wongnai x LINE MAN (Wongnai Merchant App)'
+          },
+          {
+            link: '####',
+            insideText: 'บทความเทคนิคการตลาด'
+          }
         ]
     },
     {
       header: 'สำหรับสือมวลชน',
-      insideText:
+
+      linkText:
         [
-          'ข่าว Wongnai',
-          'ปฏิฑินกิจกรรม Wongnai Event',
-          'โลโก้ Wongnai และวิธีการใช้'
+          {
+            link: '####',
+            insideText: 'ข่าว Wongnai'
+          },
+          {
+            link: '####',
+            insideText: 'ปฏิฑินกิจกรรม Wongnai Event'
+          },
+          {
+            link: '####',
+            insideText: 'โลโก้ Wongnai และวิธีการใช้'
+          }
         ]
     },
     {
       header: 'ร่วมงานกับเรา',
-      insideText:
+
+      linkText:
         [
-          'ตำแหน่งเปิดรับ',
-          'Life@Wongnai',
-          'ระบบจัดการร้านอาหาร (Wongnai POS)',
-          'รับเดลิเวอรีผ่าน Wongnai x LINE MAN (Wongnai Merchant App)',
-          'บทความเทคนิคการตลาด'
+          {
+            link: '####',
+            insideText: 'ตำแหน่งเปิดรับ'
+          },
+          {
+            link: '####',
+            insideText: 'Life@Wongnai'
+          }
         ]
     },
     {
       header: 'เกี่ยวกับ Wongnai',
-      insideText:
+      linkText:
         [
-          'ประวัติบริษัท',
-          'ติดต่อเรา',
-          'ศูนย์ช่วยเหลือ'
+          {
+            link: '####',
+            insideText: 'ประวัติบริษัท'
+          },
+          {
+            link: '####',
+            insideText: 'ติดต่อเรา'
+          },
+          {
+            link: '####',
+            insideText: 'ศูนย์ช่วยเหลือ'
+          }
         ]
     }
 

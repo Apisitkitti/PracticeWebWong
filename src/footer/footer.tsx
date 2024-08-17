@@ -1,7 +1,10 @@
 
 import { dataInsideFooter, applicationImg, footerData } from "./footerData"
 import './footer.css'
+import { useState } from "react"
 function FooterContent({ appImg, footerInformation }: dataInsideFooter) {
+  const [isToggle, setIsToggle] = useState<boolean>(false);
+  const setLanguage = () => setIsToggle(!isToggle);
   return (
     <footer>
       <div className="footerContent">
@@ -9,31 +12,23 @@ function FooterContent({ appImg, footerInformation }: dataInsideFooter) {
           <img className="wongnai-logo" src="../../img/wongnai-logo-header.png" alt="wongnaiLogo" />
         </div>
         <div className="advertisementApplicationContainer">
-          <div>
-            <p>Dowload Wongnai App Free</p>
-            <div>
+          <div className="applicationForWongnai">
+            <p className="headAppText boldText">Dowload Wongnai App Free</p>
+            <div className="applicationContainer">
               {appImg.dowloadPlatformImg.map((dowloadPlatformApp, index) =>
-                <div key={index}>
-                  <button>
-                    <div>
-                      <img src={dowloadPlatformApp.icon} alt={dowloadPlatformApp.maintext} />
-                    </div>
-                    <div>
-                      <p>{dowloadPlatformApp.subtext}</p>
-                      <p>{dowloadPlatformApp.maintext}</p>
-                    </div>
-                  </button>
-                </div>
+                <a key={index} href={dowloadPlatformApp.link}>
+                  <img id='applicationAppset' src={dowloadPlatformApp.applicationImg} alt={dowloadPlatformApp.alt} />
+                </a>
               )}
             </div>
           </div>
           <div>
-            <p>Follow Us</p>
+            <p className="headAppText boldText">Follow Us</p>
             <div>
               {appImg.socialImg.map((socialImg, index) =>
-                <div key={index}>
-                  <img src={socialImg.applicationImg} alt={socialImg.alt} />
-                </div>
+                <a href={socialImg.link} key={index}>
+                  <img id='applicationAppset' src={socialImg.applicationImg} alt={socialImg.alt} />
+                </a>
               )}
             </div>
           </div>
@@ -41,22 +36,22 @@ function FooterContent({ appImg, footerInformation }: dataInsideFooter) {
         <div className="informationContainer">
           {footerData.map((footerItem, index) =>
             <div key={index}>
-              <h3>{footerItem.header}</h3>
+              <p className="normalText">{footerItem.header}</p>
               <div className="itemIndsideTextGroup">
-                {footerItem.insideText.map((indsideText, index) =>
-                  <div key={index}>{indsideText}</div>
+                {footerItem.linkText.map((indsideText, index) =>
+                  <div className="insideAboutWongnaiFooterText" key={index}><a className="blackText" href={indsideText.link}>{indsideText.insideText}</a></div>
                 )}
               </div>
             </div>
           )}
         </div>
-        <hr />
+        <hr id="endLine" />
         <div className="wongnaiCopyRightGroup">
-          <div>Copyright 2010-2024  Wongnai Media Co., Ltd. All right reserved. <a href="##" className="linkText">Terms & Conditions|Privacy Policy</a></div>
-          <div>TH | EN</div>
+          <div className="normalText">Copyright 2010-2024  Wongnai Media Co., Ltd. All right reserved. <a href="##" className="boldText">Terms & Conditions|Privacy Policy</a></div>
+          <p onClick={setLanguage}>{isToggle ? <div><span className="boldText">TH</span> | <span id="buttonText">EN</span> </div> : <div><span id="buttonText">TH</span> | <span className="boldText">EN</span></div>}</p>
         </div>
-      </div>
-    </footer>
+      </div >
+    </footer >
   )
 }
 

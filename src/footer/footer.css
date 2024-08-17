@@ -1,7 +1,7 @@
 footer {
-  margin-top: 10px;
+  margin-top: 20px;
   background-color: var(--colorGrey);
-  border: 1px solid #DEE2E4;
+  border-top: 2px solid #DEE2E4;
   display: grid;
   grid-template-columns: 270px 1fr 270px;
   width: 100vw;
@@ -16,6 +16,7 @@ footer {
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
+  font-size: 18px;
 }
 
 .itemIndsideTextGroup {
@@ -26,4 +27,42 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 40px;
+  font-size: 18px;
+}
+
+#buttonText {
+  cursor: pointer;
+}
+
+.advertisementApplicationContainer {
+  display: flex;
+}
+
+.insideAboutWongnaiFooterText {
+  padding: 2px 0 2px;
+  width: 70%;
+}
+
+hr {
+  margin: 10px 0;
+}
+
+.applicationContainer {
+  display: flex;
+  margin-right: 50px;
+
+  & a {
+    padding-right: 5px;
+  }
+}
+
+.headAppText {
+  font-size: 20px;
+}
+
+#applicationAppset {
+  width: 140px;
+  border: 1px solid var(--colorGrey);
+
 }
