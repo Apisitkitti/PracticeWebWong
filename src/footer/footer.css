@@ -50,7 +50,9 @@ hr {
 
 .applicationContainer {
   display: flex;
-  margin-right: 50px;
+  margin-right: 40px;
+  align-items: center;
+  margin-bottom: 10px;
 
   & a {
     padding-right: 5px;
@@ -64,5 +66,9 @@ hr {
 #applicationAppset {
   width: 140px;
   border: 1px solid var(--colorGrey);
+}
 
+#applicationAppSocialSet {
+  width: 40px;
+  margin-right: 10px;
 }

@@ -47,29 +47,31 @@ export const applicationImg: applicationImgType =
   socialImg:
     [
       {
-        applicationImg: '',
-        alt: '',
+        applicationImg: '../../../img/application/facebook.png',
+        alt: 'facebook img',
         link: ''
       },
       {
-        applicationImg: '',
-        alt: '',
-        link: ''
-      }, {
-        applicationImg: '',
-        alt: '',
+        applicationImg: '../../../img/application/twitter.png',
+        alt: 'twitter img',
         link: ''
       },
       {
-        applicationImg: '',
-        alt: '',
+        applicationImg: '../../../img/application/instragram.png',
+        alt: 'instragram img',
         link: ''
       },
       {
-        applicationImg: '',
-        alt: '',
+        applicationImg: '../../../img/application/youtube.png',
+        alt: 'youtube img',
+        link: ''
+      },
+      {
+        applicationImg: '../../../img/application/line.png',
+        alt: 'line img',
         link: ''
       }
+
     ]
 }
 export const footerData: footerCategoryDataType[] =

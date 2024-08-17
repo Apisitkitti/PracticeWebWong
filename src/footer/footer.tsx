@@ -22,12 +22,12 @@ function FooterContent({ appImg, footerInformation }: dataInsideFooter) {
               )}
             </div>
           </div>
-          <div>
+          <div className="applicationForWongnai">
             <p className="headAppText boldText">Follow Us</p>
-            <div>
+            <div className="applicationContainer">
               {appImg.socialImg.map((socialImg, index) =>
                 <a href={socialImg.link} key={index}>
-                  <img id='applicationAppset' src={socialImg.applicationImg} alt={socialImg.alt} />
+                  <img id='applicationAppSocialSet' src={socialImg.applicationImg} alt={socialImg.alt} />
                 </a>
               )}
             </div>
