@@ -30,17 +30,17 @@ export const applicationImg: applicationImgType =
     [
       {
         applicationImg: '../../../img/application/appStore.png',
-        alt: '',
+        alt: 'appStore Icon',
         link: ''
       },
       {
         applicationImg: '../../../img/application/googlePlay.png',
-        alt: '',
+        alt: 'googlePlay Icon',
         link: ''
       },
       {
         applicationImg: '../../../img/application/huaweiApp.png',
-        alt: '',
+        alt: 'huawei Icon',
         link: ''
       },
     ],
