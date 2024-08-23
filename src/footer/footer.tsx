@@ -1,5 +1,5 @@
 
-import { dataInsideFooter, applicationImg, footerData } from "./footerData"
+import { dataInsideFooter, applicationImg, footerData, socialIcon } from "./footerData"
 import './footer.css'
 import { useState } from "react"
 function FooterContent({ appImg, footerInformation }: dataInsideFooter) {
@@ -15,7 +15,7 @@ function FooterContent({ appImg, footerInformation }: dataInsideFooter) {
           <div className="applicationForWongnai">
             <p className="headAppText boldText">Dowload Wongnai App Free</p>
             <div className="applicationContainer">
-              {appImg.dowloadPlatformImg.map((dowloadPlatformApp, index) =>
+              {appImg.dowloadPlatformImg.map((dowloadPlatformApp: socialIcon, index: number) =>
                 <a key={index} href={dowloadPlatformApp.link}>
                   <img id='applicationAppset' src={dowloadPlatformApp.applicationImg} alt={dowloadPlatformApp.alt} />
                 </a>
@@ -25,7 +25,7 @@ function FooterContent({ appImg, footerInformation }: dataInsideFooter) {
           <div className="applicationForWongnai">
             <p className="headAppText boldText">Follow Us</p>
             <div className="applicationContainer">
-              {appImg.socialImg.map((socialImg, index) =>
+              {appImg.socialImg.map((socialImg: socialIcon, index: number) =>
                 <a href={socialImg.link} key={index}>
                   <img id='applicationAppSocialSet' src={socialImg.applicationImg} alt={socialImg.alt} />
                 </a>

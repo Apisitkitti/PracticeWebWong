@@ -9,7 +9,7 @@ type footerCategoryDataType =
     header: string,
     linkText: linkInSide[];
   }
-type socialIcon =
+export type socialIcon =
   {
     applicationImg: string,
     alt: string,
