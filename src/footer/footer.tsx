@@ -47,7 +47,7 @@ function FooterContent({ appImg, footerInformation }: dataInsideFooter) {
         </div>
         <hr id="endLine" />
         <div className="wongnaiCopyRightGroup">
-          <div className="normalText">Copyright 2010-2024  Wongnai Media Co., Ltd. All right reserved. <a href="##" className="boldText">Terms & Conditions|Privacy Policy</a></div>
+          <div className="normalText">Copyright 2010-2024  Wongnai Media Co., Ltd. All right reserved. <a href="##" className="blackText">Terms & Conditions | Privacy Policy</a></div>
           <p onClick={setLanguage}>{isToggle ? <div><span className="boldText">TH</span> | <span id="buttonText">EN</span> </div> : <div><span id="buttonText">TH</span> | <span className="boldText">EN</span></div>}</p>
         </div>
       </div >
