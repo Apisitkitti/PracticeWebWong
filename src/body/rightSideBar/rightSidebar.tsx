@@ -2,7 +2,7 @@ import './rightSidebar.css'
 import { listRecomended, restaurantReccomendedWantThis } from './rightSideBarData'
 import { restaurantReccomended, ContentTypeInformation, articleRecommendedContentWantThis, articleRecommendedContent, listRecommendedWantThis, needInsideContent } from './rightSideBarData'
 import { RestuarantCardType } from '../FoodProfileCard/foodprofileCardData'
-import { MouseEventHandler, useState } from 'react'
+import { useState } from 'react'
 function FirstBlockSidebar() {
   return (
     <div className="contentContainer">

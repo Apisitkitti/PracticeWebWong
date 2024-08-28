@@ -6,7 +6,7 @@ function Header() {
   const handleBlur = () => { setPlaceHolder('กรุงเทพและ...') }
   return (
     <div className="header-container">
-      <img src="../img/wongnai-logo-header.png" alt="wongnai logo" height={48} width={118} className='wongnai-logo' />
+      <img src="../img/wongnai-logo-header.png" alt="wongnai logo" className='wongnai-logo' />
       <div className="header-center-container">
         <div className="location-container">
           <img src="../img/location.png" alt="location logo" className='icon location-icon' />
