@@ -51,3 +51,28 @@ body {
 .blackText {
   color: black;
 }
+
+@media only screen and (max-width:1200px) {
+  .wongnai-logo {
+    width: 50px;
+    height: 20px;
+    position: sticky;
+    left: 10px;
+  }
+
+  #header {
+    width: 100%;
+    height: 20%;
+    justify-content: space-between;
+  }
+
+  .header-center-container:is(button, div) {
+    display: none;
+    position: absolute;
+
+  }
+
+  .head-right-container .icon {
+    width: 100%;
+  }
+}

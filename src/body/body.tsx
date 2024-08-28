@@ -6,7 +6,7 @@ import FoodCardComponent from './FoodProfileCard/foodProfileCard';
 import RightSideBar from './rightSideBar/rightSidebar';
 function Body() {
   return (
-    <div className="body-container">
+    <div className="body-container" id='body'>
       <HeadLiner />
       <Sidebar />
       <main>

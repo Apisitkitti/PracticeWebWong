@@ -5,7 +5,7 @@ function Header() {
   const handleFocus = () => { setPlaceHolder('พิมพ์สถานที่') }
   const handleBlur = () => { setPlaceHolder('กรุงเทพและ...') }
   return (
-    <div className="header-container">
+    <div className="header-container " id='header'>
       <img src="../img/wongnai-logo-header.png" alt="wongnai logo" className='wongnai-logo' />
       <div className="header-center-container">
         <div className="location-container">
