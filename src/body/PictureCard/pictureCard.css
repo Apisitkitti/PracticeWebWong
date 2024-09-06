@@ -39,7 +39,8 @@
 
 }
 
-#sliderButton {
+#sliderButton,
+#sliderButtonLeft {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,6 +54,13 @@
   position: absolute;
   top: 55px;
   right: 10px;
+}
+
+#sliderButtonLeft {
+  position: absolute;
+  top: 55px;
+  left: 10px;
+  transform: rotate(90deg);
 }
 
 #imageButtonImage {
