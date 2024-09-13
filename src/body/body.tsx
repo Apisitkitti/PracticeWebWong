@@ -4,7 +4,8 @@ import Sidebar from './sidebar/sidebar';
 import CardComponent from './PictureCard/PictureCard';
 import FoodCardComponent from './FoodProfileCard/foodProfileCard';
 import RightSideBar from './rightSideBar/rightSidebar';
-function Body() {
+
+const Body = () => {
   return (
     <div className="body-container" id='body'>
       <HeadLiner />

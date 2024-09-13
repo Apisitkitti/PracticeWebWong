@@ -1,16 +1,12 @@
 import { FoodCardDataShow, RestuarantCardType, restuarantData } from "./foodprofileCardData"
-import { useState, MouseEventHandler } from "react";
+import { useState } from "react";
 import './foodProfile.css'
 
 
-function CardComponent({ restuarantData }: FoodCardDataShow) {
+const CardComponent = ({ restuarantData }: FoodCardDataShow) => {
   const imageForShow = (imageData: string[]): string[] => imageData.slice(0, 5);
   const calculatePictureLeftNumber = (imageData: string[], imageForShow: string[]): number => imageData.length - imageForShow.length;
   const [isBookmark, bookmarkControl] = useState<boolean>(false)
-
-  const bookmarkHandleEvent: MouseEventHandler = () => {
-    bookmarkControl(!isBookmark)
-  }
   return (
 
     <div className="restuarantCardContainer">
@@ -30,7 +26,7 @@ function CardComponent({ restuarantData }: FoodCardDataShow) {
         <div className="headLineRestuarantGroup">
           <div className="firstLineHeadLineRestuarant">
             <a href="##"> {restuarantData.ads ? 'Ad · ' : ''} <span className="restuarantName boldText">{restuarantData.name}</span> <span className="restuarantPlace normalText">{restuarantData.place}</span></a>
-            <img onClick={bookmarkHandleEvent} src={isBookmark ? "../../../img/bookmarkIconBlue.png" : "../../../img/bookmarkIcon.png"} alt="bookMarkIcon" id="bookMarkIcon" />
+            <img onClick={() => bookmarkControl(!isBookmark)} src={isBookmark ? "../../../img/bookmarkIconBlue.png" : "../../../img/bookmarkIcon.png"} alt="bookMarkIcon" id="bookMarkIcon" />
           </div>
           <a href="##" className="restaurantCaption linkText">{restuarantData.caption}</a>
         </div>
@@ -54,7 +50,7 @@ function CardComponent({ restuarantData }: FoodCardDataShow) {
     </div>
   )
 }
-function FoodCardComponent() {
+const FoodCardComponent = () => {
   return (
     <>
       {restuarantData.map((restuarantData: RestuarantCardType) =>

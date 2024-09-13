@@ -3,7 +3,7 @@ import { listRecomended, restaurantReccomendedWantThis } from './rightSideBarDat
 import { restaurantReccomended, ContentTypeInformation, articleRecommendedContentWantThis, articleRecommendedContent, listRecommendedWantThis, needInsideContent } from './rightSideBarData'
 import { RestuarantCardType } from '../FoodProfileCard/foodprofileCardData'
 import { useState } from 'react'
-function FirstBlockSidebar() {
+const FirstBlockSidebar = () => {
   return (
     <div className="contentContainer">
       <div className='headText'>
@@ -18,7 +18,7 @@ function FirstBlockSidebar() {
     </div>
   )
 }
-function RestaurantContentRightSidebr({ restaurantRecommended }: { restaurantRecommended: restaurantReccomendedWantThis }) {
+const RestaurantContentRightSidebar = ({ restaurantRecommended }: { restaurantRecommended: restaurantReccomendedWantThis }) => {
   const dataForShow: RestuarantCardType[] = restaurantReccomended.restaurant.slice(0, 2);
   return (
     <div className="contentContainer">
@@ -51,7 +51,7 @@ function RestaurantContentRightSidebr({ restaurantRecommended }: { restaurantRec
   )
 }
 
-function ArticleContentRightSidebar({ articleData }: { articleData: articleRecommendedContentWantThis }) {
+const ArticleContentRightSidebar = ({ articleData }: { articleData: articleRecommendedContentWantThis }) => {
   const articleForShowData: ContentTypeInformation[] = articleData.advertise.slice(0, 6);
   const [isBookmark, bookmarkControl] = useState<boolean[]>(Array(articleForShowData.length).fill(false));
   const bookmarkHandleEvent = (index: number) => {
@@ -87,7 +87,7 @@ function ArticleContentRightSidebar({ articleData }: { articleData: articleRecom
     </div>
   )
 }
-function ListContentRightSideBar({ listRecommended }: { listRecommended: listRecommendedWantThis }) {
+const ListContentRightSideBar = ({ listRecommended }: { listRecommended: listRecommendedWantThis }) => {
   const listForShowData: needInsideContent[] = listRecommended.listRecommended.slice(0, 6);
   return (
     <div className='contentContainer'>
@@ -107,11 +107,11 @@ function ListContentRightSideBar({ listRecommended }: { listRecommended: listRec
   )
 }
 
-function RightSideBar() {
+const RightSideBar = () => {
   return (
     <div className='rightSidebarGroup'>
       <FirstBlockSidebar />
-      <RestaurantContentRightSidebr restaurantRecommended={restaurantReccomended} />
+      <RestaurantContentRightSidebar restaurantRecommended={restaurantReccomended} />
       <ArticleContentRightSidebar articleData={articleRecommendedContent} />
       <ListContentRightSideBar listRecommended={listRecomended} />
     </div>

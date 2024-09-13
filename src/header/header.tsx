@@ -1,16 +1,14 @@
 import { useState } from 'react';
 import './header.css'
-function Header() {
+const Header = () => {
   const [placeHolder, setPlaceHolder] = useState<string>('กรุงเทพและ...');
-  const handleFocus = () => { setPlaceHolder('พิมพ์สถานที่') }
-  const handleBlur = () => { setPlaceHolder('กรุงเทพและ...') }
   return (
     <div className="header-container " id='header'>
       <img src="../img/wongnai-logo-header.png" alt="wongnai logo" className='wongnai-logo' />
       <div className="header-center-container">
         <div className="location-container">
           <img src="../img/location.png" alt="location logo" className='icon location-icon' />
-          <input type="text" className="location input-container" placeholder={placeHolder} onFocus={handleFocus} onBlur={handleBlur} />
+          <input type="text" className="location input-container" placeholder={placeHolder} onFocus={() => setPlaceHolder('พิมพ์สถานที่')} onBlur={() => setPlaceHolder('กรุงเทพและ...')} />
           <img src="../img/dropdown.png" alt="dropdown pic" className='icon dropdown-icon' />
         </div>
         <div className="restaurant-search-container">

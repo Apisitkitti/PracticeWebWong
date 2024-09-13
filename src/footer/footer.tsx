@@ -2,9 +2,8 @@
 import { dataInsideFooter, applicationImg, footerData, socialIcon } from "./footerData"
 import './footer.css'
 import { useState } from "react"
-function FooterContent({ appImg, footerInformation }: dataInsideFooter) {
+const FooterContent = ({ appImg, footerInformation }: dataInsideFooter) => {
   const [isToggle, setIsToggle] = useState<boolean>(false);
-  const setLanguage = () => setIsToggle(!isToggle);
   return (
     <footer>
       <div className="footerContent">
@@ -48,14 +47,14 @@ function FooterContent({ appImg, footerInformation }: dataInsideFooter) {
         <hr id="endLine" />
         <div className="wongnaiCopyRightGroup">
           <div className="normalText">Copyright 2010-2024  Wongnai Media Co., Ltd. All right reserved. <a href="##" className="blackText">Terms & Conditions | Privacy Policy</a></div>
-          <p onClick={setLanguage}>{isToggle ? <div><span className="boldText">TH</span> | <span id="buttonText">EN</span> </div> : <div><span id="buttonText">TH</span> | <span className="boldText">EN</span></div>}</p>
+          <p onClick={() => setIsToggle(!isToggle)}>{isToggle ? <div><span className="boldText">TH</span> | <span id="buttonText">EN</span> </div> : <div><span id="buttonText">TH</span> | <span className="boldText">EN</span></div>}</p>
         </div>
       </div >
     </footer >
   )
 }
 
-function Footer() {
+const Footer = () => {
   return (
     <>
       <FooterContent appImg={applicationImg} footerInformation={footerData} />

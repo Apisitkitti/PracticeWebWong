@@ -32,7 +32,7 @@ function PictureCard({ pictureAndInformation }: FoodForShow) {
 
   )
 }
-function CardComponent() {
+const CardComponent = () => {
   return (
     <PictureCard pictureAndInformation={pictureAndInformation} />
   )
