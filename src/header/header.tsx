@@ -1,5 +1,53 @@
 import { useState } from 'react';
 import './header.css'
+interface itemInsideCard {
+  icon: string,
+  text: string
+}
+const informationInsideCard: itemInsideCard[] =
+  [
+    {
+      icon: '',
+      text: 'แลกของรางวัล'
+    },
+    {
+      icon: '',
+      text: 'รวมสุดยอดรีวิว'
+    },
+    {
+      icon: '',
+      text: 'ตารางคะแนน'
+    },
+    {
+      icon: '',
+      text: 'เว็บบอร์ด'
+    },
+    {
+      icon: '',
+      text: 'หาเพื่อน'
+    },
+    {
+      icon: '',
+      text: 'ตั้งค่า'
+    }
+  ]
+const DropdownCard = () => {
+  return (
+    <div className='dropDownInformationControl'>
+      <div>
+        <button>เข้าสู้ระบบ หรือ สมัครสมาชิก</button>
+      </div>
+      <div>
+        {informationInsideCard.map((information: itemInsideCard, index: number) =>
+          <div>
+            <img src={information.icon} alt={information.text} />
+            <p>{information.text}</p>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
 const Header = () => {
   const [placeHolder, setPlaceHolder] = useState<string>('กรุงเทพและ...');
   return (
@@ -24,6 +72,7 @@ const Header = () => {
           เข้าสู่ระบบ
         </button>
         <button className='dropdown-button user-button'><img src="../img/dropdownSmall.png" alt="dropdown png" className='icon' /></button>
+        <DropdownCard />
       </div>
     </div>
   );
