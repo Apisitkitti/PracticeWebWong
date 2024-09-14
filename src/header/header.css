@@ -132,3 +132,45 @@
   border-radius: 50px;
   transition: all 0.3s;
 }
+
+.dropdownInformationControl {
+  position: absolute;
+  top: 70px;
+  right: 20%;
+  background-color: var(--colorWhite);
+  border: 1px solid var(--colorGrey);
+  width: 360px;
+  z-index: 2;
+}
+
+
+.buttonContainerForDropdown {
+  border-bottom: 1px solid var(--colorGrey);
+  display: flex;
+  justify-content: center;
+
+  & .dropdownLoginButton {
+    background-color: #0093E8;
+    border: none;
+    color: var(--colorWhite);
+    font-size: 24px;
+    font-weight: bold;
+    margin: 15px;
+    width: 100%;
+    padding: 5px 0;
+    border-radius: 7px;
+  }
+}
+
+.dropdownIcon {
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+}
+
+.itemInDropdownContainer {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  align-items: center;
+}

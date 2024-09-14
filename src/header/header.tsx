@@ -4,43 +4,44 @@ interface itemInsideCard {
   icon: string,
   text: string
 }
+const urlToImg = '../../img/'
 const informationInsideCard: itemInsideCard[] =
   [
     {
-      icon: '',
+      icon: `${urlToImg}InsideDropDownIcon/rewardCenter.png`,
       text: 'แลกของรางวัล'
     },
     {
-      icon: '',
+      icon: `${urlToImg}InsideDropDownIcon/superReviewIcon.png`,
       text: 'รวมสุดยอดรีวิว'
     },
     {
-      icon: '',
+      icon: `${urlToImg}InsideDropDownIcon/scoreBoardIcon.png`,
       text: 'ตารางคะแนน'
     },
     {
-      icon: '',
+      icon: `${urlToImg}InsideDropDownIcon/webBoardIcon.png`,
       text: 'เว็บบอร์ด'
     },
     {
-      icon: '',
+      icon: `${urlToImg}InsideDropDownIcon/addFriendIcon.png`,
       text: 'หาเพื่อน'
     },
     {
-      icon: '',
+      icon: `${urlToImg}InsideDropDownIcon/settingIcon.png`,
       text: 'ตั้งค่า'
     }
   ]
 const DropdownCard = () => {
   return (
-    <div className='dropDownInformationControl'>
-      <div>
-        <button>เข้าสู้ระบบ หรือ สมัครสมาชิก</button>
+    <div className='dropdownInformationControl'>
+      <div className='buttonContainerForDropdown'>
+        <button className='dropdownLoginButton'>เข้าสู้ระบบ หรือ สมัครสมาชิก</button>
       </div>
       <div>
         {informationInsideCard.map((information: itemInsideCard, index: number) =>
-          <div>
-            <img src={information.icon} alt={information.text} />
+          <div className='itemInDropdownContainer'>
+            <img className='dropdownIcon' src={information.icon} alt={information.text} />
             <p>{information.text}</p>
           </div>
         )}
@@ -50,6 +51,7 @@ const DropdownCard = () => {
 }
 const Header = () => {
   const [placeHolder, setPlaceHolder] = useState<string>('กรุงเทพและ...');
+  const [dropdownIsToggle, dropdropIsToggleControl] = useState<boolean>(false);
   return (
     <div className="header-container " id='header'>
       <img src="../img/wongnai-logo-header.png" alt="wongnai logo" className='wongnai-logo' />
@@ -71,9 +73,11 @@ const Header = () => {
           <img src="../img/peopleIcon.png" alt="people icon" className='icon' />
           เข้าสู่ระบบ
         </button>
-        <button className='dropdown-button user-button'><img src="../img/dropdownSmall.png" alt="dropdown png" className='icon' /></button>
-        <DropdownCard />
+        <button className='dropdown-button user-button'><img src="../img/dropdownSmall.png" alt="dropdown png" className='icon' onClick={() => dropdropIsToggleControl(!dropdownIsToggle)} /></button>
       </div>
+      {dropdownIsToggle &&
+        <DropdownCard />}
+
     </div>
   );
 }
