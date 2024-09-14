@@ -141,6 +141,9 @@
   border: 1px solid var(--colorGrey);
   width: 360px;
   z-index: 2;
+  border-radius: 5px;
+  box-shadow: 0 -1px 5px var(--colorGrey);
+
 }
 
 
@@ -165,12 +168,25 @@
 .dropdownIcon {
   width: 22px;
   height: 22px;
-  margin-right: 5px;
+  margin-right: 10px;
+}
+
+.itemDropdownContainer {
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
 
 .itemInDropdownContainer {
   display: flex;
   flex-direction: row;
-  padding: 5px;
+  padding: 10px;
   align-items: center;
+  font-size: 20px;
+  cursor: pointer;
+
+
+  &:hover {
+    background-color: var(--colorGrey);
+    text-decoration: underline;
+  }
 }

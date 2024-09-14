@@ -38,7 +38,7 @@ const DropdownCard = () => {
       <div className='buttonContainerForDropdown'>
         <button className='dropdownLoginButton'>เข้าสู้ระบบ หรือ สมัครสมาชิก</button>
       </div>
-      <div>
+      <div className='itemDropdownContainer'>
         {informationInsideCard.map((information: itemInsideCard, index: number) =>
           <div className='itemInDropdownContainer'>
             <img className='dropdownIcon' src={information.icon} alt={information.text} />
@@ -73,11 +73,10 @@ const Header = () => {
           <img src="../img/peopleIcon.png" alt="people icon" className='icon' />
           เข้าสู่ระบบ
         </button>
-        <button className='dropdown-button user-button'><img src="../img/dropdownSmall.png" alt="dropdown png" className='icon' onClick={() => dropdropIsToggleControl(!dropdownIsToggle)} /></button>
+        <button className='dropdown-button user-button' onClick={() => dropdropIsToggleControl(!dropdownIsToggle)}><img src="../img/dropdownSmall.png" alt="dropdown png" className='icon' /></button>
       </div>
       {dropdownIsToggle &&
         <DropdownCard />}
-
     </div>
   );
 }
