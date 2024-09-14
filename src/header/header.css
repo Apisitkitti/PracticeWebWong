@@ -124,6 +124,10 @@
   border-color: #939596;
 }
 
+.user-button:active {
+  background-color: #e0dcdc;
+}
+
 .dropdown-button img {
   width: 20px;
   background-color: transparent;
