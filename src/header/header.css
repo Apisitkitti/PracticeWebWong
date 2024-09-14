@@ -101,6 +101,10 @@
   width: 40px;
 }
 
+.translateIcon {
+  transform: rotate(180deg);
+}
+
 .signIn-button {
   padding: 0 20px 0 0;
   font-size: 25px;

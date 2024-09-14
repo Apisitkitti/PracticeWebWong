@@ -73,7 +73,7 @@ const Header = () => {
           <img src="../img/peopleIcon.png" alt="people icon" className='icon' />
           เข้าสู่ระบบ
         </button>
-        <button className='dropdown-button user-button' onClick={() => dropdropIsToggleControl(!dropdownIsToggle)}><img src="../img/dropdownSmall.png" alt="dropdown png" className='icon' /></button>
+        <button className='dropdown-button user-button' onClick={() => dropdropIsToggleControl(!dropdownIsToggle)}>{dropdownIsToggle ? <img src="../img/dropdownSmall.png" alt="dropdown png" className='icon translateIcon' /> : <img src="../img/dropdownSmall.png" alt="dropdown png" className='icon' />}</button>
       </div>
       {dropdownIsToggle &&
         <DropdownCard />}
