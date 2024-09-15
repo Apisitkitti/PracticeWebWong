@@ -1,13 +1,21 @@
 .picture-container {
   display: flex;
   height: max-content;
-  width: max-content;
   position: relative;
   background-color: white;
   border-radius: 8px;
   grid-column: 2;
   padding: 10px 16px;
   margin-bottom: 18px;
+  width: 954px;
+
+}
+
+.slideContainer {
+  transition: all 0.5s;
+  display: flex;
+  overflow-x: hidden;
+  width: 916px;
 }
 
 .imageAndCaptionBlock {
