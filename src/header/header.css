@@ -203,3 +203,24 @@
     text-decoration: underline;
   }
 }
+
+.searchbarDrop {
+  top: 65px;
+  right: 40.8%;
+  width: 250px;
+  font-size: var(--fontSize);
+  font-stretch: expanded;
+
+  & .itemInDropdownContainer:hover {
+    text-decoration: none;
+  }
+}
+
+.searchbarAdjustContainer {
+  padding: 15px;
+}
+
+.searchbaradjustIcon {
+  width: 20px;
+  height: 23px;
+}

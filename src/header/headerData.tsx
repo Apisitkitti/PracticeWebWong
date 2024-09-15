@@ -30,3 +30,30 @@ export const informationInsideCard: itemInsideCard[] =
       text: 'ตั้งค่า'
     }
   ]
+export const shopCategoryForSearchs: itemInsideCard[] =
+  [
+    {
+      icon: `${urlToImg}searchbarIcon/locationIcon.png`,
+      text: 'ร้านอาหารใกล้เคียง'
+    },
+    {
+      icon: `${urlToImg}searchbarIcon/foodEquipmentIcon.png`,
+      text: 'ร้านอาหาร'
+    },
+    {
+      icon: `${urlToImg}searchbarIcon/lipstickIcon.png`,
+      text: 'ร้านเสริมสวย และ สปา'
+    },
+    {
+      icon: `${urlToImg}searchbarIcon/homeIcon.png`,
+      text: 'ที่พัก'
+    },
+    {
+      icon: `${urlToImg}searchbarIcon/cameraIcon.png`,
+      text: 'สถานที่ท่องเที่ยว'
+    },
+    {
+      icon: `${urlToImg}searchbarIcon/isBookmarkIcon.png`,
+      text: 'ที่บันทึกไว้'
+    }
+  ]

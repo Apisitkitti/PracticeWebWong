@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './header.css'
-import { itemInsideCard, informationInsideCard } from './headerData';
+import { itemInsideCard, informationInsideCard, shopCategoryForSearchs } from './headerData';
 
 const DropdownCard = () => {
   return (
@@ -19,9 +19,22 @@ const DropdownCard = () => {
     </div>
   )
 }
+const ShopCategoryDropdown = () => {
+  return (
+    <div className='dropdownInformationControl searchbarDrop'>
+      {shopCategoryForSearchs.map((iconItem: itemInsideCard, index: number) =>
+        <div className='itemInDropdownContainer searchbarAdjustContainer'>
+          <img className='dropdownIcon searchbaradjustIcon ' src={iconItem.icon} alt={iconItem.text} />
+          <p className='normalText boldText'>{iconItem.text}</p>
+        </div>)
+      }
+    </div>
+  )
+}
 const Header = () => {
   const [placeHolder, setPlaceHolder] = useState<string>('กรุงเทพและ...');
   const [dropdownIsToggle, dropdropIsToggleControl] = useState<boolean>(false);
+  const [searchbarIsToogle, IsSearchbarTogle] = useState<boolean>(false);
   return (
     <div className="header-container " id='header'>
       <img src="../img/wongnai-logo-header.png" alt="wongnai logo" className='wongnai-logo' />
@@ -31,7 +44,7 @@ const Header = () => {
           <input type="text" className="location input-container" placeholder={placeHolder} onFocus={() => setPlaceHolder('พิมพ์สถานที่')} onBlur={() => setPlaceHolder('กรุงเทพและ...')} />
           <img src="../img/dropdown.png" alt="dropdown pic" className='icon dropdown-icon' />
         </div>
-        <div className="restaurant-search-container">
+        <div className="restaurant-search-container " onClick={() => { dropdropIsToggleControl(false); IsSearchbarTogle(!searchbarIsToogle) }}>
           <input type="text" className="restaurant input-container" placeholder="ร้านอาหาร โรงแรม ที่เที่ยวร้านเสริมสว..." />
         </div>
         <button className="search-button">
@@ -43,11 +56,16 @@ const Header = () => {
           <img src="../img/peopleIcon.png" alt="people icon" className='icon' />
           เข้าสู่ระบบ
         </button>
-        <button className='dropdown-button user-button' onClick={() => dropdropIsToggleControl(!dropdownIsToggle)}>{dropdownIsToggle ? <img src="../img/dropdownSmall.png" alt="dropdown png" className='icon translateIcon' /> : <img src="../img/dropdownSmall.png" alt="dropdown png" className='icon' />}</button>
+        <button className='dropdown-button user-button' onClick={() => { dropdropIsToggleControl(!dropdownIsToggle); IsSearchbarTogle(false) }}>{dropdownIsToggle ? <img src="../img/dropdownSmall.png" alt="dropdown png" className='icon translateIcon' /> : <img src="../img/dropdownSmall.png" alt="dropdown png" className='icon' />}</button>
       </div>
-      {dropdownIsToggle &&
-        <DropdownCard />}
-    </div>
+      {searchbarIsToogle &&
+        <ShopCategoryDropdown />}
+      {
+        dropdownIsToggle &&
+        <DropdownCard />
+      }
+
+    </div >
   );
 }
 
