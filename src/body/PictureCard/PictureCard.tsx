@@ -1,5 +1,5 @@
 import { FoodForShow } from "./pictureCardData"
-import { useState, useRef } from "react";
+import { useState } from "react";
 import './pictureCard.css'
 import { pictureAndInformation, PictureType } from './pictureCardData';
 
