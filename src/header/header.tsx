@@ -5,7 +5,14 @@ import { itemInsideCard, informationInsideCard, shopCategoryForSearchs } from '.
 const locationDropdownCard = () => {
   return (
     <div className='dropdownInformationControl'>
-
+      <div>
+        <div></div>
+        <div></div>
+      </div>
+      <div>
+        <div>
+        </div>
+      </div>
     </div>
   )
 }
