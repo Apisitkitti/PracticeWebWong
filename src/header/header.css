@@ -144,7 +144,7 @@
 .dropdownInformationControl {
   position: absolute;
   top: 70px;
-  right: 20%;
+  right: 18%;
   background-color: var(--colorWhite);
   border: 1px solid var(--colorGrey);
   width: 360px;

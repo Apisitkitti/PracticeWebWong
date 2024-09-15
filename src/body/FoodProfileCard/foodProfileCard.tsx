@@ -14,10 +14,10 @@ const CardComponent = ({ restuarantData }: FoodCardDataShow) => {
         {imageForShow(restuarantData.foodImg).map((foodImgItem: string, index: number) =>
           <div key={index} className="imageBorder">
             <img id="foodImg" src={foodImgItem} alt={restuarantData.name + restuarantData.caption} />
-            {index + 1 >= imageForShow(restuarantData.foodImg).length ?
+            {index + 1 >= imageForShow(restuarantData.foodImg).length &&
               <span>
                 +{calculatePictureLeftNumber(restuarantData.foodImg, imageForShow(restuarantData.foodImg))}
-              </span> : null}
+              </span>}
           </div>
         )}
 
