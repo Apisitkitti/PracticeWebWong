@@ -6,31 +6,33 @@ import { pictureAndInformation, PictureType } from './pictureCardData';
 function PictureCard({ pictureAndInformation }: FoodForShow) {
   const [isbuttonAppear, setButtonIsAppear] = useState<boolean>(false)
   const [pageNumber, setPageCount] = useState<number>(0)
-  const picturePerPage: number = 5;
-  const showImageSlider = pictureAndInformation.slice(pageNumber, pageNumber + picturePerPage)
-
+  const [numberOfSlide, slideSetter] = useState<number>(0)
+  const maxSlide: number = 2;
+  const indexSlide: number = 0;
+  const [numberForChangeSlide, changeSlideNumber] = useState<number>(0)
+  const movementSlideNumber: number = 498;
   return (
     <div className="picture-container bodySection " onMouseEnter={() => setButtonIsAppear(true)} onMouseLeave={() => setButtonIsAppear(false)}>
       <div className="slideContainer">
-        {showImageSlider.map((pictureWithCaption: PictureType, index: number) =>
-          <div key={index} className="imageAndCaptionBlock" >
+        {pictureAndInformation.map((pictureWithCaption: PictureType, index: number) =>
+          <div key={index} className="imageAndCaptionBlock" style={{ transform: `translateX(${pageNumber}%)` }} >
             <p id="pictureCaption">{pictureWithCaption.caption}</p>
             <img id="imageInside" src={pictureWithCaption.picture} alt={pictureWithCaption.caption} />
             <div id="shadow"></div>
           </div>
         )}
-        {pageNumber < pictureAndInformation.length - showImageSlider.length && isbuttonAppear &&
-          <button id="sliderButton">
-            <img id="imageButtonImage" src="../../img/dropdownSmall.png" alt="sliderButton" onClick={() => setPageCount(pageNumber + picturePerPage)} />
+        {numberForChangeSlide < maxSlide && isbuttonAppear &&
+          <button id="sliderButton" onClick={() => { setPageCount(((numberOfSlide + 1) * (-movementSlideNumber)) - (2 * numberOfSlide)); slideSetter(numberOfSlide + 1); changeSlideNumber(numberForChangeSlide + 1) }}>
+            <img id="imageButtonImage" src="../../img/dropdownSmall.png" alt="sliderButton" />
           </button>
         }
-        {pageNumber > 0 && isbuttonAppear &&
-          <button id="sliderButtonLeft">
-            <img id="imageButtonImage" src="../../img/dropdownSmall.png" alt="sliderButton" onClick={() => setPageCount(pageNumber - picturePerPage)} />
+        {numberForChangeSlide !== indexSlide && isbuttonAppear &&
+          <button id="sliderButtonLeft" onClick={() => { changeSlideNumber(numberForChangeSlide - 1); setPageCount(((numberOfSlide - numberForChangeSlide - (numberForChangeSlide - 1)) * movementSlideNumber) + (2 * numberOfSlide)); slideSetter(numberOfSlide - 1) }} >
+            <img id="imageButtonImage" src="../../img/dropdownSmall.png" alt="sliderButton" />
           </button>
         }
       </div>
-    </div>
+    </div >
 
   )
 }

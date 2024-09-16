@@ -12,13 +12,14 @@
 }
 
 .slideContainer {
-  transition: all 0.5s;
+
   display: flex;
   overflow-x: hidden;
   width: 916px;
 }
 
 .imageAndCaptionBlock {
+  transition: all 1s;
   position: relative;
   padding: 0 2px;
 }
