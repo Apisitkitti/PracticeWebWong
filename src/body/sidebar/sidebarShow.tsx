@@ -32,18 +32,16 @@ function DistanceShowUp({ distance }: data.DistancePropShowType) {
   const [placeHolderText, placeHolderControl] = useState('500 ม.')
   const [isOnButton, buttonAppearControl] = useState<boolean>(false);
   const handleChangeFollowOption = (event: React.MouseEvent<HTMLButtonElement>) => {
-    let value: string = event.currentTarget.value;
+    const value: string = event.currentTarget.value;
     placeHolderControl(value);
     buttonAppearControl(!isOnButton);
   }
-  const handleButtonAppear = () => {
-    buttonAppearControl(!isOnButton);
-  }
+
   return (
     <div className="distanceNum container">
       <p>ค้นหาตามระยะห่างจาก</p>
       <div className="placeblock textbox"><input type="text" placeholder="เช่น วัดพระแก้ว" /></div>
-      <div className="distanceblock textbox" onClick={handleButtonAppear}>
+      <div className="distanceblock textbox" onClick={() => buttonAppearControl(!isOnButton)}>
         <input type="text" placeholder={placeHolderText} />
         <button id="dropdownIcon" >
           <img src="../img/dropdownSmall.png" alt="icon" className="icon" />
