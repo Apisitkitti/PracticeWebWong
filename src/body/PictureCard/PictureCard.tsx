@@ -10,7 +10,7 @@ function PictureCard({ pictureAndInformation }: FoodForShow) {
   const maxSlide: number = 2;
   const indexSlide: number = 0;
   const [numberForChangeSlide, changeSlideNumber] = useState<number>(0)
-  const movementSlideNumber: number = 498;
+  const movementSlideNumber: number = 500;
   return (
     <div className="picture-container bodySection " onMouseEnter={() => setButtonIsAppear(true)} onMouseLeave={() => setButtonIsAppear(false)}>
       <div className="slideContainer">
@@ -22,12 +22,12 @@ function PictureCard({ pictureAndInformation }: FoodForShow) {
           </div>
         )}
         {numberForChangeSlide < maxSlide && isbuttonAppear &&
-          <button id="sliderButton" onClick={() => { setPageCount(((numberOfSlide + 1) * (-movementSlideNumber)) - (2 * numberOfSlide)); slideSetter(numberOfSlide + 1); changeSlideNumber(numberForChangeSlide + 1) }}>
+          <button id="sliderButton" onClick={() => { setPageCount(((numberOfSlide + 1) * (-movementSlideNumber))); slideSetter(numberOfSlide + 1); changeSlideNumber(numberForChangeSlide + 1) }}>
             <img id="imageButtonImage" src="../../img/dropdownSmall.png" alt="sliderButton" />
           </button>
         }
         {numberForChangeSlide !== indexSlide && isbuttonAppear &&
-          <button id="sliderButtonLeft" onClick={() => { changeSlideNumber(numberForChangeSlide - 1); setPageCount(((numberOfSlide - numberForChangeSlide - (numberForChangeSlide - 1)) * movementSlideNumber) + (2 * numberOfSlide)); slideSetter(numberOfSlide - 1) }} >
+          <button id="sliderButtonLeft" onClick={() => { changeSlideNumber(numberForChangeSlide - 1); setPageCount(((numberOfSlide - numberForChangeSlide - (numberForChangeSlide - 1)) * movementSlideNumber)); slideSetter(numberOfSlide - 1) }} >
             <img id="imageButtonImage" src="../../img/dropdownSmall.png" alt="sliderButton" />
           </button>
         }
