@@ -2,7 +2,35 @@ export interface itemInsideCard {
   icon: string,
   text: string
 }
+export interface imageSliderDate {
+  image: string,
+  textIndsideImg: string;
+}
+
+interface dropdownProvince {
+  imageSlide: imageSliderDate[],
+  provinceNearby: string[];
+}
 const urlToImg = '../../img/'
+export const dropDownSearchBarInformation: dropdownProvince =
+{
+  imageSlide:
+    [
+      { image: `${urlToImg}province/bangkok.jpg`, textIndsideImg: 'กรุงเทพและมหานคร' },
+      { image: `${urlToImg}province/chonburi.jpg`, textIndsideImg: 'ชลบุรี' },
+      { image: `${urlToImg}province/chiangmai.jpg`, textIndsideImg: 'เชียงใหม่' },
+      { image: `${urlToImg}province/rayong.jpg`, textIndsideImg: 'ระยอง' },
+      { image: `${urlToImg}province/nakorn.jpg`, textIndsideImg: 'นครราชสีมา' },
+      { image: `${urlToImg}province/pranakorn.jpg`, textIndsideImg: 'พระนครศรีอยุธยา' },
+      { image: `${urlToImg}province/puket.jpg`, textIndsideImg: 'ภูเก็ต' },
+      { image: `${urlToImg}province/songkla.jpg`, textIndsideImg: 'สงขลา' }
+    ],
+  provinceNearby: ['กรุงเทพและปริมณฑล']
+}
+
+
+
+
 export const informationInsideCard: itemInsideCard[] =
   [
     {

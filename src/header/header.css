@@ -224,3 +224,28 @@
   width: 20px;
   height: 23px;
 }
+
+.headerDropdown {
+  display: flex;
+  justify-content: space-around;
+}
+
+.imageSlideGroup {
+  display: flex;
+  overflow-x: hidden;
+}
+
+.slideFrame {
+  position: relative;
+}
+
+.imageTagText {
+  position: absolute;
+  top: 0;
+  left: 5px;
+}
+
+.imageInsideProvinceSlide {
+  width: 115px;
+  height: 150px;
+}
