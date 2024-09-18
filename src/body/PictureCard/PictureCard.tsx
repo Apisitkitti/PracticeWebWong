@@ -7,7 +7,7 @@ function PictureCard({ pictureAndInformation }: FoodForShow) {
   const [isbuttonAppear, setButtonIsAppear] = useState<boolean>(false)
   const [pageNumber, setPageCount] = useState<number>(0)
   const [numberOfSlide, slideSetter] = useState<number>(0)
-  const maxSlide: number = 2;
+  const maxSlide: number = (pictureAndInformation.length / 5) - 1;
   const indexSlide: number = 0;
   const [numberForChangeSlide, changeSlideNumber] = useState<number>(0)
   const movementSlideNumber: number = 500;
