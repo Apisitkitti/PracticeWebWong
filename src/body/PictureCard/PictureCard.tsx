@@ -16,7 +16,7 @@ function PictureCard({ pictureAndInformation }: FoodForShow) {
       <div className="slideContainer">
         {pictureAndInformation.map((pictureWithCaption: PictureType, index: number) =>
           <div key={index} className="imageAndCaptionBlock" style={{ transform: `translateX(${pageNumber}%)` }} >
-            <p id="pictureCaption">{pictureWithCaption.caption}</p>
+            <p className="pictureCaption boldWhiteText">{pictureWithCaption.caption}</p>
             <img id="imageInside" src={pictureWithCaption.picture} alt={pictureWithCaption.caption} />
             <div id="shadow"></div>
           </div>

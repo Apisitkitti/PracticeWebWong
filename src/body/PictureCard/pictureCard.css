@@ -37,10 +37,8 @@
 }
 
 
-#pictureCaption {
+.pictureCaption {
   font-size: 18px;
-  font-weight: bold;
-  color: white;
   position: absolute;
   top: 5px;
   padding: 5px 10px 10px 10px;

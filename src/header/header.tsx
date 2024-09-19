@@ -1,27 +1,34 @@
 import { useState } from 'react';
 import './header.css'
 import { itemInsideCard, informationInsideCard, shopCategoryForSearchs, dropDownSearchBarInformation } from './headerData';
-
 const LocationDropdownCard = () => {
   return (
     <div className='dropdownInformationControl'>
       <div className='headerDropdown'>
-        <div>ประเทศไทย</div>
-        <div>ต่างประเทศ</div>
+        <p>ประเทศไทย</p>
+        <p>ต่างประเทศ</p>
       </div>
-      <div>
+      <div className='drowdownSlideTopdown'>
         <p>ปลายทางยอดนิยม</p>
         <div className='imageSlideGroup'>
           {dropDownSearchBarInformation.imageSlide.map((item, index) =>
             <a className='slideFrame' href='###' key={index}>
               <img className='imageInsideProvinceSlide' src={item.image} alt={item.textIndsideImg} />
-              <p className='imageTagText boldText'>{item.textIndsideImg}</p>
+              <p className='imageTagText'>{item.textIndsideImg}</p>
             </a>
-
           )}
         </div>
-      </div>
-      <div>
+        <div className='buttonInDropdownProvince'>
+          <img className='dropdownIcon' src="../../img/location.png" alt="locationIcon" />
+          <p className='boldText'>ใกล้ฉัน</p>
+        </div>
+        {dropDownSearchBarInformation.provinceNearby.map((item, index) =>
+          <div key={index} className='buttonInDropdownProvince'>
+            <p className='blackText'>{item}</p>
+          </div>
+        )}
+
+
       </div>
     </div>
   )

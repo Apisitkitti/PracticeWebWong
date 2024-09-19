@@ -52,28 +52,7 @@ body {
   color: black;
 }
 
-/* @media only screen and (max-width:1200px) {
-  .wongnai-logo {
-    width: 80px;
-    height: 30px;
-    position: sticky;
-    left: 10px;
-  }
-
-  #header {
-    width: 100%;
-    height: fit-content;
-    padding: 10px 5px;
-    justify-content: space-between;
-  }
-
-  .header-center-container:is(button, div) {
-    display: none;
-    position: absolute;
-
-  }
-
-  .head-right-container .icon {
-    width: 100%;
-  }
-} */
+.boldWhiteText {
+  color: var(--colorWhite);
+  font-weight: bold;
+}
