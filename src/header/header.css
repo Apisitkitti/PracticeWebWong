@@ -203,6 +203,8 @@
   }
 }
 
+
+
 .searchbarDrop {
   top: 65px;
   right: 40.8%;
@@ -224,9 +226,17 @@
   height: 23px;
 }
 
+
+.provinceControlBar {
+  height: 600px;
+}
+
 .headerDropdown {
   display: flex;
   justify-content: space-around;
+  background-color: var(--colorWhite);
+  border-bottom: 1px solid var(--colorGrey);
+  padding: 10px;
 }
 
 .imageSlideGroup {
@@ -250,7 +260,12 @@
 }
 
 .dropdownSlideTopdown {
+  height: 92%;
   overflow-y: scroll;
+}
+
+.slideTopdownText {
+  font-size: 18px;
 }
 
 .imageInsideProvinceSlide {

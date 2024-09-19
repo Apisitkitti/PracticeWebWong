@@ -3,12 +3,12 @@ import './header.css'
 import { itemInsideCard, informationInsideCard, shopCategoryForSearchs, dropDownSearchBarInformation } from './headerData';
 const LocationDropdownCard = () => {
   return (
-    <div className='dropdownInformationControl'>
+    <div className='dropdownInformationControl provinceControlBar'>
       <div className='headerDropdown'>
         <p>ประเทศไทย</p>
         <p>ต่างประเทศ</p>
       </div>
-      <div className='drowdownSlideTopdown'>
+      <div className='dropdownSlideTopdown'>
         <p>ปลายทางยอดนิยม</p>
         <div className='imageSlideGroup'>
           {dropDownSearchBarInformation.imageSlide.map((item, index) =>
@@ -18,17 +18,17 @@ const LocationDropdownCard = () => {
             </a>
           )}
         </div>
-        <div className='buttonInDropdownProvince'>
-          <img className='dropdownIcon' src="../../img/location.png" alt="locationIcon" />
-          <p className='boldText'>ใกล้ฉัน</p>
-        </div>
-        {dropDownSearchBarInformation.provinceNearby.map((item, index) =>
-          <div key={index} className='buttonInDropdownProvince'>
-            <p className='blackText'>{item}</p>
+        <div className='slideTopdownText'>
+          <div className='buttonInDropdownProvince'>
+            <img className='dropdownIcon' src="../../img/location.png" alt="locationIcon" />
+            <p className='boldText'>ใกล้ฉัน</p>
           </div>
-        )}
-
-
+          {dropDownSearchBarInformation.provinceNearby.map((item, index) =>
+            <div key={index} className='buttonInDropdownProvince'>
+              <p className='blackText'>{item}</p>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   )
