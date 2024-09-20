@@ -8,13 +8,14 @@ export interface imageSliderDate {
 }
 
 interface dropdownProvince {
-  imageSlide: imageSliderDate[],
+  imageSlideProvince: imageSliderDate[],
+  imageSlideCountry: imageSliderDate[],
   provinceNearby: string[];
 }
 const urlToImg = '../../img/'
 export const dropDownSearchBarInformation: dropdownProvince =
 {
-  imageSlide:
+  imageSlideProvince:
     [
       { image: `${urlToImg}province/bangkok.jpg`, textIndsideImg: 'กรุงเทพและมหานคร' },
       { image: `${urlToImg}province/chonburi.jpg`, textIndsideImg: 'ชลบุรี' },
@@ -25,6 +26,9 @@ export const dropDownSearchBarInformation: dropdownProvince =
       { image: `${urlToImg}province/puket.jpg`, textIndsideImg: 'ภูเก็ต' },
       { image: `${urlToImg}province/songkla.jpg`, textIndsideImg: 'สงขลา' }
     ],
+  imageSlideCountry: [
+    { image: `${urlToImg}country/singapore.jpg`, textIndsideImg: 'Singapore' }
+  ],
   provinceNearby: [
     'กรุงเทพและปริมณฑล', 'กาญจนบุรี', 'กาฬสินธุ์', 'กำแพงเพชร',
     'จันทบุรี', 'ฉะเชิงเทรา', 'ฉะเชิงเทรา', 'ชะอำ', 'ชัยนาท', 'ชัยภูมิ',

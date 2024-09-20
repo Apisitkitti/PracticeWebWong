@@ -2,16 +2,29 @@ import { useState } from 'react';
 import './header.css'
 import { itemInsideCard, informationInsideCard, shopCategoryForSearchs, dropDownSearchBarInformation } from './headerData';
 const LocationDropdownCard = () => {
+  const [isThailandButtonClick, isThailandButtonSet] = useState<boolean>(true);
+  const [isForeignButtonClick, isForeignButtonSet] = useState<boolean>(false);
   return (
     <div className='dropdownInformationControl provinceControlBar'>
+      <img className='adjustMoreforDropdown' src='../../img/imageForDeco.png' alt='imageFoe add some gimic' />
       <div className='headerDropdown'>
-        <p>ประเทศไทย</p>
-        <p>ต่างประเทศ</p>
+        {isThailandButtonClick
+          ? <button className='dropdownButton dropdownButtonHighLight' onClick={() => { isThailandButtonSet(true); isForeignButtonSet(false) }}>ประเทศไทย</button>
+          : <button className='dropdownButton' onClick={() => { isThailandButtonSet(true); isForeignButtonSet(false) }}>ประเทศไทย</button>}
+        {isForeignButtonClick
+          ? <button className='dropdownButton dropdownButtonHighLight' onClick={() => { isThailandButtonSet(false); isForeignButtonSet(true) }}>ต่างประเทศ</button>
+          : <button className='dropdownButton' onClick={() => { isThailandButtonSet(false); isForeignButtonSet(true) }}>ต่างประเทศ</button>}
       </div>
       <div className='dropdownSlideTopdown'>
-        <p>ปลายทางยอดนิยม</p>
-        <div className='imageSlideGroup'>
-          {dropDownSearchBarInformation.imageSlide.map((item, index) =>
+        <p className='tabContent'>ปลายทางยอดนิยม</p>
+        <div className='imageSlideGroup tabContent'>
+          {isThailandButtonClick && dropDownSearchBarInformation.imageSlideProvince.map((item, index) =>
+            <a className='slideFrame' href='###' key={index}>
+              <img className='imageInsideProvinceSlide' src={item.image} alt={item.textIndsideImg} />
+              <p className='imageTagText'>{item.textIndsideImg}</p>
+            </a>
+          )}
+          {isForeignButtonClick && dropDownSearchBarInformation.imageSlideCountry.map((item, index) =>
             <a className='slideFrame' href='###' key={index}>
               <img className='imageInsideProvinceSlide' src={item.image} alt={item.textIndsideImg} />
               <p className='imageTagText'>{item.textIndsideImg}</p>
@@ -20,12 +33,12 @@ const LocationDropdownCard = () => {
         </div>
         <div className='slideTopdownText'>
           <div className='buttonInDropdownProvince'>
-            <img className='dropdownIcon' src="../../img/location.png" alt="locationIcon" />
+            <img className='dropdownIcon provinceIcon' src="../../img/location.png" alt="locationIcon" />
             <p className='boldText'>ใกล้ฉัน</p>
           </div>
-          {dropDownSearchBarInformation.provinceNearby.map((item, index) =>
+          {isThailandButtonClick && dropDownSearchBarInformation.provinceNearby.map((item, index) =>
             <div key={index} className='buttonInDropdownProvince'>
-              <p className='blackText'>{item}</p>
+              <p className='blackText' >{item}</p>
             </div>
           )}
         </div>
