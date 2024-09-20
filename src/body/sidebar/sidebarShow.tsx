@@ -70,7 +70,7 @@ function ProvinceShowUp({ province }: { province: string[] }) {
           <label htmlFor="provinceCheck" className="sidebarItem text">{provinceItem}</label>
         </div>
       )}
-      <a href="##">ดูเพิ่มเติม ({leftProvince} ย่าน)</a>
+      <a className="moreItem" href="##">ดูเพิ่มเติม ({leftProvince} ย่าน)</a>
       <hr id="endLine" />
     </div>
   );
@@ -87,7 +87,7 @@ function FoodShowUp({ food }: { food: string[] }) {
           <label htmlFor="foodCheck" className="sidebarItem text">{foodItem}</label>
         </div>
       )}
-      <a href="###">ดูเพิ่มเติม ({leftfood} ประเภท)</a>
+      <a className='moreItem' href="###">ดูเพิ่มเติม ({leftfood} ประเภท)</a>
       <hr id="endLine" />
     </div>
   );
@@ -131,7 +131,7 @@ function DealShowUp({ deal }: { deal: string[] }) {
           <label htmlFor="dealCheck" className="sidebarItem text">{dealItem}</label>
         </div>
       )}
-      <a href="##">ดูเพิ่มเติม</a>
+      <a className='moreItem' href="##">ดูเพิ่มเติม</a>
     </div>
   );
 }

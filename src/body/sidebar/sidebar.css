@@ -127,3 +127,10 @@
   justify-content: center;
   padding-right: 5px;
 }
+
+.moreItem {
+  text-decoration: none;
+  color: #2DA8ED;
+  font-weight: bold;
+  font-size: 18px;
+}
