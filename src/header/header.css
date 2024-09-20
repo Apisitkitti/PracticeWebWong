@@ -309,6 +309,7 @@
   padding: 0 0px 10px 0px;
   width: 100%;
   border-bottom: 1px solid var(--colorGrey);
+  cursor: pointer;
 }
 
 .dropdownButtonHighLight {
