@@ -210,7 +210,6 @@
   right: 616px;
   width: 250px;
   font-size: var(--fontSize);
-  font-stretch: expanded;
 
   & .itemInDropdownContainer:hover {
     text-decoration: none;
@@ -230,6 +229,7 @@
   height: 500px;
   left: 465px;
   border: 1px solid #DDE0E1;
+  width: 425px;
 }
 
 .headerDropdown {
@@ -251,13 +251,16 @@
   position: relative;
   padding: 0px 2px 0 0;
   margin-top: 5px;
+  transition: all 0.5s;
+
 }
 
 .imageTagText {
   position: absolute;
   color: white;
   top: 0px;
-  width: 95px;
+  font-size: 18px;
+  width: 110px;
   padding: 5px 0px 20px 5px;
   border-radius: 5px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) 80%);
@@ -270,12 +273,12 @@
 }
 
 .slideTopdownText {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .imageInsideProvinceSlide {
-  width: 95px;
-  height: 120px;
+  width: 110px;
+  height: 150px;
   border-radius: 5px;
 }
 
@@ -301,7 +304,7 @@
 .dropdownButton {
   border: none;
   background-color: var(--colorWhite);
-  font-size: 18px;
+  font-size: 20px;
   color: #939596;
   padding: 0 0px 10px 0px;
   width: 100%;
@@ -316,6 +319,7 @@
 
 .tabContent {
   margin-left: 10px;
+  font-size: 20px;
 }
 
 .adjustMoreforDropdown {
@@ -323,4 +327,33 @@
   width: 20px;
   top: -9px;
   left: 20px;
+}
+
+.sliderButton,
+.sliderButtonLeft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-90deg);
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid rgb(137, 137, 137);
+  background-color: rgb(62, 62, 62);
+  opacity: 70%;
+  top: 140px;
+  right: 10px;
+  z-index: 3;
+}
+
+.sliderButtonLeft {
+  left: 0px;
+  transform: rotate(90deg);
+}
+
+.imageButtonImage {
+  width: 20px;
+  height: 20px;
+  filter: invert(100%);
 }

@@ -4,6 +4,13 @@ import { itemInsideCard, informationInsideCard, shopCategoryForSearchs, dropDown
 const LocationDropdownCard = () => {
   const [isThailandButtonClick, isThailandButtonSet] = useState<boolean>(true);
   const [isForeignButtonClick, isForeignButtonSet] = useState<boolean>(false);
+  const [isbuttonAppear, setButtonIsAppear] = useState<boolean>(false)
+  const [pageNumber, setPageCount] = useState<number>(0)
+  const [numberOfSlide, slideSetter] = useState<number>(0)
+  const maxSlide: number = (dropDownSearchBarInformation.imageSlideProvince.length / 4) - 1;
+  const indexSlide: number = 0;
+  const [numberForChangeSlide, changeSlideNumber] = useState<number>(0)
+  const movementSlideNumber: number = 400;
   return (
     <div className='dropdownInformationControl provinceControlBar'>
       <img className='adjustMoreforDropdown' src='../../img/imageForDeco.png' alt='imageFoe add some gimic' />
@@ -17,15 +24,25 @@ const LocationDropdownCard = () => {
       </div>
       <div className='dropdownSlideTopdown'>
         <p className='tabContent'>ปลายทางยอดนิยม</p>
-        <div className='imageSlideGroup tabContent'>
-          {isThailandButtonClick && dropDownSearchBarInformation.imageSlideProvince.map((item, index) =>
+        <div className='imageSlideGroup tabContent' onMouseEnter={() => setButtonIsAppear(true)} onMouseLeave={() => setButtonIsAppear(false)}>
+          {isThailandButtonClick && numberForChangeSlide < maxSlide && isbuttonAppear &&
+            <button className="sliderButton" onClick={() => { setPageCount(((numberOfSlide + 1) * (-movementSlideNumber))); slideSetter(numberOfSlide + 1); changeSlideNumber(numberForChangeSlide + 1) }}>
+              <img className="imageButtonImage" src="../../img/dropdownSmall.png" alt="sliderButton" />
+            </button>
+          }
+          {isForeignButtonClick && dropDownSearchBarInformation.imageSlideCountry.map((item, index) =>
             <a className='slideFrame' href='###' key={index}>
               <img className='imageInsideProvinceSlide' src={item.image} alt={item.textIndsideImg} />
               <p className='imageTagText'>{item.textIndsideImg}</p>
             </a>
           )}
-          {isForeignButtonClick && dropDownSearchBarInformation.imageSlideCountry.map((item, index) =>
-            <a className='slideFrame' href='###' key={index}>
+          {isThailandButtonClick && numberForChangeSlide !== indexSlide && isbuttonAppear &&
+            <button className="sliderButtonLeft" onClick={() => { changeSlideNumber(numberForChangeSlide - 1); setPageCount(((numberOfSlide - numberForChangeSlide - (numberForChangeSlide - 1)) * movementSlideNumber)); slideSetter(numberOfSlide - 1) }} >
+              <img className="imageButtonImage" src="../../img/dropdownSmall.png" alt="sliderButton" />
+            </button>
+          }
+          {isThailandButtonClick && dropDownSearchBarInformation.imageSlideProvince.map((item, index) =>
+            <a className='slideFrame' href='###' key={index} style={{ transform: `translateX(${pageNumber}%)` }}>
               <img className='imageInsideProvinceSlide' src={item.image} alt={item.textIndsideImg} />
               <p className='imageTagText'>{item.textIndsideImg}</p>
             </a>

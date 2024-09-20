@@ -46,6 +46,7 @@ export const dropDownSearchBarInformation: dropdownProvince =
 
 
 
+
 export const informationInsideCard: itemInsideCard[] =
   [
     {
