@@ -44,11 +44,11 @@
   top: 0;
 }
 
-.textbox:not(:first-child) {
+.textbox {
   padding-top: 10px;
 }
 
-.textbox input {
+:is(.textbox, .textboxPlace) input {
   outline: none;
   border: none;
   font-size: 18px;
@@ -59,26 +59,35 @@
   opacity: 100%;
 }
 
-.textbox {
+
+
+.textbox,
+.textboxPlace {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #c8ccce;
   margin-top: 10px;
   color: black;
 
-  &:hover {
-    border-color: #2DA8ED
-  }
-
-  &:active {
-    border: 2px solid#2DA8ED;
-  }
-
   & .icon {
     width: 15px;
     margin-left: 10px;
     opacity: 20%;
   }
+}
+
+.textbox:hover {
+  border-color: #2DA8ED
+}
+
+.textbox:active {
+  outline: 2px solid #2DA8ED;
+}
+
+.textboxPlace:active {
+  outline: 2px solid #8CD1F6;
+  border: 1px solid #35b5ff;
+
 }
 
 .button-group {
@@ -95,6 +104,7 @@
 #destination-button {
   display: flex;
   width: inherit;
+  height: max-content;
   padding: 4px 10px;
   font-size: 18px;
   border: none;

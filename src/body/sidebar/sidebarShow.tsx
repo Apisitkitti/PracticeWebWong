@@ -40,7 +40,7 @@ function DistanceShowUp({ distance }: data.DistancePropShowType) {
   return (
     <div className="distanceNum container">
       <p>ค้นหาตามระยะห่างจาก</p>
-      <div className="placeblock textbox"><input type="text" placeholder="เช่น วัดพระแก้ว" /></div>
+      <div className="placeblock textboxPlace  "><input type="text" placeholder="เช่น วัดพระแก้ว" /></div>
       <div className="distanceblock textbox" onClick={() => buttonAppearControl(!isOnButton)}>
         <input type="text" placeholder={placeHolderText} />
         <button id="dropdownIcon" >
