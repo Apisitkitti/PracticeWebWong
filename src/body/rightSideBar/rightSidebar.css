@@ -1,9 +1,7 @@
 .rightSidebarGroup {
-  grid-column: 3;
-  position: absolute;
-  margin-left: 620px;
   font-size: 18px;
   height: max-content;
+  margin-left: 20px;
 }
 
 .contentContainer {

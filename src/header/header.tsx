@@ -106,7 +106,7 @@ const Header = () => {
           dropdropIsToggleControl(false);
           isSearchbarTogle(false);
           isLocationToggle(false)
-          isPlaceToggle(!locationIsToggle)
+          isPlaceToggle(true)
         }}>
           <img src="../img/location.png" alt="location logo" className='icon location-icon' />
           <input type="text" className="location input-container" placeholder={placeHolder} onFocus={() => setPlaceHolder('พิมพ์สถานที่')} onBlur={() => setPlaceHolder('กรุงเทพและ...')} />
@@ -114,7 +114,7 @@ const Header = () => {
         </div>
         <div className="restaurant-search-container " onClick={() => {
           dropdropIsToggleControl(false);
-          isSearchbarTogle(!searchbarIsToogle);
+          isSearchbarTogle(true);
           isLocationToggle(false);
           isPlaceToggle(false)
         }}>

@@ -9,13 +9,17 @@ const Body = () => {
   return (
     <div className="body-container" id='body'>
       <HeadLiner />
-      <Sidebar />
-      <main>
-        <CardComponent />
-        <RightSideBar />
-        <FoodCardComponent />
-      </main>
+      <main className='mainContent'>
+        <Sidebar />
+        <div className='contentWrapper'>
+          <CardComponent />
+          <div className='secondContentWrapper'>
+            <FoodCardComponent />
+            <RightSideBar />
+          </div>
+        </div>
 
+      </main>
     </div>
   );
 }

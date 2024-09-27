@@ -52,10 +52,10 @@ const CardComponent = ({ restuarantData }: FoodCardDataShow) => {
 }
 const FoodCardComponent = () => {
   return (
-    <>
+    <div className="foodListCard">
       {restuarantData.map((restuarantData: RestuarantCardType) =>
         <CardComponent restuarantData={restuarantData} />)}
-    </>
+    </div>
   )
 }
 export default FoodCardComponent

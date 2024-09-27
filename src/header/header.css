@@ -1,6 +1,6 @@
 .header-container {
   width: 100vw;
-  height: 80px;
+  height: 79px;
   flex-direction: row;
   display: flex;
   align-items: center;
@@ -10,6 +10,8 @@
 }
 
 .wongnai-logo {
+  width: 118px;
+  height: 48px;
   margin-right: 40px;
 }
 

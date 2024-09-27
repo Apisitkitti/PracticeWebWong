@@ -1,12 +1,16 @@
 .body-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 2fr 1fr;
-  width: 100vw;
-  column-gap: 15px;
-  background-color: var(--colorGrey);
+  display: flex;
+  flex-direction: column;
+
 }
 
-.bodySection {
+.mainContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.body-container .bodySection {
   margin-top: 25px;
 }
 
@@ -54,6 +58,11 @@
 
 .underLineText:hover {
   text-decoration: underline;
+}
+
+.secondContentWrapper {
+  display: flex;
+  flex-direction: row;
 }
 
 #bookMarkIcon {

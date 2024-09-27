@@ -1,12 +1,10 @@
 .headLiner-container {
   height: 110px;
-  grid-column: 1 / span 5;
   background-color: white;
 }
 
 .headLiner-text-container {
-  margin: 20px 0 20px 180px;
-  grid-column: 3 / span 2;
+  margin: 20px 0 20px 175px;
 
   & a {
     color: #A9A6A9;
