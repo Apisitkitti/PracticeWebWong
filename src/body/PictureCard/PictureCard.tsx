@@ -2,7 +2,23 @@ import { FoodForShow } from "./pictureCardData"
 import { useState } from "react";
 import './pictureCard.css'
 import { pictureAndInformation, PictureType } from './pictureCardData';
+import { create } from "zustand";
 
+interface slideState {
+  slideNumber: number
+  slideCheck: number
+  pictureChange: number
+  nextSlide: () => void
+  prevSlide: () => void
+}
+const changeSlide = create<slideState>()((set) => (
+  {
+    slideNumber: 1,
+    slideCheck: 0,
+    pictureChange: 500,
+    nextSlide: () => set((state) => ({ slideNumber: state.slideNumber * -state.pictureChange })),
+    prevSlide: () => set((state) => ({ slideNumber: (state.slideNumber - 1) * state.pictureChange }))
+  }))
 function PictureCard({ pictureAndInformation }: FoodForShow) {
   const [isbuttonAppear, setButtonIsAppear] = useState<boolean>(false)
   const [pageNumber, setPageCount] = useState<number>(0)

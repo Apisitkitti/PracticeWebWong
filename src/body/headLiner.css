@@ -1,13 +1,18 @@
 .headLiner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 110px;
   background-color: white;
 }
 
 .headLiner-text-container {
-  margin: 20px 0 20px 175px;
+  margin-left: -790px;
 
-  & a {
+  & a,
+  .slash {
     color: #A9A6A9;
+    padding-right: 5px;
   }
 
   & a:hover {
