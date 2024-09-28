@@ -1,15 +1,20 @@
+.end {
+  border: 10px solid var(--colorWhite);
+  z-index: 2;
+  width: 100vw;
+}
+
 footer {
-  margin-top: 20px;
+  margin-top: -10px;
   background-color: var(--colorGrey);
   border-top: 2px solid #DEE2E4;
-  display: grid;
-  grid-template-columns: 270px 1fr 270px;
+  display: flex;
+  justify-content: center;
   width: 100vw;
 }
 
 .footerContent {
   margin-top: 20px;
-  grid-column: 2;
 }
 
 .informationContainer {

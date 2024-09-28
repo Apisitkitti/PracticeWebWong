@@ -6,6 +6,7 @@ const FooterContent = ({ appImg, footerInformation }: dataInsideFooter) => {
   const [isToggle, setIsToggle] = useState<boolean>(false);
   return (
     <footer>
+
       <div className="footerContent">
         <div className="logoContainer">
           <img className="wongnai-logo" src="../../img/wongnai-logo-header.png" alt="wongnaiLogo" />
@@ -57,6 +58,7 @@ const FooterContent = ({ appImg, footerInformation }: dataInsideFooter) => {
 const Footer = () => {
   return (
     <>
+      <hr className='end' />
       <FooterContent appImg={applicationImg} footerInformation={footerData} />
     </>
   )

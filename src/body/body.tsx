@@ -18,7 +18,6 @@ const Body = () => {
             <RightSideBar />
           </div>
         </div>
-
       </main>
     </div>
   );
