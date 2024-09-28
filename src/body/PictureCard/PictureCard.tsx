@@ -5,7 +5,8 @@ import { pictureAndInformation, PictureType } from './pictureCardData';
 import { create } from "zustand";
 
 interface slideState {
-  slideNumber: number
+  pictureToSlide: number
+  slidePercentive: number
   slidePage: number
   pictureChange: number
   nextSlide: () => void
@@ -13,32 +14,29 @@ interface slideState {
 }
 const useChangeSlide = create<slideState>()((set) => (
   {
-    slideNumber: 1,
+    pictureToSlide: 5,
+    slidePercentive: 100,
     slidePage: 1,
-    pictureChange: 500,
+    pictureChange: 0,
     nextSlide: () => set((state) => ({
-      slideNumber: state.slidePage * -state.pictureChange,
+      pictureChange: state.pictureChange - (state.pictureToSlide * state.slidePercentive),
       slidePage: state.slidePage + 1,
     })),
     prevSlide: () => set((state) => ({
-      slidePage: state.slidePage,
-      slideNumber: state.slidePage * state.pictureChange
+      pictureChange: state.pictureChange + (state.pictureToSlide * state.slidePercentive),
+      slidePage: state.slidePage - 1
     }))
   }))
 function PictureCard({ pictureAndInformation }: FoodForShow) {
   const [isbuttonAppear, setButtonIsAppear] = useState<boolean>(false)
-  // const [pageNumber, setPageCount] = useState<number>(0)
-  // const [numberOfSlide, slideSetter] = useState<number>(0)
-  const maxSlide: number = (pictureAndInformation.length / 5);
   const indexSlide: number = 1;
-  // const [numberForChangeSlide, changeSlideNumber] = useState<number>(0)
-  // const movementSlideNumber: number = 500;
-  const { slideNumber, slidePage, nextSlide, prevSlide } = useChangeSlide()
+  const { pictureChange, slidePage, nextSlide, prevSlide, pictureToSlide } = useChangeSlide()
+  const maxSlide: number = (pictureAndInformation.length / pictureToSlide);
   return (
     <div className="picture-container bodySection " onMouseEnter={() => setButtonIsAppear(true)} onMouseLeave={() => setButtonIsAppear(false)}>
       <div className="slideContainer">
         {pictureAndInformation.map((pictureWithCaption: PictureType, index: number) =>
-          <div key={index} className="imageAndCaptionBlock" style={{ transform: `translateX(${slideNumber}%)` }} >
+          <div key={index} className="imageAndCaptionBlock" style={{ transform: `translateX(${pictureChange}%)` }} >
             <p className="pictureCaption boldWhiteText">{pictureWithCaption.caption}</p>
             <img id="imageInside" src={pictureWithCaption.picture} alt={pictureWithCaption.caption} />
             <div id="shadow"></div>
