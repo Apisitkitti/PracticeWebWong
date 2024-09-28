@@ -18,6 +18,7 @@ const useSlideHeader = create<slideState>()((set) => ({
     slidePage: state.slidePage - 1
   }))
 }))
+
 const LocationDropdownCard = () => {
   const [isThailandButtonClick, isThailandButtonSet] = useState<boolean>(true);
   const [isForeignButtonClick, isForeignButtonSet] = useState<boolean>(false);

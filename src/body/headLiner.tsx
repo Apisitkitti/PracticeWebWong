@@ -10,7 +10,7 @@ function HeadLiner() {
         <a href='##'> ร้านอาหารและปริมณฑล </a>
         <span className='slash'>/</span>
         <span className='hl'> ค้นหาร้านอาหาร</span>
-        <p className="text-header hl">ร้านอาหารยอดนิยม ในกรุงเทพและปริมณฑล</p>
+        <p className="text-header hl">ร้านอาหาร ยอดนิยม ในกรุงเทพและปริมณฑล</p>
       </div>
     </div>
   );
