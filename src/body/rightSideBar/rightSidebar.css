@@ -8,7 +8,7 @@
   background-color: white;
   padding: 15px;
   border-radius: 5px;
-  width: 333px;
+  width: 302px;
   margin-bottom: 15px;
   font-size: 20px;
 }
@@ -22,7 +22,7 @@
   background: no-repeat url('../../../public/img/map.jpg');
   display: flex;
   height: 150px;
-  width: 305px;
+  width: 270px;
   align-items: center;
   justify-content: center;
 }

@@ -89,3 +89,5 @@ export const pictureAndInformation: PictureType[] =
       picture: '../../../img/newAndRecommended.jpg'
     }
   ]
+
+
