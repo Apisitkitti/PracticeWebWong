@@ -1,16 +1,32 @@
 import { useState } from 'react';
 import './header.css'
 import { itemInsideCard, informationInsideCard, shopCategoryForSearchs, dropDownSearchBarInformation } from './headerData';
+import { slideState } from '../typeSetter';
+import { create } from 'zustand';
+
+const useSlideHeader = create<slideState>()((set) => ({
+  pictureToSlide: 4,
+  slidePercentive: 100,
+  slidePage: 1,
+  pictureChange: 0,
+  nextSlide: () => set((state) => ({
+    pictureChange: state.pictureChange - (state.pictureToSlide * state.slidePercentive),
+    slidePage: state.slidePage + 1,
+  })),
+  prevSlide: () => set((state) => ({
+    pictureChange: state.pictureChange + (state.pictureToSlide * state.slidePercentive),
+    slidePage: state.slidePage - 1
+  }))
+}))
 const LocationDropdownCard = () => {
   const [isThailandButtonClick, isThailandButtonSet] = useState<boolean>(true);
   const [isForeignButtonClick, isForeignButtonSet] = useState<boolean>(false);
   const [isbuttonAppear, setButtonIsAppear] = useState<boolean>(false)
-  const [pageNumber, setPageCount] = useState<number>(0)
-  const [numberOfSlide, slideSetter] = useState<number>(0)
-  const maxSlide: number = (dropDownSearchBarInformation.imageSlideProvince.length / 4) - 1;
-  const indexSlide: number = 0;
-  const [numberForChangeSlide, changeSlideNumber] = useState<number>(0)
-  const movementSlideNumber: number = 400;
+  const indexSlide: number = 1;
+  const { pictureChange, slidePage, nextSlide, prevSlide, pictureToSlide } = useSlideHeader()
+  const maxSlide: number = dropDownSearchBarInformation.imageSlideProvince.length / pictureToSlide;
+
+
   return (
     <div className='dropdownInformationControl provinceControlBar'>
       <img className='adjustMoreforDropdown' src='../../img/imageForDeco.png' alt='imageFoe add some gimic' />
@@ -25,13 +41,13 @@ const LocationDropdownCard = () => {
       <div className='dropdownSlideTopdown'>
         <p className='tabContent'>ปลายทางยอดนิยม</p>
         <div className='imageSlideGroup tabContent' onMouseEnter={() => setButtonIsAppear(true)} onMouseLeave={() => setButtonIsAppear(false)}>
-          {isThailandButtonClick && numberForChangeSlide < maxSlide && isbuttonAppear &&
-            <button className="sliderButton" onClick={() => { setPageCount(((numberOfSlide + 1) * (-movementSlideNumber))); slideSetter(numberOfSlide + 1); changeSlideNumber(numberForChangeSlide + 1) }}>
+          {isThailandButtonClick && slidePage < maxSlide && isbuttonAppear &&
+            <button className="sliderButton" onClick={nextSlide}>
               <img className="imageButtonImage" src="../../img/dropdownSmall.png" alt="sliderButton" />
             </button>
           }
-          {isThailandButtonClick && numberForChangeSlide !== indexSlide && isbuttonAppear &&
-            <button className="sliderButtonLeft" onClick={() => { changeSlideNumber(numberForChangeSlide - 1); setPageCount(((numberOfSlide - numberForChangeSlide - (numberForChangeSlide - 1)) * movementSlideNumber)); slideSetter(numberOfSlide - 1) }} >
+          {isThailandButtonClick && slidePage !== indexSlide && isbuttonAppear &&
+            <button className="sliderButtonLeft" onClick={prevSlide} >
               <img className="imageButtonImage" src="../../img/dropdownSmall.png" alt="sliderButton" />
             </button>
           }
@@ -42,7 +58,7 @@ const LocationDropdownCard = () => {
             </a>
           )}
           {isThailandButtonClick && dropDownSearchBarInformation.imageSlideProvince.map((item, index) =>
-            <a className='slideFrame' href='###' key={index} style={{ transform: `translateX(${pageNumber}%)` }}>
+            <a className='slideFrame' href='###' key={index} style={{ transform: `translateX(${pictureChange}%)` }}>
               <img className='imageInsideProvinceSlide' src={item.image} alt={item.textIndsideImg} />
               <p className='imageTagText'>{item.textIndsideImg}</p>
             </a>
