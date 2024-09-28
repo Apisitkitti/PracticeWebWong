@@ -150,7 +150,6 @@ const Header = () => {
           dropdropIsToggleControl(!dropdownIsToggle);
           isSearchbarTogle(false);
           isLocationToggle(false);
-          isPlaceToggle(false)
         }}>{dropdownIsToggle ? <img src="../img/dropdownSmall.png" alt="dropdown png" className='icon translateIcon' /> : <img src="../img/dropdownSmall.png" alt="dropdown png" className='icon' />}</button>
       </div>
       {placeIsToggle &&
