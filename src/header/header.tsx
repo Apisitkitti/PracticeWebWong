@@ -153,14 +153,13 @@ const Header = () => {
           isPlaceToggle(false)
         }}>{dropdownIsToggle ? <img src="../img/dropdownSmall.png" alt="dropdown png" className='icon translateIcon' /> : <img src="../img/dropdownSmall.png" alt="dropdown png" className='icon' />}</button>
       </div>
+      {placeIsToggle &&
+        <LocationDropdownCard />}
       {searchbarIsToogle &&
         <ShopCategoryDropdown />}
 
       {dropdownIsToggle &&
         <DropdownCard />}
-      <div></div>
-      {placeIsToggle &&
-        <LocationDropdownCard />}
     </div >
   );
 }
