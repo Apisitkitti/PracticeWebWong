@@ -8,10 +8,13 @@ import { slideState } from "../../typeSetter";
 
 const useChangeSlide = create<slideState>()((set) => (
   {
+    indexSlide: 1,
     pictureToSlide: 5,
     slidePercentive: 100,
     slidePage: 1,
     pictureChange: 0,
+    isArrowAppear: false,
+    maxSlide: (dataLength, picturePerPage) => dataLength / picturePerPage,
     nextSlide: () => set((state) => ({
       pictureChange: state.pictureChange - (state.pictureToSlide * state.slidePercentive),
       slidePage: state.slidePage + 1,
@@ -19,16 +22,16 @@ const useChangeSlide = create<slideState>()((set) => (
     prevSlide: () => set((state) => ({
       pictureChange: state.pictureChange + (state.pictureToSlide * state.slidePercentive),
       slidePage: state.slidePage - 1
+    })), setIsArrowAppearWhenHover: (isHover) => set((state) => ({
+      isArrowAppear: state.isArrowAppear = isHover
     }))
   }))
 
 function PictureCard({ pictureAndInformation }: FoodForShow) {
-  const [isbuttonAppear, setButtonIsAppear] = useState<boolean>(false)
-  const indexSlide: number = 1;
-  const { pictureChange, slidePage, nextSlide, prevSlide, pictureToSlide } = useChangeSlide()
-  const maxSlide: number = (pictureAndInformation.length / pictureToSlide);
+  const { pictureChange, slidePage, nextSlide, prevSlide, pictureToSlide, indexSlide, maxSlide, isArrowAppear, setIsArrowAppearWhenHover } = useChangeSlide()
+  const endOfSlide: number = maxSlide(pictureAndInformation.length, pictureToSlide);
   return (
-    <div className="picture-container bodySection " onMouseEnter={() => setButtonIsAppear(true)} onMouseLeave={() => setButtonIsAppear(false)}>
+    <div className="picture-container bodySection " onMouseEnter={() => setIsArrowAppearWhenHover(true)} onMouseLeave={() => setIsArrowAppearWhenHover(false)}>
       <div className="slideContainer">
         {pictureAndInformation.map((pictureWithCaption: PictureType, index: number) =>
           <div key={index} className="imageAndCaptionBlock" style={{ transform: `translateX(${pictureChange}%)` }} >
@@ -36,12 +39,12 @@ function PictureCard({ pictureAndInformation }: FoodForShow) {
             <img id="imageInside" src={pictureWithCaption.picture} alt={pictureWithCaption.caption} />
           </div>
         )}
-        {slidePage < maxSlide && isbuttonAppear &&
+        {slidePage < endOfSlide && isArrowAppear &&
           <button id="sliderButton" onClick={nextSlide}>
             <img id="imageButtonImage" src="../../img/dropdownSmall.png" alt="sliderButton" />
           </button>
         }
-        {slidePage !== indexSlide && isbuttonAppear &&
+        {slidePage !== indexSlide && isArrowAppear &&
           <button id="sliderButtonLeft" onClick={prevSlide}>
             <img id="imageButtonImage" src="../../img/dropdownSmall.png" alt="sliderButton" />
           </button>

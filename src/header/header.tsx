@@ -6,10 +6,9 @@ import { useLocationDropdown, useSlideHeader } from './headerState';
 
 
 const LocationDropdownCard = () => {
-  const { isClickThailand, isClickForeign, setIsClickedThai, isButtonAppear, setIsButtonAppearWhenHover } = useLocationDropdown()
-  const indexSlide: number = 1;
-  const { pictureChange, slidePage, nextSlide, prevSlide, pictureToSlide } = useSlideHeader()
-  const maxSlide: number = dropDownSearchBarInformation.imageSlideProvince.length / pictureToSlide;
+  const { isClickThailand, isClickForeign, setIsClickedThai } = useLocationDropdown()
+  const { pictureChange, slidePage, nextSlide, prevSlide, pictureToSlide, indexSlide, maxSlide, isArrowAppear, setIsArrowAppearWhenHover } = useSlideHeader()
+  const endOfSlide: number = maxSlide(dropDownSearchBarInformation.imageSlideProvince.length, pictureToSlide)
 
 
   return (
@@ -25,13 +24,13 @@ const LocationDropdownCard = () => {
       </div>
       <div className='dropdownSlideTopdown'>
         <p className='tabContent'>ปลายทางยอดนิยม</p>
-        <div className='imageSlideGroup tabContent' onMouseEnter={() => setIsButtonAppearWhenHover(true)} onMouseLeave={() => setIsButtonAppearWhenHover(false)}>
-          {isClickThailand && slidePage < maxSlide && isButtonAppear &&
+        <div className='imageSlideGroup tabContent' onMouseEnter={() => setIsArrowAppearWhenHover(true)} onMouseLeave={() => setIsArrowAppearWhenHover(false)}>
+          {isClickThailand && slidePage < endOfSlide && isArrowAppear &&
             <button className="sliderButton" onClick={nextSlide}>
               <img className="imageButtonImage" src="../../img/dropdownSmall.png" alt="sliderButton" />
             </button>
           }
-          {isClickThailand && slidePage !== indexSlide && isButtonAppear &&
+          {isClickThailand && slidePage !== indexSlide && isArrowAppear &&
             <button className="sliderButtonLeft" onClick={prevSlide} >
               <img className="imageButtonImage" src="../../img/dropdownSmall.png" alt="sliderButton" />
             </button>
