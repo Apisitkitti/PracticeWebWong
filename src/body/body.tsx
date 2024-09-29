@@ -4,10 +4,11 @@ import Sidebar from './sidebar/sidebar';
 import CardComponent from './PictureCard/PictureCard';
 import FoodCardComponent from './FoodProfileCard/foodProfileCard';
 import RightSideBar from './rightSideBar/rightSidebar';
-
+import { useHeaderStore } from '../header/headerState';
 const Body = () => {
+  const { setPlaceHolder, disappearAllInterface } = useHeaderStore()
   return (
-    <div className="body-container" id='body'>
+    <div className="body-container" id='body' onClick={() => { disappearAllInterface(); setPlaceHolder('กรุงเทพและ...') }}>
       <HeadLiner />
       <main className='mainContent'>
         <Sidebar />
@@ -19,7 +20,7 @@ const Body = () => {
           </div>
         </div>
       </main>
-    </div>
+    </div >
   );
 }
 

@@ -97,7 +97,7 @@ const Header = () => {
     <div className="header-container " id='header'>
       <img src="../img/wongnai-logo-header.png" alt="wongnai logo" className='wongnai-logo' />
       <div className="header-center-container">
-        <div className="location-container" onClick={locationInterfaceAppear} onBlur={disappearAllInterface}>
+        <div className="location-container" onClick={locationInterfaceAppear}>
           <img src="../img/location.png" alt="location logo" className='icon location-icon' />
           <input type="text" className="location input-container" placeholder={placeHolderInLocationBar} onFocus={() => setPlaceHolder('พิมพ์สถานที่')} onBlur={() => setPlaceHolder('กรุงเทพและ...')} />
           <img src="../img/dropdown.png" alt="dropdown pic" className='icon dropdown-icon' />
