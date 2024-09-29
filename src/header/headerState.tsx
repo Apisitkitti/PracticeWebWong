@@ -1,22 +1,60 @@
 import { create } from 'zustand';
 import { slideState } from '../typeSetter';
 
-interface locationDrodown {
+interface locationDropdownStore {
   isClickThailand: boolean,
   isClickForeign: boolean,
   setIsClickedThai: (isClick: boolean) => void
 }
 
+interface headerStateStore {
+  placeHolderInLocationBar: string,
+  isDropdownToggle: boolean,
+  isSearchBarToggle: boolean,
+  isLocationToggle: boolean,
+  dropdownInterfaceAppear: () => void,
+  searchbarInterfaceAppear: () => void,
+  locationInterfaceAppear: () => void,
+  disappearAllInterface: () => void,
+  setPlaceHolder: (newWord: string) => void
+}
+export const useHeaderStore = create<headerStateStore>()((set) => ({
+  placeHolderInLocationBar: 'กรุงเทพและ...',
+  isDropdownToggle: false,
+  isSearchBarToggle: false,
+  isLocationToggle: false,
 
+  dropdownInterfaceAppear: () => set((state) => ({
+    isDropdownToggle: !state.isDropdownToggle,
+    isSearchBarToggle: false
+  })),
 
+  searchbarInterfaceAppear: () => set((state) => ({
+    isDropdownToggle: false,
+    isSearchBarToggle: true,
+    isLocationToggle: false
+  })),
 
-
-export const useLocationDropdown = create<locationDrodown>()((set) => ({
+  locationInterfaceAppear: () => set((state) => ({
+    isDropdownToggle: false,
+    isSearchBarToggle: false,
+    isLocationToggle: true
+  })),
+  disappearAllInterface: () => set((state) => ({
+    isDropdownToggle: false,
+    isSearchBarToggle: false,
+    isLocationToggle: false
+  })),
+  setPlaceHolder: (newWord) => set((state) => ({
+    placeHolderInLocationBar: newWord
+  }))
+}))
+export const useLocationDropdown = create<locationDropdownStore>()((set) => ({
   isClickThailand: true,
   isClickForeign: false,
   setIsClickedThai: (isClick) => set((state) => ({
-    isClickThailand: state.isClickThailand = isClick,
-    isClickForeign: state.isClickForeign = !isClick
+    isClickThailand: isClick,
+    isClickForeign: !isClick
   }))
 }))
 

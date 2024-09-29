@@ -1,7 +1,6 @@
-import { useState } from 'react';
 import './header.css'
 import { itemInsideCard, informationInsideCard, shopCategoryForSearchs, dropDownSearchBarInformation } from './headerData';
-import { useLocationDropdown, useSlideHeader } from './headerState';
+import { useHeaderStore, useLocationDropdown, useSlideHeader } from './headerState';
 
 
 
@@ -93,36 +92,17 @@ const ShopCategoryDropdown = () => {
   )
 }
 const Header = () => {
-  const [placeHolder, setPlaceHolder] = useState<string>('กรุงเทพและ...');
-  const [dropdownIsToggle, dropdropIsToggleControl] = useState<boolean>(false);
-  const [searchbarIsToogle, isSearchbarTogle] = useState<boolean>(false);
-  const [locationIsToggle, isLocationToggle] = useState<boolean>(false);
-  const [placeIsToggle, isPlaceToggle] = useState<boolean>(false);
+  const { isLocationToggle, isSearchBarToggle, isDropdownToggle, placeHolderInLocationBar, locationInterfaceAppear, searchbarInterfaceAppear, dropdownInterfaceAppear, disappearAllInterface, setPlaceHolder } = useHeaderStore()
   return (
     <div className="header-container " id='header'>
       <img src="../img/wongnai-logo-header.png" alt="wongnai logo" className='wongnai-logo' />
       <div className="header-center-container">
-        <div className="location-container" onClick={() => {
-          dropdropIsToggleControl(false);
-          isSearchbarTogle(false);
-          isLocationToggle(false)
-          isPlaceToggle(true)
-        }}>
+        <div className="location-container" onClick={locationInterfaceAppear} onBlur={disappearAllInterface}>
           <img src="../img/location.png" alt="location logo" className='icon location-icon' />
-          <input type="text" className="location input-container" placeholder={placeHolder} onFocus={() => setPlaceHolder('พิมพ์สถานที่')} onBlur={() => setPlaceHolder('กรุงเทพและ...')} />
+          <input type="text" className="location input-container" placeholder={placeHolderInLocationBar} onFocus={() => setPlaceHolder('พิมพ์สถานที่')} onBlur={() => setPlaceHolder('กรุงเทพและ...')} />
           <img src="../img/dropdown.png" alt="dropdown pic" className='icon dropdown-icon' />
         </div>
-        <div className="restaurant-search-container " onClick={() => {
-          dropdropIsToggleControl(false);
-          isSearchbarTogle(true);
-          isLocationToggle(false);
-          isPlaceToggle(false)
-        }} onBlur={() => {
-          dropdropIsToggleControl(false);
-          isSearchbarTogle(false);
-          isLocationToggle(false);
-          isPlaceToggle(false)
-        }}>
+        <div className="restaurant-search-container " onClick={searchbarInterfaceAppear} onBlur={disappearAllInterface}>
           <input type="text" className="restaurant input-container" placeholder="ร้านอาหาร โรงแรม ที่เที่ยวร้านเสริมสว..." />
         </div>
         <button className="search-button">
@@ -134,18 +114,14 @@ const Header = () => {
           <img src="../img/peopleIcon.png" alt="people icon" className='icon' />
           เข้าสู่ระบบ
         </button>
-        <button className='dropdown-button user-button' onClick={() => {
-          dropdropIsToggleControl(!dropdownIsToggle);
-          isSearchbarTogle(false);
-          isLocationToggle(false);
-        }}>{dropdownIsToggle ? <img src="../img/dropdownSmall.png" alt="dropdown png" className='icon translateIcon' /> : <img src="../img/dropdownSmall.png" alt="dropdown png" className='icon' />}</button>
+        <button className='dropdown-button user-button' onClick={dropdownInterfaceAppear} onBlur={disappearAllInterface}>{isDropdownToggle ? <img src="../img/dropdownSmall.png" alt="dropdown png" className='icon translateIcon' /> : <img src="../img/dropdownSmall.png" alt="dropdown png" className='icon' />}</button>
       </div>
-      {placeIsToggle &&
+      {isLocationToggle &&
         <LocationDropdownCard />}
-      {searchbarIsToogle &&
+      {isSearchBarToggle &&
         <ShopCategoryDropdown />}
 
-      {dropdownIsToggle &&
+      {isDropdownToggle &&
         <DropdownCard />}
     </div >
   );
