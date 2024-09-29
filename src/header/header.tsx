@@ -1,28 +1,12 @@
 import { useState } from 'react';
 import './header.css'
 import { itemInsideCard, informationInsideCard, shopCategoryForSearchs, dropDownSearchBarInformation } from './headerData';
-import { slideState } from '../typeSetter';
-import { create } from 'zustand';
+import { useLocationDropdown, useSlideHeader } from './headerState';
 
-const useSlideHeader = create<slideState>()((set) => ({
-  pictureToSlide: 4,
-  slidePercentive: 100,
-  slidePage: 1,
-  pictureChange: 0,
-  nextSlide: () => set((state) => ({
-    pictureChange: state.pictureChange - (state.pictureToSlide * state.slidePercentive),
-    slidePage: state.slidePage + 1,
-  })),
-  prevSlide: () => set((state) => ({
-    pictureChange: state.pictureChange + (state.pictureToSlide * state.slidePercentive),
-    slidePage: state.slidePage - 1
-  }))
-}))
+
 
 const LocationDropdownCard = () => {
-  const [isThailandButtonClick, isThailandButtonSet] = useState<boolean>(true);
-  const [isForeignButtonClick, isForeignButtonSet] = useState<boolean>(false);
-  const [isbuttonAppear, setButtonIsAppear] = useState<boolean>(false)
+  const { isClickThailand, isClickForeign, setIsClickedThai, isButtonAppear, setIsButtonAppearWhenHover } = useLocationDropdown()
   const indexSlide: number = 1;
   const { pictureChange, slidePage, nextSlide, prevSlide, pictureToSlide } = useSlideHeader()
   const maxSlide: number = dropDownSearchBarInformation.imageSlideProvince.length / pictureToSlide;
@@ -32,33 +16,33 @@ const LocationDropdownCard = () => {
     <div className='dropdownInformationControl provinceControlBar'>
       <img className='adjustMoreforDropdown' src='../../img/imageForDeco.png' alt='imageFoe add some gimic' />
       <div className='headerDropdown'>
-        {isThailandButtonClick
-          ? <button className='dropdownButton dropdownButtonHighLight' onClick={() => { isThailandButtonSet(true); isForeignButtonSet(false) }}>ประเทศไทย</button>
-          : <button className='dropdownButton' onClick={() => { isThailandButtonSet(true); isForeignButtonSet(false) }}>ประเทศไทย</button>}
-        {isForeignButtonClick
-          ? <button className='dropdownButton dropdownButtonHighLight' onClick={() => { isThailandButtonSet(false); isForeignButtonSet(true) }}>ต่างประเทศ</button>
-          : <button className='dropdownButton' onClick={() => { isThailandButtonSet(false); isForeignButtonSet(true) }}>ต่างประเทศ</button>}
+        {isClickThailand
+          ? <button className='dropdownButton dropdownButtonHighLight' onClick={() => setIsClickedThai(true)}>ประเทศไทย</button>
+          : <button className='dropdownButton' onClick={() => setIsClickedThai(true)} >ประเทศไทย</button>}
+        {isClickForeign
+          ? <button className='dropdownButton dropdownButtonHighLight' onClick={() => setIsClickedThai(false)}>ต่างประเทศ</button>
+          : <button className='dropdownButton' onClick={() => setIsClickedThai(false)}>ต่างประเทศ</button>}
       </div>
       <div className='dropdownSlideTopdown'>
         <p className='tabContent'>ปลายทางยอดนิยม</p>
-        <div className='imageSlideGroup tabContent' onMouseEnter={() => setButtonIsAppear(true)} onMouseLeave={() => setButtonIsAppear(false)}>
-          {isThailandButtonClick && slidePage < maxSlide && isbuttonAppear &&
+        <div className='imageSlideGroup tabContent' onMouseEnter={() => setIsButtonAppearWhenHover(true)} onMouseLeave={() => setIsButtonAppearWhenHover(false)}>
+          {isClickThailand && slidePage < maxSlide && isButtonAppear &&
             <button className="sliderButton" onClick={nextSlide}>
               <img className="imageButtonImage" src="../../img/dropdownSmall.png" alt="sliderButton" />
             </button>
           }
-          {isThailandButtonClick && slidePage !== indexSlide && isbuttonAppear &&
+          {isClickThailand && slidePage !== indexSlide && isButtonAppear &&
             <button className="sliderButtonLeft" onClick={prevSlide} >
               <img className="imageButtonImage" src="../../img/dropdownSmall.png" alt="sliderButton" />
             </button>
           }
-          {isForeignButtonClick && dropDownSearchBarInformation.imageSlideCountry.map((item, index) =>
+          {isClickForeign && dropDownSearchBarInformation.imageSlideCountry.map((item, index) =>
             <a className='slideFrame' href='###' key={index}>
               <img className='imageInsideProvinceSlide' src={item.image} alt={item.textIndsideImg} />
               <p className='imageTagText'>{item.textIndsideImg}</p>
             </a>
           )}
-          {isThailandButtonClick && dropDownSearchBarInformation.imageSlideProvince.map((item, index) =>
+          {isClickThailand && dropDownSearchBarInformation.imageSlideProvince.map((item, index) =>
             <a className='slideFrame' href='###' key={index} style={{ transform: `translateX(${pictureChange}%)` }}>
               <img className='imageInsideProvinceSlide' src={item.image} alt={item.textIndsideImg} />
               <p className='imageTagText'>{item.textIndsideImg}</p>
@@ -70,14 +54,14 @@ const LocationDropdownCard = () => {
             <img className='dropdownIcon provinceIcon' src="../../img/location.png" alt="locationIcon" />
             <p className='boldText'>ใกล้ฉัน</p>
           </div>
-          {isThailandButtonClick && dropDownSearchBarInformation.provinceNearby.map((item, index) =>
+          {isClickThailand && dropDownSearchBarInformation.provinceNearby.map((item, index) =>
             <div key={index} className='buttonInDropdownProvince'>
               <p className='blackText' >{item}</p>
             </div>
           )}
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 const DropdownCard = () => {
@@ -132,6 +116,11 @@ const Header = () => {
         <div className="restaurant-search-container " onClick={() => {
           dropdropIsToggleControl(false);
           isSearchbarTogle(true);
+          isLocationToggle(false);
+          isPlaceToggle(false)
+        }} onBlur={() => {
+          dropdropIsToggleControl(false);
+          isSearchbarTogle(false);
           isLocationToggle(false);
           isPlaceToggle(false)
         }}>

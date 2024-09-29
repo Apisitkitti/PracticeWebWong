@@ -13,6 +13,7 @@
   width: 118px;
   height: 48px;
   margin-right: 40px;
+  object-fit: cover;
 }
 
 .header-center-container {
@@ -283,6 +284,7 @@
   width: 110px;
   height: 150px;
   border-radius: 5px;
+  object-fit: cover;
 }
 
 .buttonInDropdownProvince {

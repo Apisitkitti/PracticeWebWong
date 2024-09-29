@@ -25,7 +25,7 @@ const CardComponent = ({ restuarantData }: FoodCardDataShow) => {
       <div className="textRestuarantContainer">
         <div className="headLineRestuarantGroup">
           <div className="firstLineHeadLineRestuarant">
-            <a href="##"> {restuarantData.ads ? 'Ad · ' : ''} <span className="restuarantName boldText">{restuarantData.name}</span> <span className="restuarantPlace normalText">{restuarantData.place}</span></a>
+            <a href="##"> {restuarantData.ads ? <span className="blackText"> Ad · </span> : ''} <span className="restuarantName boldText">{restuarantData.name}</span> <span className="restuarantPlace normalText">{restuarantData.place}</span></a>
             <img onClick={() => bookmarkControl(!isBookmark)} src={isBookmark ? "../../../img/bookmarkIconBlue.png" : "../../../img/bookmarkIcon.png"} alt="bookMarkIcon" id="bookMarkIcon" />
           </div>
           <a href="##" className="restaurantCaption linkText">{restuarantData.caption}</a>
