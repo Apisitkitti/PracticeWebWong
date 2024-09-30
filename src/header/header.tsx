@@ -7,6 +7,7 @@ import { useHeaderStore, useLocationDropdown, useSlideHeader } from './headerSta
 const LocationDropdownCard = () => {
   const { isClickThailand, isClickForeign, setIsClickedThai } = useLocationDropdown()
   const { pictureChange, slidePage, nextSlide, prevSlide, pictureToSlide, indexSlide, maxSlide, isArrowAppear, setIsArrowAppearWhenHover } = useSlideHeader()
+  const { setPlaceHolder, disappearAllInterface } = useHeaderStore()
   const endOfSlide: number = maxSlide(dropDownSearchBarInformation.imageSlideProvince.length, pictureToSlide)
 
 
@@ -53,7 +54,7 @@ const LocationDropdownCard = () => {
             <p className='boldText'>ใกล้ฉัน</p>
           </div>
           {isClickThailand && dropDownSearchBarInformation.provinceNearby.map((item, index) =>
-            <div key={index} className='buttonInDropdownProvince'>
+            <div key={index} className='buttonInDropdownProvince' onClick={() => { setPlaceHolder(item); disappearAllInterface() }}>
               <p className='blackText' >{item}</p>
             </div>
           )}
@@ -99,7 +100,7 @@ const Header = () => {
       <div className="header-center-container">
         <div className="location-container" onClick={locationInterfaceAppear}>
           <img src="../img/location.png" alt="location logo" className='icon location-icon' />
-          <input type="text" className="location input-container" placeholder={placeHolderInLocationBar} onFocus={() => setPlaceHolder('พิมพ์สถานที่')} onBlur={() => setPlaceHolder('กรุงเทพและ...')} />
+          <input type="text" className="location input-container" placeholder={placeHolderInLocationBar} onFocus={() => setPlaceHolder('พิมพ์สถานที่')} />
           <img src="../img/dropdown.png" alt="dropdown pic" className='icon dropdown-icon' />
         </div>
         <div className="restaurant-search-container " onClick={searchbarInterfaceAppear} onBlur={disappearAllInterface}>

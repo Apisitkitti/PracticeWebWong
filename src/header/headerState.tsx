@@ -46,7 +46,7 @@ export const useHeaderStore = create<headerStateStore>()((set) => ({
     isLocationToggle: false
   })),
   setPlaceHolder: (newWord) => set((state) => ({
-    placeHolderInLocationBar: newWord
+    placeHolderInLocationBar: state.placeHolderInLocationBar = newWord
   }))
 }))
 export const useLocationDropdown = create<locationDropdownStore>()((set) => ({
