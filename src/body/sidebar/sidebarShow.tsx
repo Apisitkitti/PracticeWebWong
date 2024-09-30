@@ -1,6 +1,6 @@
 import * as data from "./sidebarData";
 import { useState } from "react";
-
+import { create } from "zustand";
 function ShopCategoryShowUp({ shopCategory }: { shopCategory: string[] }) {
   return (
     <div className="shop-category container " >
@@ -28,29 +28,42 @@ function RateShowUp({ rate }: { rate: number[] }) {
     </div>
   );
 }
-function DistanceShowUp({ distance }: data.DistancePropShowType) {
-  const [placeHolderText, placeHolderControl] = useState('500 ม.')
-  const [isOnButton, buttonAppearControl] = useState<boolean>(false);
-  const handleChangeFollowOption = (event: React.MouseEvent<HTMLButtonElement>) => {
-    const value: string = event.currentTarget.value;
-    placeHolderControl(value);
-    buttonAppearControl(!isOnButton);
-  }
 
+interface distanceShowUpNeedStore {
+  placeHolderDistanceText: string,
+  isDistanceButtonClick: boolean,
+  setIsDistanceClick: () => void,
+  placeHolderChange: (newText: string) => void
+}
+const useDistanceShowUp = create<distanceShowUpNeedStore>()((set) => ({
+  placeHolderDistanceText: '500 ม.',
+  isDistanceButtonClick: false,
+
+  setIsDistanceClick: () => set((state) => (
+    {
+      isDistanceButtonClick: state.isDistanceButtonClick = !state.isDistanceButtonClick
+    })),
+  placeHolderChange: (newText) => set((state) => ({
+    placeHolderDistanceText: state.placeHolderDistanceText = newText,
+    isDistanceButtonClick: state.isDistanceButtonClick = !state.isDistanceButtonClick
+  }))
+}))
+function DistanceShowUp({ distance }: data.DistancePropShowType) {
+  const { placeHolderDistanceText, isDistanceButtonClick, setIsDistanceClick, placeHolderChange } = useDistanceShowUp()
   return (
     <div className="distanceNum container">
       <p>ค้นหาตามระยะห่างจาก</p>
       <div className="placeblock textboxPlace  "><input type="text" placeholder="เช่น วัดพระแก้ว" /></div>
-      <div className="distanceblock textbox" onClick={() => buttonAppearControl(!isOnButton)}>
-        <input type="text" placeholder={placeHolderText} />
+      <div className="distanceblock textbox" onClick={setIsDistanceClick}>
+        <input type="text" placeholder={placeHolderDistanceText} />
         <button id="dropdownIcon" >
           <img src="../img/dropdownSmall.png" alt="icon" className="icon" />
         </button>
       </div>
-      {isOnButton && (
+      {isDistanceButtonClick && (
         <div className="button-group">
           {distance.map((distanceItem: data.DistanceType) =>
-            <button id="destination-button" onClick={handleChangeFollowOption} value={distanceItem.distanceNum + ' ' + distanceItem.distanceSuffix} > {distanceItem.distanceNum} {distanceItem.distanceSuffix}</button>
+            <button id="destination-button" onClick={() => placeHolderChange(distanceItem.distanceNum + ' ' + distanceItem.distanceSuffix)} value={distanceItem.distanceNum + ' ' + distanceItem.distanceSuffix} > {distanceItem.distanceNum} {distanceItem.distanceSuffix}</button>
           )}
         </div>
       )}
