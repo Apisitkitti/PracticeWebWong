@@ -1,11 +1,21 @@
 import { FoodCardDataShow, RestuarantCardType, restuarantData } from "./foodprofileCardData"
 import { useState } from "react";
+import { create } from "zustand";
 import './foodProfile.css'
+
+interface cardComponentStore {
+  imageForShow: (imageData: string[]) => string[]
+  calculatePictureLeftNumber: (imageData: string[], imageForShow: string[]) => number
+}
+const useCardComponentStore = create<cardComponentStore>()((set) => ({
+  imageForShow: (imageData) => imageData.slice(0, 5),
+  calculatePictureLeftNumber: (imageData, imageForShow) => imageData.length - imageForShow.length,
+}))
+
 
 
 const CardComponent = ({ restuarantData }: FoodCardDataShow) => {
-  const imageForShow = (imageData: string[]): string[] => imageData.slice(0, 5);
-  const calculatePictureLeftNumber = (imageData: string[], imageForShow: string[]): number => imageData.length - imageForShow.length;
+  const { imageForShow, calculatePictureLeftNumber } = useCardComponentStore()
   const [isBookmark, bookmarkControl] = useState<boolean>(false)
   return (
 

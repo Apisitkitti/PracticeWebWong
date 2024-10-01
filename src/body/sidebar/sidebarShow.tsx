@@ -48,6 +48,8 @@ const useDistanceShowUp = create<distanceShowUpNeedStore>()((set) => ({
     isDistanceButtonClick: state.isDistanceButtonClick = !state.isDistanceButtonClick
   }))
 }))
+
+
 function DistanceShowUp({ distance }: data.DistancePropShowType) {
   const { placeHolderDistanceText, isDistanceButtonClick, setIsDistanceClick, placeHolderChange } = useDistanceShowUp()
   return (
