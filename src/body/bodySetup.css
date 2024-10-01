@@ -27,13 +27,19 @@
   display: flex;
   height: 15px;
   align-items: center;
+  flex-direction: row;
+  justify-content: center;
   color: white;
   font-size: 12px;
   border-radius: 5px;
-  padding: 1px 5px;
+  padding: 5px;
   background-color: #880B0B;
   margin-right: 5px;
-  width: max-content;
+
+  & .star {
+    font-size: 12px;
+    align-items: center;
+  }
 }
 
 #scoreText {
