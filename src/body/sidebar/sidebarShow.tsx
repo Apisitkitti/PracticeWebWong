@@ -1,7 +1,6 @@
 import * as data from "./sidebarData";
-import { useState } from "react";
 import { create } from "zustand";
-function ShopCategoryShowUp({ shopCategory }: { shopCategory: string[] }) {
+const ShopCategoryShowUp = ({ shopCategory }: { shopCategory: string[] }) => {
   return (
     <div className="shop-category container " >
       {shopCategory.map((shopItem: string, index: number) =>
@@ -14,7 +13,7 @@ function ShopCategoryShowUp({ shopCategory }: { shopCategory: string[] }) {
     </div>
   )
 }
-function RateShowUp({ rate }: { rate: number[] }) {
+const RateShowUp = ({ rate }: { rate: number[] }) => {
   return (
     <div className="rate container">
       <p>เรตติ้ง</p>
@@ -50,7 +49,7 @@ const useDistanceShowUp = create<distanceShowUpNeedStore>()((set) => ({
 }))
 
 
-function DistanceShowUp({ distance }: data.DistancePropShowType) {
+const DistanceShowUp = ({ distance }: data.DistancePropShowType) => {
   const { placeHolderDistanceText, isDistanceButtonClick, setIsDistanceClick, placeHolderChange } = useDistanceShowUp()
   return (
     <div className="distanceNum container">
@@ -73,7 +72,7 @@ function DistanceShowUp({ distance }: data.DistancePropShowType) {
     </div >
   );
 }
-function ProvinceShowUp({ province }: { province: string[] }) {
+const ProvinceShowUp = ({ province }: { province: string[] }) => {
   const filterProvinceToShow: string[] = province.slice(0, 6);
   const leftProvince = province.length - filterProvinceToShow.length;
   return (
@@ -90,7 +89,7 @@ function ProvinceShowUp({ province }: { province: string[] }) {
     </div>
   );
 }
-function FoodShowUp({ food }: { food: string[] }) {
+const FoodShowUp = ({ food }: { food: string[] }) => {
   const filterFoodToShow: string[] = food.slice(0, 6);
   const leftfood: number = food.length - filterFoodToShow.length;
   return (
@@ -108,7 +107,7 @@ function FoodShowUp({ food }: { food: string[] }) {
   );
 }
 
-function DiscountShowUp({ discount }: { discount: string[] }) {
+const DiscountShowUp = ({ discount }: { discount: string[] }) => {
   return (
     <div className="discount container">
       <p>ส่วนลด</p>
@@ -122,7 +121,7 @@ function DiscountShowUp({ discount }: { discount: string[] }) {
     </div >
   );
 }
-function PriceShowUp({ price }: { price: string[] }) {
+const PriceShowUp = ({ price }: { price: string[] }) => {
   return (
     <div>
       <p>ราคา</p>
@@ -136,7 +135,7 @@ function PriceShowUp({ price }: { price: string[] }) {
     </div>
   );
 }
-function DealShowUp({ deal }: { deal: string[] }) {
+const DealShowUp = ({ deal }: { deal: string[] }) => {
   const filterDeal: string[] = deal.slice(0, 5);
   return (
     <div className="food-category container" >
@@ -151,7 +150,7 @@ function DealShowUp({ deal }: { deal: string[] }) {
   );
 }
 
-function ForShowSidebar() {
+const ForShowSidebar = () => {
   return (
     <>
       <ShopCategoryShowUp shopCategory={data.shopCategory} />

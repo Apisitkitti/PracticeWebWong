@@ -1,5 +1,5 @@
 import './headLiner.css'
-function HeadLiner() {
+const HeadLiner = () => {
   return (
     <div className="headLiner-container">
       <div className='headLiner-text-container'>

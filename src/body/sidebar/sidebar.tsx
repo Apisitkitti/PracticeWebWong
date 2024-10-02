@@ -1,7 +1,7 @@
 import ForShowSidebar from './sidebarShow';
 import './sidebar.css';
 
-export default function Sidebar() {
+const Sidebar = () => {
   return (
 
     <div className="sidebar-container bodySection">
@@ -10,3 +10,5 @@ export default function Sidebar() {
 
   );
 }
+export default Sidebar
+
