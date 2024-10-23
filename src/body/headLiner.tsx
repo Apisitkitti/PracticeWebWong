@@ -1,4 +1,5 @@
 import './headLiner.css'
+
 const HeadLiner = () => {
   return (
     <div className="headLiner-container">
