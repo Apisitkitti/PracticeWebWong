@@ -12,4 +12,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Deploy netlify
-      run: curl -X POST -d {} ${{secrets.NETLIFY_BUILD_HOOK}}
+      run: curl -X POST -d {} ${{ secrets.NETLIFY_BUILD_HOOK }}
