@@ -35,7 +35,8 @@ const RestaurantContentRightSidebar = ({ restaurantRecommended }: { restaurantRe
               </p>
               <div className='ratingGroup'>
                 <div className='ratingIcon'>
-                  <span id='scoreText'>{restaurant.score.toFixed(1)}</span>★
+                  <span id='scoreText'>{restaurant.score.toFixed(1)} </span>
+                  <span className='star'>★</span>
                 </div>
                 <div>
                   <span className='normalText'>{restaurant.review} รีวิว {restaurant.dollarSign} </span>

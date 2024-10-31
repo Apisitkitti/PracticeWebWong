@@ -43,7 +43,7 @@ const CardComponent = ({ restuarantData }: FoodCardDataShow) => {
 
         <div className="restuarantStatusGroup">
           <div className="ratingIcon">
-            <p id="scoreText">{restuarantData.score.toFixed(1)}<span className="star">★</span></p>
+            <p id="scoreText">{restuarantData.score.toFixed(1)} <span className="star">★</span></p>
           </div>
           <a href="###" className="normalText"><span className="underLineText">{restuarantData.review} รีวิว</span> {restuarantData.dollarSign}</a>
 

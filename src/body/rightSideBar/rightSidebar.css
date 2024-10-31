@@ -8,7 +8,7 @@
   background-color: white;
   padding: 15px;
   border-radius: 5px;
-  width: 302px;
+  width: 290px;
   margin-bottom: 15px;
   font-size: 20px;
 }
@@ -22,7 +22,7 @@
   background: no-repeat url('../../../public/img/map.jpg');
   display: flex;
   height: 150px;
-  width: 270px;
+  width: 260px;
   align-items: center;
   justify-content: center;
 }
@@ -52,7 +52,11 @@
 .cardRestaurantContainer {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: start;
+}
+
+.textContainer {
+  margin-top: -6px;
 }
 
 .ratingGroup {
@@ -113,6 +117,7 @@
 .textContainerArticle {
   display: flex;
 }
+
 
 .bookmarkGroup {
   display: flex;

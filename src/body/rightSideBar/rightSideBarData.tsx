@@ -25,7 +25,7 @@ export interface restaurantReccomendedWantThis extends contentWantThisIntheTop {
 }
 export const restaurantReccomended: restaurantReccomendedWantThis =
 {
-  headTitle: 'ร้านอาหารแนะนำ',
+  headTitle: 'ร้านอาหารที่น่าสนใจ',
   restaurant: restuarantData
 }
 export interface listRecommendedWantThis extends contentWantThisIntheTop {
