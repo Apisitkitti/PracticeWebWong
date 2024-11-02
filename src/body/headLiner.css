@@ -2,18 +2,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 110px;
+  height: 105px;
   background-color: white;
   width: 100vw;
 }
 
+
 .headLiner-text-container {
-  margin-left: -765px;
+  margin-left: -790px;
 
   & a,
   .slash {
     color: #A9A6A9;
-    padding-right: 5px;
   }
 
   & a:hover {
@@ -21,7 +21,7 @@
   }
 
   & :is(a, span) {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   & p {
@@ -29,7 +29,10 @@
     font-size: 32px;
     font-weight: bold;
   }
+}
 
+.linkTextGroup :is(a, .slash) {
+  padding-right: 5pt;
 }
 
 .hl {
