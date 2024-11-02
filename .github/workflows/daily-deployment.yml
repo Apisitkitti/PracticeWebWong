@@ -2,9 +2,9 @@ name: Daily deployment
 
 
 on:
-  schedule:
-    - cron: "0 0 * * *"
-
+  push:
+    branched:
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
