@@ -10,10 +10,11 @@
 }
 
 .wongnai-logo {
-  width: 118px;
+  width: 117px;
+  margin-top: 2px;
   height: 48px;
   margin-right: 40px;
-  object-fit: cover;
+  margin-left: -35px;
 }
 
 .header-center-container {
@@ -79,10 +80,14 @@
   }
 }
 
+.header-center-container {
+  margin-right: -20px;
+}
 
 .header-center-container .dropdown-icon {
   width: 14px;
   height: 12px;
+  margin-right: 5px;
 }
 
 .input-container {
@@ -103,6 +108,10 @@
 
 .icon {
   width: 40px;
+}
+
+.location-icon {
+  width: 24px;
 }
 
 .translateIcon {

@@ -99,7 +99,7 @@ const Header = () => {
       <img src="../img/wongnai-logo-header.png" alt="wongnai logo" className='wongnai-logo' />
       <div className="header-center-container">
         <div className="location-container" onClick={locationInterfaceAppear}>
-          <img src="../img/location.png" alt="location logo" className='icon location-icon' />
+          <img src="../img/location.png" alt="location logo" className='location-icon' />
           <input type="text" className="location input-container" placeholder={placeHolderInLocationBar} onFocus={() => setPlaceHolder('พิมพ์สถานที่')} />
           <img src="../img/dropdown.png" alt="dropdown pic" className='icon dropdown-icon' />
         </div>
