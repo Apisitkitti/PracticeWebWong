@@ -21,7 +21,7 @@
 .groupMapContent {
   background: no-repeat url('../../../public/img/map.jpg');
   display: flex;
-  height: 150px;
+  height: 140px;
   width: 260px;
   align-items: center;
   justify-content: center;
