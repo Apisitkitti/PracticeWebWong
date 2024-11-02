@@ -37,6 +37,7 @@
   margin-right: 5px;
 
   & .star {
+    margin-left: 2px;
     font-size: 12px;
     align-items: center;
   }

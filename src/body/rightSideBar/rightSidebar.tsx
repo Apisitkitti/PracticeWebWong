@@ -3,6 +3,7 @@ import { listRecomended, restaurantReccomendedWantThis } from './rightSideBarDat
 import { restaurantReccomended, ContentTypeInformation, articleRecommendedContentWantThis, articleRecommendedContent, listRecommendedWantThis, needInsideContent } from './rightSideBarData'
 import { RestuarantCardType } from '../FoodProfileCard/foodprofileCardData'
 import { useState } from 'react'
+import RatingScore from '../../componnent/ratingTemplate'
 const FirstBlockSidebar = () => {
   return (
     <div className="contentContainer">
@@ -34,10 +35,7 @@ const RestaurantContentRightSidebar = ({ restaurantRecommended }: { restaurantRe
                 {restaurant.ads ? 'Ad ·' : ''} <span className='boldText'>{restaurant.name}-</span>
               </p>
               <div className='ratingGroup'>
-                <div className='ratingIcon'>
-                  <span id='scoreText'>{restaurant.score.toFixed(1)} </span>
-                  <span className='star'>★</span>
-                </div>
+                <RatingScore score={restaurant.score} />
                 <div>
                   <span className='normalText'>{restaurant.review} รีวิว {restaurant.dollarSign} </span>
                   {restaurant.status ? <span className='restuarantOpen'>เปิดอยู่</span> : <span className='restuarantClose'>ปิดอยู่</span>}

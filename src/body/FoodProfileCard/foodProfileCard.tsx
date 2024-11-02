@@ -1,6 +1,7 @@
 import { FoodCardDataShow, RestuarantCardType, restuarantData } from "./foodprofileCardData"
 import { useState } from "react";
 import { create } from "zustand";
+import RatingScore from "../../componnent/ratingTemplate";
 import './foodProfile.css'
 
 interface cardComponentStore {
@@ -42,9 +43,7 @@ const CardComponent = ({ restuarantData }: FoodCardDataShow) => {
         </div>
 
         <div className="restuarantStatusGroup">
-          <div className="ratingIcon">
-            <p id="scoreText">{restuarantData.score.toFixed(1)} <span className="star">★</span></p>
-          </div>
+          <RatingScore score={restuarantData.score} />
           <a href="###" className="normalText"><span className="underLineText">{restuarantData.review} รีวิว</span> {restuarantData.dollarSign}</a>
 
           {restuarantData.status ? <span className="restuarantStatus restuarantOpen boldText">เปิดอยู่</span> : <span className="restuarantStatus restuarantClose boldText">ปิดอยู่</span>}
