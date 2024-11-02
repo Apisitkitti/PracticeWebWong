@@ -14,7 +14,7 @@
   margin-top: 2px;
   height: 48px;
   margin-right: 40px;
-  margin-left: -35px;
+  margin-left: -12px;
 }
 
 .header-center-container {
@@ -98,6 +98,10 @@
 .location-container .input-container {
   width: 110px;
   margin: 0 4px;
+}
+
+.header-right-container {
+  margin-left: 30px;
 }
 
 .header-right-container,
