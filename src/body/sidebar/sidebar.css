@@ -56,6 +56,12 @@
   border: none;
   font-size: 18px;
   width: 200px;
+  height: 40px;
+  background-color: transparent;
+}
+
+.placeBlock {
+  height: 44px;
 }
 
 .distanceblock {
