@@ -32,7 +32,7 @@ const RestaurantContentRightSidebar = ({ restaurantRecommended }: { restaurantRe
             <div ><img id='imageSize' src={restaurant.foodImg[0]} alt={restaurant.name} /></div>
             <div className='textContainer'>
               <p>
-                {restaurant.ads ? 'Ad ·' : ''} <span className='boldText'>{restaurant.name}-</span>
+                {restaurant.ads && 'Ad ·'} <span className='boldText'>{restaurant.name}-</span>
               </p>
               <div className='ratingGroup'>
                 <RatingScore score={restaurant.score} />
@@ -41,7 +41,7 @@ const RestaurantContentRightSidebar = ({ restaurantRecommended }: { restaurantRe
                   {restaurant.status ? <span className='restuarantOpen'>เปิดอยู่</span> : <span className='restuarantClose'>ปิดอยู่</span>}
                 </div>
               </div>
-              <a href='##' className='linkText'>{restaurant.caption}</a>
+              <a href='##' className=' captionText linkText'>{restaurant.caption}</a>
             </div>
           </div>
         )}

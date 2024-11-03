@@ -48,7 +48,7 @@ const FooterContent = ({ appImg, footerInformation }: dataInsideFooter) => {
         <hr id="endLine" />
         <div className="wongnaiCopyRightGroup">
           <div className="normalText">Copyright 2010-2024  Wongnai Media Co., Ltd. All right reserved. <a href="##" className="blackText">Terms & Conditions | Privacy Policy</a></div>
-          <p onClick={() => setIsToggle(!isToggle)}>{isToggle ? <div><span className="boldText">TH</span> | <span id="buttonText">EN</span> </div> : <div><span id="buttonText">TH</span> | <span className="boldText">EN</span></div>}</p>
+          <p onClick={() => setIsToggle(!isToggle)}> <div><span className={isToggle ? "boldText" : "buttonText"}>TH</span> | <span className={isToggle ? "buttonText" : "boldText"}>EN</span> </div> </p>
         </div>
       </div >
     </footer >

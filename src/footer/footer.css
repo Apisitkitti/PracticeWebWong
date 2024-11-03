@@ -19,6 +19,7 @@ footer {
 
 .footerContent {
   margin-top: 20px;
+  margin-left: 35px;
 }
 
 .informationContainer {
@@ -26,6 +27,7 @@ footer {
   flex-direction: row;
   margin-bottom: 20px;
   font-size: 18px;
+  margin-left: 10px;
 }
 
 .itemIndsideTextGroup {
@@ -40,7 +42,7 @@ footer {
   font-size: 18px;
 }
 
-#buttonText {
+.buttonText {
   cursor: pointer;
 }
 
