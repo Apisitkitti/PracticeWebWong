@@ -5,12 +5,16 @@
 }
 
 footer {
-  margin-top: -10px;
+  margin-top: -12px;
   background-color: var(--colorGrey);
   border-top: 2px solid #DEE2E4;
   display: flex;
   justify-content: center;
   width: 100vw;
+}
+
+.logoContainer {
+  margin-left: 10px;
 }
 
 .footerContent {
@@ -69,12 +73,15 @@ hr {
 }
 
 #applicationAppset {
-  width: 140px;
-  border: 1px solid #C0C1C1;
-  border-radius: 10px;
+  width: 133px;
+  height: 40px;
+  outline: 1px solid #C0C1C1;
+  border-radius: 8px;
+  object-fit: cover;
+
 }
 
 #applicationAppSocialSet {
-  width: 40px;
+  width: 32px;
   margin-right: 10px;
 }
