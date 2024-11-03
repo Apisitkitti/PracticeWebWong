@@ -41,7 +41,7 @@ const RestaurantContentRightSidebar = ({ restaurantRecommended }: { restaurantRe
                   {restaurant.status ? <span className='restuarantOpen'>เปิดอยู่</span> : <span className='restuarantClose'>ปิดอยู่</span>}
                 </div>
               </div>
-              <a href='##' className=' captionText linkText'>{restaurant.caption}</a>
+              <a href='##' className='captionText linkText'>{restaurant.caption}</a>
             </div>
           </div>
         )}

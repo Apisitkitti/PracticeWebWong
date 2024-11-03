@@ -62,6 +62,7 @@
   display: flex;
   justify-content: space-around;
   align-items: start;
+  margin-bottom: 5px;
 }
 
 .textContainer {
@@ -72,6 +73,7 @@
   display: flex;
   align-items: center;
 }
+
 
 #imageSize {
   width: 70px;
