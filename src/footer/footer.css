@@ -13,19 +13,18 @@ footer {
   width: 100vw;
 }
 
-.logoContainer {
-  margin-left: 10px;
-}
 
 .footerContent {
   margin-top: 20px;
+  margin-left: 40px;
 }
 
 .informationContainer {
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
-  font-size: 18px;
+  font-size: 14px;
+  margin-left: 15px;
 }
 
 .itemIndsideTextGroup {
@@ -40,7 +39,7 @@ footer {
   font-size: 18px;
 }
 
-#buttonText {
+.buttonText {
   cursor: pointer;
 }
 
@@ -51,7 +50,10 @@ footer {
 .insideAboutWongnaiFooterText {
   padding: 2px 0 2px;
   width: 70%;
+
 }
+
+
 
 hr {
   margin: 10px 0;
@@ -69,7 +71,10 @@ hr {
 }
 
 .headAppText {
-  font-size: 20px;
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-weight: var(--fontMedium);
+  color: #3D4245;
 }
 
 #applicationAppset {
@@ -78,10 +83,18 @@ hr {
   outline: 1px solid #C0C1C1;
   border-radius: 8px;
   object-fit: cover;
-
 }
 
 #applicationAppSocialSet {
   width: 32px;
   margin-right: 10px;
+}
+
+.headerSubText,
+.insideAboutWongnaiFooterText {
+  margin-bottom: 5px;
+}
+
+.endFooterText {
+  font-size: 14px;
 }

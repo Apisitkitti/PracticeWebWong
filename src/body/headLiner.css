@@ -9,7 +9,7 @@
 
 
 .headLiner-text-container {
-  margin-left: -790px;
+  margin-left: -680px;
 
   & a,
   .slash {
@@ -21,18 +21,18 @@
   }
 
   & :is(a, span) {
-    font-size: 20px;
+    font-size: 14px;
   }
 
   & p {
     margin-top: 10px;
-    font-size: 32px;
-    font-weight: bold;
+    font-size: 24px;
+    font-weight: var(--fontBold);
   }
 }
 
 .linkTextGroup :is(a, .slash) {
-  padding-right: 5pt;
+  padding-right: 5px;
 }
 
 .hl {

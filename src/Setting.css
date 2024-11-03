@@ -1,13 +1,20 @@
 @font-face {
-  font-family: 'DBHeavent';
-  src: url('../public/font/DBHeavent.ttf') format('truetype');
+  font-family: 'Noboto';
+  src: url('../public/font/Noboto-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'DBHeavent';
-  src: url('../public/font/DBHeaventBd.ttf') format('truetype');
+  font-family: 'Noboto';
+  src: url('../public/font/Noboto-Bold.ttf') format('truetype');
+  font-weight: bolder;
+  font-style: oblique;
+}
+
+@font-face {
+  font-family: 'Noboto';
+  src: url('../public/font/Noboto-Medium.ttf') format('truetype');
   font-weight: bold;
   font-style: oblique;
 }
@@ -15,7 +22,7 @@
 * {
   box-sizing: border-box;
   /* border: 1px solid red; */
-  font-family: DBHeavent;
+  font-family: Noboto;
   margin: 0;
   padding: 0;
   text-decoration: none;
@@ -27,7 +34,10 @@
   --colorBlue: #0093E8;
   --colorBlueHover: #027ec7;
   --colorWhite: #ffff;
-  --colorGrey: #EDF0F2
+  --colorGrey: #EDF0F2;
+  --fontNormal: normal;
+  --fontMedium: bold;
+  --fontBold: bolder;
 }
 
 body {
@@ -55,4 +65,8 @@ body {
 .boldWhiteText {
   color: var(--colorWhite);
   font-weight: bold;
+}
+
+.greyText {
+  color: #3D4245;
 }

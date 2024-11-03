@@ -17,7 +17,7 @@ export const dropDownSearchBarInformation: dropdownProvince =
 {
   imageSlideProvince:
     [
-      { image: `${urlToImg}province/bangkok.jpg`, textIndsideImg: 'กรุงเทพและมหานคร' },
+      { image: `${urlToImg}province/bangkok.jpg`, textIndsideImg: 'กรุงเทพมหานคร' },
       { image: `${urlToImg}province/chonburi.jpg`, textIndsideImg: 'ชลบุรี' },
       { image: `${urlToImg}province/chiangmai.jpg`, textIndsideImg: 'เชียงใหม่' },
       { image: `${urlToImg}province/rayong.jpg`, textIndsideImg: 'ระยอง' },

@@ -67,7 +67,7 @@ const DropdownCard = () => {
   return (
     <div className='dropdownInformationControl'>
       <div className='buttonContainerForDropdown'>
-        <button className='dropdownLoginButton'>เข้าสู้ระบบ หรือ สมัครสมาชิก</button>
+        <button className='dropdownLoginButton'>เข้าสู่ระบบ หรือ สมัครสมาชิก</button>
       </div>
       <div className='itemDropdownContainer'>
         {informationInsideCard.map((information: itemInsideCard, index: number) =>

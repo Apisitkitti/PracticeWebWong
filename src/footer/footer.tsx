@@ -13,7 +13,7 @@ const FooterContent = ({ appImg, footerInformation }: dataInsideFooter) => {
         </div>
         <div className="advertisementApplicationContainer">
           <div className="applicationForWongnai">
-            <p className="headAppText boldText">Dowload Wongnai App Free</p>
+            <p className="headAppText">Dowload Wongnai App Free</p>
             <div className="applicationContainer">
               {appImg.dowloadPlatformImg.map((dowloadPlatformApp: socialIcon, index: number) =>
                 <a key={index} href={dowloadPlatformApp.link}>
@@ -23,7 +23,7 @@ const FooterContent = ({ appImg, footerInformation }: dataInsideFooter) => {
             </div>
           </div>
           <div className="applicationForWongnai">
-            <p className="headAppText boldText">Follow Us</p>
+            <p className="headAppText">Follow Us</p>
             <div className="applicationContainer">
               {appImg.socialImg.map((socialImg: socialIcon, index: number) =>
                 <a href={socialImg.link} key={index}>
@@ -35,11 +35,13 @@ const FooterContent = ({ appImg, footerInformation }: dataInsideFooter) => {
         </div>
         <div className="informationContainer">
           {footerData.map((footerItem, index) =>
-            <div key={index}>
-              <p className="normalText">{footerItem.header}</p>
+            <div className="alltextInFooter" key={index}>
+              <p className="headerSubText normalText">{footerItem.header}</p>
               <div className="itemIndsideTextGroup">
                 {footerItem.linkText.map((indsideText, index) =>
-                  <div className="insideAboutWongnaiFooterText" key={index}><a className="blackText" href={indsideText.link}>{indsideText.insideText}</a></div>
+                  <div className="insideAboutWongnaiFooterText" key={index}>
+                    <a className="footerSubtext greyText" href={indsideText.link}>{indsideText.insideText}</a>
+                  </div>
                 )}
               </div>
             </div>
@@ -47,8 +49,8 @@ const FooterContent = ({ appImg, footerInformation }: dataInsideFooter) => {
         </div>
         <hr id="endLine" />
         <div className="wongnaiCopyRightGroup">
-          <div className="normalText">Copyright 2010-2024  Wongnai Media Co., Ltd. All right reserved. <a href="##" className="blackText">Terms & Conditions | Privacy Policy</a></div>
-          <p onClick={() => setIsToggle(!isToggle)}>{isToggle ? <div><span className="boldText">TH</span> | <span id="buttonText">EN</span> </div> : <div><span id="buttonText">TH</span> | <span className="boldText">EN</span></div>}</p>
+          <div className="endFooterText normalText">Copyright 2010-2024  Wongnai Media Co., Ltd. All right reserved. <a href="##" className="blackText">Terms & Conditions | Privacy Policy</a></div>
+          <p onClick={() => setIsToggle(!isToggle)}><div className="endFooterText"><span className={isToggle ? "boldText" : "buttonText "}>TH</span> | <span className={isToggle ? 'buttonText' : 'boldText'}>EN</span> </div></p>
         </div>
       </div >
     </footer >
