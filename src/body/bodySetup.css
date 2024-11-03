@@ -30,21 +30,23 @@
   flex-direction: row;
   justify-content: center;
   color: white;
-  font-size: 12px;
   border-radius: 5px;
-  padding: 5px;
+  padding: 9px 5px;
   background-color: #880B0B;
   margin-right: 5px;
 
   & .star {
     margin-left: 2px;
-    font-size: 12px;
+    font-size: 16px;
     align-items: center;
+    margin-bottom: 1px;
   }
 }
 
 #scoreText {
-  font-size: 15px;
+  font-size: 18px;
+  font-weight: bold;
+
 }
 
 .restuarantOpen {

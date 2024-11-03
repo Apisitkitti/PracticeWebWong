@@ -44,8 +44,7 @@ const CardComponent = ({ restuarantData }: FoodCardDataShow) => {
 
         <div className="restuarantStatusGroup">
           <RatingScore score={restuarantData.score} />
-          <a href="###" className="normalText"><span className="underLineText">{restuarantData.review} รีวิว</span> {restuarantData.dollarSign}</a>
-
+          <a href="###" className="restaurantTextContainer normalText"><span className="textInside underLineText">{restuarantData.review} รีวิว</span> <span className="textInside">{restuarantData.dollarSign}</span></a>
           {restuarantData.status ? <span className="restuarantStatus restuarantOpen boldText">เปิดอยู่</span> : <span className="restuarantStatus restuarantClose boldText">ปิดอยู่</span>}
         </div>
 
