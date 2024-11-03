@@ -1,5 +1,5 @@
 .rightSidebarGroup {
-  font-size: 18px;
+  font-size: 14px;
   height: max-content;
   margin-left: 20px;
 }
@@ -10,11 +10,19 @@
   border-radius: 5px;
   width: 290px;
   margin-bottom: 15px;
-  font-size: 20px;
+  font-size: 12px;
+}
+
+.restuarantTextInsideRightSidbar {
+  font-size: 16px;
+}
+
+.adText {
+  font-size: 14px;
 }
 
 .headText {
-  font-size: 24px;
+  font-size: 18px;
   margin-bottom: 10px;
 }
 
@@ -42,7 +50,7 @@
   border: none;
   padding: 5px 15px;
   border-radius: 10px;
-  font-size: 25px;
+  font-size: 18px;
 }
 
 #locationButton:hover {

@@ -44,6 +44,9 @@
   display: flex;
 }
 
+.cardRestaurantContainer:not(.linkText) {
+  margin-bottom: 10px;
+}
 
 #bookMarkIcon:active {
   color: yellow

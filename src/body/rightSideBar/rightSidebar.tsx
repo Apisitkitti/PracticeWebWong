@@ -31,13 +31,13 @@ const RestaurantContentRightSidebar = ({ restaurantRecommended }: { restaurantRe
           <div className='cardRestaurantContainer' key={index}>
             <div ><img id='imageSize' src={restaurant.foodImg[0]} alt={restaurant.name} /></div>
             <div className='textContainer'>
-              <p>
-                {restaurant.ads ? 'Ad ·' : ''} <span className='boldText'>{restaurant.name}-</span>
+              <p className='restuarantTextInsideRightSidbar'>
+                <span className='adText'>{restaurant.ads && 'Ad ·'}</span> <span className='boldText'>{restaurant.name}-</span>
               </p>
               <div className='ratingGroup'>
                 <RatingScore score={restaurant.score} />
                 <div>
-                  <span className='normalText'>{restaurant.review} รีวิว {restaurant.dollarSign} </span>
+                  <span className='normalText'>{restaurant.review} <span>รีวิว</span> <span>{restaurant.dollarSign}</span> </span>
                   {restaurant.status ? <span className='restuarantOpen'>เปิดอยู่</span> : <span className='restuarantClose'>ปิดอยู่</span>}
                 </div>
               </div>
