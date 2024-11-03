@@ -37,7 +37,7 @@
 
 .imageRestaurantContainer {
   display: flex;
-
+  margin: 8px -3px;
 }
 
 .categoryGroup {

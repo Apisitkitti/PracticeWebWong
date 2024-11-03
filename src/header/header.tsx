@@ -113,7 +113,7 @@ const Header = () => {
       <div className="header-right-container">
         <button className='signIn-button user-button'>
           <img src="../img/peopleIcon.png" alt="people icon" className='icon' />
-          เข้าสู่ระบบ
+          <span className='loginButtonText'>เข้าสู่ระบบ</span>
         </button>
         <button className='dropdown-button user-button' onClick={dropdownInterfaceAppear} onBlur={disappearAllInterface}>{isDropdownToggle ? <img src="../img/dropdownSmall.png" alt="dropdown png" className='icon translateIcon' /> : <img src="../img/dropdownSmall.png" alt="dropdown png" className='icon' />}</button>
       </div>

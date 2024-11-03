@@ -36,8 +36,8 @@ const RestaurantContentRightSidebar = ({ restaurantRecommended }: { restaurantRe
               </p>
               <div className='ratingGroup'>
                 <RatingScore score={restaurant.score} />
-                <div>
-                  <span className='normalText'>{restaurant.review} รีวิว {restaurant.dollarSign} </span>
+                <div className='reviewGroup'>
+                  <span className='normalText'><span>{restaurant.review} รีวิว </span> <span>{restaurant.dollarSign}</span> </span>
                   {restaurant.status ? <span className='restuarantOpen'>เปิดอยู่</span> : <span className='restuarantClose'>ปิดอยู่</span>}
                 </div>
               </div>
@@ -52,7 +52,7 @@ const RestaurantContentRightSidebar = ({ restaurantRecommended }: { restaurantRe
 
 const ArticleContentRightSidebar = ({ articleData }: { articleData: articleRecommendedContentWantThis }) => {
   const articleForShowData: ContentTypeInformation[] = articleData.advertise.slice(0, 6);
-  const [isBookmark, bookmarkControl] = useState<boolean[]>(Array(articleForShowData.length).fill(false));
+  const [isBookmark, bookmarkControl] = useState<boolean[]>([]);
   const bookmarkHandleEvent = (index: number) => {
     const newBookmarkStates = [...isBookmark];
     newBookmarkStates[index] = !newBookmarkStates[index];

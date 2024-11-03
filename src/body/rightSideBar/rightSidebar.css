@@ -8,7 +8,7 @@
   background-color: white;
   padding: 15px;
   border-radius: 5px;
-  width: 290px;
+  width: 295px;
   margin-bottom: 15px;
   font-size: 20px;
 }
@@ -16,15 +16,24 @@
 .headText {
   font-size: 24px;
   margin-bottom: 10px;
+  color: #3d4245;
 }
 
 .groupMapContent {
   background: no-repeat url('../../../public/img/map.jpg');
   display: flex;
   height: 140px;
-  width: 260px;
+  width: 265px;
   align-items: center;
   justify-content: center;
+}
+
+.reviewGroup span {
+  padding-left: 1px;
+
+  & span {
+    padding: 0 2px;
+  }
 }
 
 #mapLocation {
