@@ -14,12 +14,13 @@ footer {
 }
 
 .logoContainer {
-  margin-left: 17px;
+  margin-left: 18px;
 }
 
 .footerContent {
   margin-top: 20px;
-  margin-left: 35px;
+  /* margin-left: 35px; */
+  width: 980px
 }
 
 .informationContainer {
@@ -39,7 +40,7 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 40px;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .buttonText {
@@ -52,7 +53,7 @@ footer {
 
 .insideAboutWongnaiFooterText {
   padding: 2px 0 2px;
-  width: 70%;
+  width: 60%;
 }
 
 hr {
@@ -61,7 +62,7 @@ hr {
 
 .applicationContainer {
   display: flex;
-  margin-right: 40px;
+  margin-right: 60px;
   align-items: center;
   margin-bottom: 10px;
 
