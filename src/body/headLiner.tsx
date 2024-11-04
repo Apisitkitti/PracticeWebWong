@@ -9,7 +9,7 @@ const HeadLiner = () => {
           <span className='slash'>/</span>
           <a href='##'> ร้านอาหาร </a>
           <span className='slash'>/</span>
-          <a href='##'> ร้านอาหารและปริมณฑล </a>
+          <a href='##'> ร้านอาหารในกรุงเทพและปริมณฑล </a>
           <span className='slash'>/</span>
           <span className='hl'> ค้นหาร้านอาหาร</span>
         </div>
