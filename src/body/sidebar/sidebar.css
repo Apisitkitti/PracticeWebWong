@@ -6,7 +6,6 @@
   box-shadow: 0 0 #EDF0F2;
   border-radius: 8px;
   padding: 15px;
-  margin-left: 1px;
   height: max-content;
   margin-right: 18px;
   justify-content: center;
@@ -41,8 +40,8 @@
 
 
 #endLine {
-  margin-top: 10px;
-  opacity: 50%;
+  margin-top: 8px;
+  opacity: 25%;
   position: sticky;
   top: 0;
 }
@@ -105,7 +104,7 @@
 }
 
 .button-group {
-  width: 180px;
+  width: 182px;
   flex-direction: column;
   margin-top: 5px;
   border: 1px solid #c8ccce;
@@ -113,6 +112,7 @@
   position: absolute;
   background-color: white;
   z-index: 2;
+  margin-left: -1px;
 }
 
 #destination-button {

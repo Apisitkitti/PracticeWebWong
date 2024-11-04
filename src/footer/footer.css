@@ -1,7 +1,6 @@
 .end {
   border: 10px solid var(--colorWhite);
   z-index: 2;
-  width: 100vw;
 }
 
 footer {
@@ -10,16 +9,14 @@ footer {
   border-top: 2px solid #DEE2E4;
   display: flex;
   justify-content: center;
-  width: 100vw;
 }
 
 .logoContainer {
-  margin-left: 18px;
+  margin-left: -2px;
 }
 
 .footerContent {
-  margin-top: 20px;
-  /* margin-left: 35px; */
+  margin-top: 30px;
   width: 980px
 }
 
