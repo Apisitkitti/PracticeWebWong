@@ -1,13 +1,13 @@
 .rightSidebarGroup {
   font-size: 18px;
   height: max-content;
-  margin-left: 20px;
+  margin-left: 16px;
 }
 
 .contentContainer {
   background-color: white;
   padding: 15px;
-  border-radius: 5px;
+  border-radius: 8px;
   width: 295px;
   margin-bottom: 15px;
   font-size: 20px;
