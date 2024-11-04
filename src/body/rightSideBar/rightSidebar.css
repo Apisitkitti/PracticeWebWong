@@ -1,14 +1,14 @@
 .rightSidebarGroup {
   font-size: 18px;
   height: max-content;
-  margin-left: 16px;
+  margin-left: 18px;
 }
 
 .contentContainer {
   background-color: white;
   padding: 15px;
   border-radius: 8px;
-  width: 295px;
+  width: 294px;
   margin-bottom: 15px;
   font-size: 20px;
 }
@@ -23,7 +23,7 @@
   background: no-repeat url('../../../public/img/map.jpg');
   display: flex;
   height: 140px;
-  width: 265px;
+  width: 263px;
   align-items: center;
   justify-content: center;
 }
