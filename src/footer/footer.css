@@ -29,7 +29,8 @@ footer {
 }
 
 .itemIndsideTextGroup {
-  width: 200px;
+  width: 190px;
+
 }
 
 .wongnaiCopyRightGroup {
@@ -38,6 +39,7 @@ footer {
   justify-content: space-between;
   margin-bottom: 40px;
   font-size: 20px;
+  width: 928px;
 }
 
 .buttonText {
